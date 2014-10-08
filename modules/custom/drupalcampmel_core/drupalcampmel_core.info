@@ -22,6 +22,7 @@ dependencies[] = page_manager
 dependencies[] = panels
 dependencies[] = prepro
 dependencies[] = sassy
+dependencies[] = sassy_compass
 dependencies[] = strongarm
 dependencies[] = text
 

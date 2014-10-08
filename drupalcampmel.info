@@ -12,6 +12,6 @@ dependencies[] = drupalcampmel_core
 
 ; Profiler - Variables
 
-variables[site_mail] = stuart@realityloop.com
+variables[site_mail] = melbourne@drupalcamps.net.au
 variables[site_name] = DrupalCampMelbourne2014
 variables[site_slogan] = November 14-15 2014

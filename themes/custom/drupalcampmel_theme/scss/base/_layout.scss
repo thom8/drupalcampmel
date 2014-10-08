@@ -5,4 +5,8 @@ body {
 
   background-image: url('../images/bg-docklands.jpg');
   background-repeat: no-repeat;
+
+  &, h1, h2 {
+    font-family: 'Bree Serif';
+  }
 }

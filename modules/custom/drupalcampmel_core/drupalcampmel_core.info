@@ -19,6 +19,7 @@ dependencies[] = email
 dependencies[] = entity
 dependencies[] = entityform
 dependencies[] = entityform_block
+dependencies[] = escape_admin
 dependencies[] = features
 dependencies[] = google_fonts_api
 dependencies[] = page_manager

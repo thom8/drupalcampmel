@@ -79,6 +79,10 @@ projects[environment_indicator][type] = module
 projects[environment_indicator][subdir] = contrib
 projects[environment_indicator][version] = 2.5
 
+projects[escape_admin][type] = module
+projects[escape_admin][subdir] = contrib
+projects[escape_admin][version] = 1.1
+
 projects[features][type] = module
 projects[features][subdir] = contrib
 projects[features][version] = 2.2

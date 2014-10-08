@@ -20,6 +20,27 @@ function drupalcampmel_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'cache';
+  $strongarm->value = 1;
+  $export['cache'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'cache_lifetime';
+  $strongarm->value = '3600';
+  $export['cache_lifetime'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'dindent_non_cacheable_pages';
+  $strongarm->value = 1;
+  $export['dindent_non_cacheable_pages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'entityform_block_types';
   $strongarm->value = array(
     0 => 'register_interest',
@@ -121,6 +142,13 @@ function drupalcampmel_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'page_cache_maximum_age';
+  $strongarm->value = '86400';
+  $export['page_cache_maximum_age'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'prepro';
   $strongarm->value = array(
     'filetypes' => array(
@@ -131,7 +159,7 @@ function drupalcampmel_core_strongarm() {
       ),
       'scss' => array(
         'compile_handler' => 'sassy/sassy',
-        'cache_handler' => 'prepro/onload',
+        'cache_handler' => 'prepro/manual',
         'cache_path' => 'public://prepro',
       ),
     ),
@@ -139,13 +167,27 @@ function drupalcampmel_core_strongarm() {
       'sassy' => array(
         'watchdog' => 0,
         'debug' => 0,
-        'errors' => 'watchdog',
-        'style' => 'nested',
+        'errors' => 'silent',
+        'style' => 'compressed',
       ),
     ),
     'show_warnings' => TRUE,
   );
   $export['prepro'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'preprocess_css';
+  $strongarm->value = 1;
+  $export['preprocess_css'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'preprocess_js';
+  $strongarm->value = 1;
+  $export['preprocess_js'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

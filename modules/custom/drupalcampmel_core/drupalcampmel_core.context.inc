@@ -61,14 +61,44 @@ function drupalcampmel_core_context_default_contexts() {
       ),
     ),
     'module' => array(
-      'devel' => 'enable',
-      'context_ui' => 'enable',
-      'module_filter' => 'enable',
       'coffee' => 'enable',
+      'context_ui' => 'enable',
+      'dblog' => 'enable',
+      'devel' => 'enable',
       'field_ui' => 'enable',
-      'reroute_email' => 'enable',
+      'module_filter' => 'enable',
       'navbar' => 'enable',
       'navbar_region' => 'enable',
+      'reroute_email' => 'enable',
+      'speedy' => 'disable',
+    ),
+    'variable' => array(
+      'prepro' => array(
+        'filetypes' => array(
+          'sass' => array(
+            'compile_handler' => 'sassy/sassy',
+            'cache_handler' => 'prepro/onload',
+            'cache_path' => 'public://prepro',
+          ),
+          'scss' => array(
+            'compile_handler' => 'sassy/sassy',
+            'cache_handler' => 'prepro/onload',
+            'cache_path' => 'public://prepro',
+          ),
+        ),
+        'additional' => array(
+          'sassy' => array(
+            'watchdog' => 1,
+            'debug' => 1,
+            'errors' => 'watchdog',
+            'style' => 'expanded',
+          ),
+        ),
+        'show_warnings' => TRUE,
+      ),
+      'cache' => 0,
+      'preprocess_css' => 0,
+      'preprocess_js' => 0,
     ),
   );
   $context->condition_mode = 0;

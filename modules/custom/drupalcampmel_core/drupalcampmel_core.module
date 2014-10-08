@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the DrupalCampMelbourne: Core feature.
+ */
+
+include_once 'drupalcampmel_core.features.inc';

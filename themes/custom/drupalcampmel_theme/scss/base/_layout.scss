@@ -1,0 +1,8 @@
+@import "compass/css3/background-size";
+
+body {
+  @include background-size();
+
+  background-image: url('../images/bg-docklands.jpg');
+  background-repeat: no-repeat;
+}

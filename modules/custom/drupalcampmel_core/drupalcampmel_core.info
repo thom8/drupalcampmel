@@ -1,0 +1,59 @@
+name = DrupalCampMelbourne: Core
+description = Core Feature for DrupalCampMelbourne
+core = 7.x
+package = DrupalCampMelbourne
+version = 7.x-2014.0
+project = drupalcampmel_core
+
+
+
+; Dependencies
+
+dependencies[] = context
+dependencies[] = context_module
+dependencies[] = context_server_vars
+dependencies[] = ctools
+dependencies[] = email
+dependencies[] = entity
+dependencies[] = entityform
+dependencies[] = entityform_block
+dependencies[] = features
+dependencies[] = page_manager
+dependencies[] = panels
+dependencies[] = prepro
+dependencies[] = sassy
+dependencies[] = strongarm
+dependencies[] = text
+
+
+
+; Features
+
+features[context][] = server-development
+features[context][] = server-production
+
+features[ctools][] = context:context:3
+features[ctools][] = page_manager:pages_default:1
+features[ctools][] = strongarm:strongarm:1
+
+features[entityform_type][] = register_interest
+
+features[features_api][] = api:2
+
+features[field_base][] = field_email_address
+features[field_base][] = field_first_name
+features[field_base][] = field_last_name
+
+features[field_instance][] = entityform-register_interest-field_email_address
+features[field_instance][] = entityform-register_interest-field_first_name
+features[field_instance][] = entityform-register_interest-field_last_name
+
+features[page_manager_pages][] = home
+
+features[variable][] = admin_theme
+features[variable][] = entityform_block_types
+features[variable][] = navbar_region_settings
+features[variable][] = prepro
+features[variable][] = site_frontpage
+features[variable][] = theme_default
+features[variable][] = theme_drupalcampmel_theme_settings

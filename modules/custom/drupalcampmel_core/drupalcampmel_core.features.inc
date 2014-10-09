@@ -47,7 +47,7 @@ function drupalcampmel_core_default_entityform_type() {
       "form_status" : "ENTITYFORM_OPEN",
       "roles" : { "1" : "1", "2" : 0 },
       "resubmit_action" : "new",
-      "redirect_path" : "",
+      "redirect_path" : "\\u003Cfront\\u003E",
       "instruction_pre" : { "value" : "", "format" : "plain_text" },
       "current_type" : "register_interest",
       "enable_block" : 1

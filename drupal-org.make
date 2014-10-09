@@ -110,9 +110,9 @@ projects[libraries][version] = 2.2
 
 projects[mailchimp][type] = module
 projects[mailchimp][subdir] = contrib
-projects[mailchimp][version] = 2.12
-; Add Subscribe e-mail to list rule - https://drupal.org/node/1909306#comment-7034190
-projects[mailchimp][patch][] = https://drupal.org/files/mailchimp_lists_rules_subscribe_email.patch
+projects[mailchimp][version] = 3.1
+; Errors when adding a Mailchimp Subscribe field - https://www.drupal.org/node/2262321#comment-9067843
+projects[mailchimp][patch][] = https://www.drupal.org/files/issues/intgroups_check-2262321-16.patch
 
 projects[module_filter][type] = module
 projects[module_filter][subdir] = contrib
@@ -210,7 +210,7 @@ libraries[dindent][download][type] = get
 libraries[dindent][download][url] = https://raw.githubusercontent.com/Decipher/dindent/master/src/Parser.php
 
 libraries[mailchimp][download][type] = get
-libraries[mailchimp][download][url] = http://apidocs.mailchimp.com/api/downloads/mailchimp-api-class.zip
+libraries[mailchimp][download][url] = https://bitbucket.org/mailchimp/mailchimp-api-php/get/2.0.5.zip
 
 libraries[modernizr][download][type] = get
 libraries[modernizr][download][url] = https://github.com/Modernizr/Modernizr/archive/v2.7.1.zip

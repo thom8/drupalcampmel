@@ -21,6 +21,7 @@ dependencies[] = entity
 dependencies[] = entityform
 dependencies[] = entityform_block
 dependencies[] = features
+dependencies[] = googleanalytics
 dependencies[] = jquery_update
 dependencies[] = mailchimp
 dependencies[] = mailchimp_lists
@@ -31,12 +32,13 @@ dependencies[] = sassy
 dependencies[] = sassy_compass
 dependencies[] = strongarm
 dependencies[] = text
+dependencies[] = xmlsitemap
 
 
 
 ; Features
 
-features[context][] = global
+features[context][] = layout-global
 features[context][] = server-development
 features[context][] = server-production
 
@@ -66,6 +68,9 @@ features[variable][] = cache
 features[variable][] = cache_lifetime
 features[variable][] = dindent_non_cacheable_pages
 features[variable][] = entityform_block_types
+features[variable][] = googleanalytics_cache
+features[variable][] = googleanalytics_js_scope
+features[variable][] = googleanalytics_trackmessages
 features[variable][] = navbar_region_settings
 features[variable][] = page_cache_maximum_age
 features[variable][] = prepro

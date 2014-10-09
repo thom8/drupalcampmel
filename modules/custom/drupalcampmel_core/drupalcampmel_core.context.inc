@@ -13,7 +13,7 @@ function drupalcampmel_core_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'global';
+  $context->name = 'layout-global';
   $context->description = '';
   $context->tag = 'DrupalCampMel::Layout';
   $context->conditions = array(
@@ -40,7 +40,7 @@ function drupalcampmel_core_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('DrupalCampMel::Layout');
-  $export['global'] = $context;
+  $export['layout-global'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
@@ -105,6 +105,15 @@ function drupalcampmel_core_context_default_contexts() {
       'speedy' => 'disable',
     ),
     'variable' => array(
+      '#set' => array(
+        'cache' => 0,
+        'googleanalytics_account' => 0,
+        'prepro' => 0,
+        'preprocess_css' => 0,
+        'preprocess_js' => 0,
+      ),
+      'cache' => 0,
+      'googleanalytics_account' => '',
       'prepro' => array(
         'filetypes' => array(
           'sass' => array(
@@ -126,9 +135,8 @@ function drupalcampmel_core_context_default_contexts() {
             'style' => 'expanded',
           ),
         ),
-        'show_warnings' => TRUE,
+        'show_warnings' => 1,
       ),
-      'cache' => 0,
       'preprocess_css' => 0,
       'preprocess_js' => 0,
     ),

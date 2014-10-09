@@ -110,11 +110,62 @@ function drupalcampmel_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'entityform-register_interest-field_mailchimp'
+  $field_instances['entityform-register_interest-field_mailchimp'] = array(
+    'bundle' => 'register_interest',
+    'default_value' => array(
+      0 => array(
+        'subscribe' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'mailchimp_lists',
+        'settings' => array(
+          'interest_groups' => array(),
+          'show_interest_groups' => FALSE,
+        ),
+        'type' => 'mailchimp_lists_subscribe_default',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'entityform',
+    'field_name' => 'field_mailchimp',
+    'label' => 'Mailchimp',
+    'required' => 0,
+    'settings' => array(
+      'interest_groups_title' => 'Interest Groups',
+      'mergefields' => array(
+        'EMAIL' => 'field_email_address',
+        'FNAME' => 'field_first_name',
+        'LNAME' => 'field_last_name',
+      ),
+      'options' => array(
+        'interest_groups' => array(),
+        'subscribe' => FALSE,
+      ),
+      'show_interest_groups' => 0,
+      'unsubscribe_on_delete' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'mailchimp_lists',
+      'settings' => array(),
+      'type' => 'mailchimp_lists_select',
+      'weight' => 4,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Email address');
   t('First name');
   t('Last name');
+  t('Mailchimp');
 
   return $field_instances;
 }

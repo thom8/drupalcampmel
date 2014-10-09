@@ -5,3 +5,12 @@
  */
 
 include_once 'drupalcampmel_core.features.inc';
+
+/**
+ * Implements HOOK_form_alter().
+ */
+function drupalcampmel_core_form_alter(&$form, &$form_state, $form_id) {
+  if ($form['#form_id'] == 'register_interest_entityform_edit_form') {
+    $form['field_mailchimp']['#access'] = FALSE;
+  }
+}

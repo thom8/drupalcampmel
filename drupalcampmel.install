@@ -1,0 +1,14 @@
+<?php
+/**
+ * @file
+ * Install file for DrupalCampMelbourne2014.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function drupalcampmel_install() {
+  // Ensure DrupalCampMel theme is enabled and Bartik is disabled.
+  theme_enable(array('drupalcampmel_theme'));
+  theme_disable(array('bartik'));
+}

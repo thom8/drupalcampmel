@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Install profile for bHack.in
+ * Install profile for DrupalCampMelbourne2014.
  */
 
 /**

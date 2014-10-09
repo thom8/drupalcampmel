@@ -3,7 +3,7 @@
     attach: function(context) {
       $(window).resize(function() {
         $('.main-container').css('margin-top', $(document).width() * (873 / 1280));
-        $('.pane-page-logo').css('margin-top', -$('#logo img').height() / 1.15);
+        $('.pane-page-logo').css('margin-top', -$('#logo img').height() / 1.35);
       }).trigger('resize');
     }
   }

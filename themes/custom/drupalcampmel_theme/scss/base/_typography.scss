@@ -54,18 +54,18 @@ body {
     text-align: inherit;
   }
   @include respond-to('tablet') {
-    font-size: 32px;
-    margin-right: 35px;
+    font-size: 29px;
+    margin-right: 122px;
     margin-top: -41px;
   }
   @include respond-to('desktop') {
-    font-size: 40px;
-    margin-right: 66px;
+    font-size: 39px;
+    margin-right: 155px;
     margin-top: -47px;
   }
   @include respond-to('wide') {
-    font-size: 48px;
-    margin-right: 82px;
+    font-size: 47px;
+    margin-right: 194px;
     margin-top: -50px;
   }
 }

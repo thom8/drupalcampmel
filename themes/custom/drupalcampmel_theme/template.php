@@ -12,16 +12,22 @@ function drupalcampmel_theme_form_register_interest_entityform_edit_form_alter(&
     if (isset($form[$child][LANGUAGE_NONE][0])) {
       foreach (element_children($form[$child][LANGUAGE_NONE][0]) as $key) {
         // Use placeholder instead of title.
-        $form[$child][LANGUAGE_NONE][0][$key]['#title_display'] = 'invisible';
+        $form[$child][LANGUAGE_NONE][0][$key]['#title_display']             = 'invisible';
         $form[$child][LANGUAGE_NONE][0][$key]['#attributes']['placeholder'] = $form[$child][LANGUAGE_NONE][0][$key]['#title'];
-
-        // Modify field sizes.
-        if ('field_email_address' != $child) {
-          $form[$child]['#attributes']['class'][] = 'col-sm-6';
-        }
       }
     }
   }
+
+  // Modify field sizes.
+  $form['field_first_name']['#prefix'] = '<div class="row">';
+  $form['field_last_name']['#suffix']  = '</div>';
+
+  $form['field_email_address']['#prefix'] = '<div class="row">';
+  $form['field_email_address']['#suffix'] = '</div>';
+
+  $form['field_first_name']['#attributes']['class'][]    = 'col-sm-6';
+  $form['field_last_name']['#attributes']['class'][]     = 'col-sm-6';
+  $form['field_email_address']['#attributes']['class'][] = 'col-sm-12';
 
   // Add classes to submit button.
   $form['actions']['submit']['#attributes']['class'][] = 'btn';

@@ -1,17 +1,5 @@
 .entitytype-register_interest-form {
   .col-sm-6 {
     margin: 0;
-
-    @include respond-to('phone') {
-      padding: 0 !important;
-    }
-  }
-
-  .field-name-field-first-name {
-    padding-left: 0;
-  }
-
-  .field-name-field-last-name {
-    padding-right: 0;
   }
 }

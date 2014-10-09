@@ -3,3 +3,33 @@ body {
     font-family: 'Bree Serif';
   }
 }
+
+.pane-page-site-name {
+  font-size: 32px;
+  margin-top: -32px;
+
+  @include respond-to('tablet') {
+    font-size: 64px;
+    margin-top: -64px;
+  }
+  @include respond-to('desktop') {
+    font-size: 80px;
+    margin-top: -80px;
+  }
+  @include respond-to('wide') {
+    font-size: 96px;
+    margin-top: -96px;
+  }
+
+  .part-drupal {
+    color: $color-blue-drupal;
+  }
+
+  .part-camp {
+    color: $color-blue-dark;
+  }
+
+  .part-melbourne {
+    color: $color-orange;
+  }
+}

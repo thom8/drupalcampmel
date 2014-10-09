@@ -26,3 +26,11 @@ stylesheets[all][] = scss/style.scss
 ;;;;;;;;;;;;;;;;;;;;;
 
 scripts[] = js/drupalcampmel_theme.js
+
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Fonts
+;;;;;;;;;;;;;;;;;;;;;
+
+fonts[google_fonts_api][] = "Bree Serif&subset=latin#regular"

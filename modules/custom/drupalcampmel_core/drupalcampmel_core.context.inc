@@ -161,7 +161,20 @@ function drupalcampmel_core_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array();
+  $context->reactions = array(
+    'module' => array(
+      'coffee' => 'disable',
+      'context_ui' => 'disable',
+      'dblog' => 'disable',
+      'devel' => 'disable',
+      'field_ui' => 'disable',
+      'module_filter' => 'disable',
+      'navbar' => 'disable',
+      'navbar_region' => 'disable',
+      'reroute_email' => 'disable',
+      'speedy' => 'enable',
+    ),
+  );
   $context->condition_mode = 0;
 
   // Translatables

@@ -19,12 +19,7 @@ projects[coffee][version] = 2.2
 
 projects[context][type] = module
 projects[context][subdir] = contrib
-projects[context][download][type] = git
-projects[context][download][revision] = 543c1c157f37a33910dcc1623fc75119c7a70a95
-; Fixed context_empty() - http://drupal.org/node/1842566#comment-7269520
-projects[context][patch][] = http://drupal.org/files/context_empty-1842566-1.patch
-; Fixed active menu trail - https://drupal.org/node/835090#comment-7608141
-projects[context][patch][] = https://drupal.org/files/context_menu_fix_2013-07-02_835090_124.patch
+projects[context][version] = 3.3
 
 projects[context_module][type] = module
 projects[context_module][subdir] = contrib
@@ -41,7 +36,7 @@ projects[context_server_vars][download][revision] = 1d61d973ddb7513de9c3d82b33c8
 projects[context_variable][type] = module
 projects[context_variable][subdir] = contrib
 projects[context_variable][download][type] = git
-projects[context_variable][download][revision] = 8d611c2ac42c4aaa794f78edee994c3ae5f2f6c6
+projects[context_variable][download][revision] = cd9b3b9b64acd5ac3a1c6c180eadff34294c3f11
 
 projects[ctools][type] = module
 projects[ctools][subdir] = contrib
@@ -133,10 +128,7 @@ projects[panels][version] = 3.4
 
 projects[prepro][type] = module
 projects[prepro][subdir] = contrib
-projects[prepro][download][type] = git
-projects[prepro][download][revision] = 306d6c59e539add57c287c60c53dbe755550dd7a
-; Variable integration - http://drupal.org/node/1958564#comment-7269614
-projects[prepro][patch][] = http://drupal.org/files/variable_integration-1958564-3.patch
+projects[prepro][version] = 1.4
 
 projects[reroute_email][type] = module
 projects[reroute_email][subdir] = contrib

@@ -56,29 +56,3 @@ function drupalcampmel_core_default_entityform_type() {
   }');
   return $items;
 }
-
-/**
- * Implements hook_fontyourface_features_default_font().
- */
-function drupalcampmel_core_fontyourface_features_default_font() {
-  return array(
-    'Bree Serif regular (latin)' => array(
-      'name' => 'Bree Serif regular (latin)',
-      'enabled' => 1,
-      'url' => 'http://www.google.com/webfonts/family?family=Bree Serif&subset=latin#regular',
-      'provider' => 'google_fonts_api',
-      'css_selector' => NULL,
-      'css_family' => 'Bree Serif',
-      'css_style' => 'normal',
-      'css_weight' => 'normal',
-      'css_fallbacks' => '',
-      'foundry' => '',
-      'foundry_url' => '',
-      'license' => '',
-      'license_url' => '',
-      'designer' => '',
-      'designer_url' => '',
-      'metadata' => 'a:2:{s:4:"path";s:18:"Bree Serif:regular";s:6:"subset";s:5:"latin";}',
-    ),
-  );
-}

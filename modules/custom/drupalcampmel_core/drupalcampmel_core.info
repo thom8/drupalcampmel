@@ -21,7 +21,6 @@ dependencies[] = entity
 dependencies[] = entityform
 dependencies[] = entityform_block
 dependencies[] = features
-dependencies[] = google_fonts_api
 dependencies[] = mailchimp
 dependencies[] = mailchimp_lists
 dependencies[] = page_manager
@@ -56,8 +55,6 @@ features[field_instance][] = entityform-register_interest-field_email_address
 features[field_instance][] = entityform-register_interest-field_first_name
 features[field_instance][] = entityform-register_interest-field_last_name
 features[field_instance][] = entityform-register_interest-field_mailchimp
-
-features[fontyourface][] = Bree Serif regular (latin)
 
 features[page_manager_pages][] = home
 

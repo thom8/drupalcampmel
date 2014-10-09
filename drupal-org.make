@@ -88,10 +88,6 @@ projects[features][version] = 2.2
 ; Cleaner info format - https://drupal.org/comment/8270327#comment-8270327
 projects[features][patch][] = https://drupal.org/files/issues/cleaner_info-2155793-1.patch
 
-projects[fontyourface][type] = module
-projects[fontyourface][subdir] = contrib
-projects[fontyourface][version] = 2.8
-
 projects[google_analytics][type] = module
 projects[google_analytics][subdir] = contrib
 projects[google_analytics][download][type] = git

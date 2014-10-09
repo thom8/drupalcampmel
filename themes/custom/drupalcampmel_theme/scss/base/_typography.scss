@@ -55,17 +55,17 @@ body {
   }
   @include respond-to('tablet') {
     font-size: 29px;
-    margin-right: 122px;
+    margin-right: 60px;
     margin-top: -41px;
   }
   @include respond-to('desktop') {
     font-size: 39px;
-    margin-right: 155px;
+    margin-right: 75px;
     margin-top: -47px;
   }
   @include respond-to('wide') {
     font-size: 47px;
-    margin-right: 194px;
+    margin-right: 97px;
     margin-top: -50px;
   }
 }

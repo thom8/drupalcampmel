@@ -5,6 +5,10 @@ api = 2
 
 ; Modules
 
+projects[blockify][type] = module
+projects[blockify][subdir] = contrib
+projects[blockify][version] = 1.2
+
 projects[breakpoints][type] = module
 projects[breakpoints][subdir] = contrib
 projects[breakpoints][version] = 1.3

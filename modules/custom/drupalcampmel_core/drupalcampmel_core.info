@@ -9,6 +9,7 @@ project = drupalcampmel_core
 
 ; Dependencies
 
+dependencies[] = blockify
 dependencies[] = context
 dependencies[] = context_module
 dependencies[] = context_server_vars
@@ -61,6 +62,7 @@ features[fontyourface][] = Bree Serif regular (latin)
 features[page_manager_pages][] = home
 
 features[variable][] = admin_theme
+features[variable][] = blockify_blocks
 features[variable][] = cache
 features[variable][] = cache_lifetime
 features[variable][] = dindent_non_cacheable_pages

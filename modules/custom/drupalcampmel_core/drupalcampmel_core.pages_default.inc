@@ -151,6 +151,28 @@ function drupalcampmel_core_default_page_manager_pages() {
     $display->content['new-71107b32-5af1-4754-888d-834d86844db9'] = $pane;
     $display->panels['center'][2] = 'new-71107b32-5af1-4754-888d-834d86844db9';
     $pane = new stdClass();
+    $pane->pid = 'new-ee733f5a-ec04-4c52-a51e-a71f942ebdfc';
+    $pane->panel = 'center';
+    $pane->type = 'block';
+    $pane->subtype = 'blockify-blockify-messages';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'ee733f5a-ec04-4c52-a51e-a71f942ebdfc';
+    $display->content['new-ee733f5a-ec04-4c52-a51e-a71f942ebdfc'] = $pane;
+    $display->panels['center'][3] = 'new-ee733f5a-ec04-4c52-a51e-a71f942ebdfc';
+    $pane = new stdClass();
     $pane->pid = 'new-c27a1fed-5431-4642-a6c1-50b66ff22040';
     $pane->panel = 'center';
     $pane->type = 'block';
@@ -167,11 +189,11 @@ function drupalcampmel_core_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = 'c27a1fed-5431-4642-a6c1-50b66ff22040';
     $display->content['new-c27a1fed-5431-4642-a6c1-50b66ff22040'] = $pane;
-    $display->panels['center'][3] = 'new-c27a1fed-5431-4642-a6c1-50b66ff22040';
+    $display->panels['center'][4] = 'new-c27a1fed-5431-4642-a6c1-50b66ff22040';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

@@ -46,13 +46,26 @@ body {
 }
 
 .pane-page-slogan {
-  font-size: 20px;
+  font-size: 15px;
+  margin-top: -13px;
   text-align: right;
 
   @include respond-to('phone') {
     text-align: inherit;
   }
   @include respond-to('tablet') {
-    margin-right: 10px;
+    font-size: 32px;
+    margin-right: 35px;
+    margin-top: -41px;
+  }
+  @include respond-to('desktop') {
+    font-size: 40px;
+    margin-right: 66px;
+    margin-top: -47px;
+  }
+  @include respond-to('wide') {
+    font-size: 48px;
+    margin-right: 82px;
+    margin-top: -50px;
   }
 }

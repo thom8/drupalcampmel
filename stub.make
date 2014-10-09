@@ -14,5 +14,5 @@ projects[drupal][version] = 7.31
 
 projects[drupalcampmel][type] = profile
 projects[drupalcampmel][download][type] = git
-projects[drupalcampmel][download][url] = git@github.com:drupalmel/drupalcampmel.git
+projects[drupalcampmel][download][url] = https://github.com/drupalmel/drupalcampmel.git
 projects[drupalcampmel][download][branch] = 2014.x

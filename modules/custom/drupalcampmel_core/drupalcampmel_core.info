@@ -73,3 +73,4 @@ features[variable][] = preprocess_js
 features[variable][] = site_frontpage
 features[variable][] = theme_default
 features[variable][] = theme_drupalcampmel_theme_settings
+features[variable][] = update_notification_threshold

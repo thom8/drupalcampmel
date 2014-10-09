@@ -38,7 +38,7 @@ function drupalcampmel_core_block_view($delta='') {
   switch ($delta) {
     case 'copyright':
       $block['subject'] = t('');
-      $block['content'] = '&copy; 2014 DrupalMelbourne Community. ' . l('Fork this site on Github', 'https://github.com/drupalmel/drupalcampmel') . '.';
+      $block['content'] = '&copy; 2014 DrupalMelbourne Community. <br>' . l('Fork this site on Github', 'https://github.com/drupalmel/drupalcampmel') . '.';
       break;
   }
 

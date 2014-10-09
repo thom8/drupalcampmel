@@ -194,28 +194,6 @@ function drupalcampmel_core_default_page_manager_pages() {
     $pane->uuid = 'c27a1fed-5431-4642-a6c1-50b66ff22040';
     $display->content['new-c27a1fed-5431-4642-a6c1-50b66ff22040'] = $pane;
     $display->panels['center'][4] = 'new-c27a1fed-5431-4642-a6c1-50b66ff22040';
-    $pane = new stdClass();
-    $pane->pid = 'new-fa2e14b1-a63b-444f-916b-ce2b2b56244a';
-    $pane->panel = 'center';
-    $pane->type = 'block';
-    $pane->subtype = 'drupalcampmel_core-copyright';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 5;
-    $pane->locks = array();
-    $pane->uuid = 'fa2e14b1-a63b-444f-916b-ce2b2b56244a';
-    $display->content['new-fa2e14b1-a63b-444f-916b-ce2b2b56244a'] = $pane;
-    $display->panels['center'][5] = 'new-fa2e14b1-a63b-444f-916b-ce2b2b56244a';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

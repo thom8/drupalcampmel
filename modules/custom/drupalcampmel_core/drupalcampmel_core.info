@@ -35,6 +35,7 @@ dependencies[] = text
 
 ; Features
 
+features[context][] = global
 features[context][] = server-development
 features[context][] = server-production
 

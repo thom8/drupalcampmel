@@ -13,6 +13,38 @@ function drupalcampmel_core_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'global';
+  $context->description = '';
+  $context->tag = 'DrupalCampMel::Layout';
+  $context->conditions = array(
+    'sitewide' => array(
+      'values' => array(
+        1 => 1,
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'drupalcampmel_core-copyright' => array(
+          'module' => 'drupalcampmel_core',
+          'delta' => 'copyright',
+          'region' => 'footer',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('DrupalCampMel::Layout');
+  $export['global'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'server-development';
   $context->description = '';
   $context->tag = 'DrupalCampMel::Servers';

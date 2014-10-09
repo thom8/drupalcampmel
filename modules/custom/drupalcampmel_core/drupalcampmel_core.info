@@ -21,6 +21,7 @@ dependencies[] = entity
 dependencies[] = entityform
 dependencies[] = entityform_block
 dependencies[] = features
+dependencies[] = jquery_update
 dependencies[] = mailchimp
 dependencies[] = mailchimp_lists
 dependencies[] = page_manager

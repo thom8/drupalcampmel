@@ -22,13 +22,13 @@ function drupalcampmel_core_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'blockify_blocks';
   $strongarm->value = array(
+    'blockify-logo' => 'blockify-logo',
+    'blockify-site-name' => 'blockify-site-name',
+    'blockify-site-slogan' => 'blockify-site-slogan',
+    'blockify-page-title' => 'blockify-page-title',
+    'blockify-breadcrumb' => 'blockify-breadcrumb',
+    'blockify-tabs' => 'blockify-tabs',
     'blockify-messages' => 'blockify-messages',
-    'blockify-logo' => 0,
-    'blockify-site-name' => 0,
-    'blockify-site-slogan' => 0,
-    'blockify-page-title' => 0,
-    'blockify-breadcrumb' => 0,
-    'blockify-tabs' => 0,
     'blockify-actions' => 0,
     'blockify-feed-icons' => 0,
   );

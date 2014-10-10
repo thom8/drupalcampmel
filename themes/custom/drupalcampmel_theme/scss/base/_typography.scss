@@ -15,21 +15,22 @@ body {
   }
 }
 
-.pane-page-site-name {
+#block-blockify-blockify-site-name {
   font-size: 24px;
-  margin-top: -32px;
+  margin-top: -16px;
+  text-align: center;
 
   @include respond-to('tablet') {
     font-size: 59px;
-    margin-top: -64px;
+    margin-top: -48px;
   }
   @include respond-to('desktop') {
     font-size: 78px;
-    margin-top: -80px;
+    margin-top: -64px;
   }
   @include respond-to('wide') {
     font-size: 94px;
-    margin-top: -96px;
+    margin-top: -80px;
   }
 
   .part-drupal {
@@ -45,27 +46,27 @@ body {
   }
 }
 
-.pane-page-slogan {
+#block-blockify-blockify-site-slogan {
   font-size: 15px;
-  margin-top: -13px;
+  margin-top: 1px;
   text-align: right;
 
   @include respond-to('phone') {
-    text-align: inherit;
+    text-align: center;
   }
   @include respond-to('tablet') {
     font-size: 29px;
-    margin-right: 60px;
-    margin-top: -41px;
+    margin-right: 65px;
+    margin-top: -27px;
   }
   @include respond-to('desktop') {
     font-size: 39px;
-    margin-right: 75px;
-    margin-top: -47px;
+    margin-right: 80px;
+    margin-top: -33px;
   }
   @include respond-to('wide') {
     font-size: 47px;
-    margin-right: 97px;
-    margin-top: -50px;
+    margin-right: 102px;
+    margin-top: -36px;
   }
 }

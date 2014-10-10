@@ -17,15 +17,63 @@ function drupalcampmel_core_context_default_contexts() {
   $context->description = '';
   $context->tag = 'DrupalCampMel::Layout';
   $context->conditions = array(
-    'sitewide' => array(
+    'theme' => array(
       'values' => array(
-        1 => 1,
+        'drupalcampmel_theme' => 'drupalcampmel_theme',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'blockify-blockify-logo' => array(
+          'module' => 'blockify',
+          'delta' => 'blockify-logo',
+          'region' => 'content',
+          'weight' => '-16',
+        ),
+        'blockify-blockify-site-name' => array(
+          'module' => 'blockify',
+          'delta' => 'blockify-site-name',
+          'region' => 'content',
+          'weight' => '-15',
+        ),
+        'blockify-blockify-site-slogan' => array(
+          'module' => 'blockify',
+          'delta' => 'blockify-site-slogan',
+          'region' => 'content',
+          'weight' => '-14',
+        ),
+        'blockify-blockify-breadcrumb' => array(
+          'module' => 'blockify',
+          'delta' => 'blockify-breadcrumb',
+          'region' => 'content',
+          'weight' => '-13',
+        ),
+        'blockify-blockify-page-title' => array(
+          'module' => 'blockify',
+          'delta' => 'blockify-page-title',
+          'region' => 'content',
+          'weight' => '-12',
+        ),
+        'blockify-blockify-tabs' => array(
+          'module' => 'blockify',
+          'delta' => 'blockify-tabs',
+          'region' => 'content',
+          'weight' => '-11',
+        ),
+        'blockify-blockify-messages' => array(
+          'module' => 'blockify',
+          'delta' => 'blockify-messages',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+        'system-main' => array(
+          'module' => 'system',
+          'delta' => 'main',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
         'drupalcampmel_core-copyright' => array(
           'module' => 'drupalcampmel_core',
           'delta' => 'copyright',

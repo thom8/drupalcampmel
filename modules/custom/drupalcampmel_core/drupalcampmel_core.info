@@ -11,6 +11,7 @@ project = drupalcampmel_core
 
 dependencies[] = blockify
 dependencies[] = context
+dependencies[] = context_condition_theme
 dependencies[] = context_module
 dependencies[] = context_server_vars
 dependencies[] = context_variable

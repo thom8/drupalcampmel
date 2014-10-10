@@ -36,22 +36,35 @@ function drupalcampmel_theme_form_register_interest_entityform_edit_form_alter(&
 }
 
 /**
- * Implements hook_preprocess_panels_pane().
+ * Implements hook_preprocess().
  */
-function drupalcampmel_theme_preprocess_panels_pane(&$vars) {
-  // Use SVG logo.
-  if ('page_logo' == $vars['pane']->type) {
-    $vars['content'] = str_replace('.png', '.svg', $vars['content']);
-  }
+function drupalcampmel_theme_preprocess(&$vars, $hook) {
+  if ($hook == 'block') {
+    switch ($vars['block_html_id']) {
+      // Use SVG logo.
+      case 'block-blockify-blockify-logo':
+        $vars['content'] = str_replace('.png', '.svg', $vars['content']);
+        break;
 
-  // Add SPANs to site name string.
-  if ('page_site_name' == $vars['pane']->type) {
-    preg_match_all('/([A-Z][a-z]+|[0-9]+)/', $vars['content'], $parts);
+      // Add SPANs to site name string.
+      case 'block-blockify-blockify-site-name':
+        preg_match_all('/([A-Z][a-z]+|[0-9]+)/', variable_get('site_name', NULL), $parts);
 
-    $vars['content'] = '';
-    foreach ($parts[1] as $delta => $part) {
-      $id = strtolower($part);
-      $vars['content'] .= "<span class='part-{$delta} part-{$id}'>{$part}</span>";
+        $vars['content'] = '';
+        foreach ($parts[1] as $delta => $part) {
+          $id = strtolower($part);
+          $vars['content'] .= "<span class='part-{$delta} part-{$id}'>{$part}</span>";
+        }
+        break;
     }
   }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function drupalcampmel_theme_preprocess_page(&$vars) {
+  $vars['breadcrumb'] = '';
+  $vars['title'] = '';
+  unset($vars['tabs']);
 }

@@ -25,6 +25,10 @@ projects[context][type] = module
 projects[context][subdir] = contrib
 projects[context][version] = 3.3
 
+projects[context_condition_theme][type] = module
+projects[context_condition_theme][subdir] = contrib
+projects[context_condition_theme][version] = 1.0
+
 projects[context_module][type] = module
 projects[context_module][subdir] = contrib
 projects[context_module][download][type] = git

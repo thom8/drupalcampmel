@@ -7,11 +7,30 @@ body {
   background-repeat: no-repeat;
 }
 
-#block-blockify-blockify-logo {
-  text-align: center;
+.main-container {
+  width: 100%;
+  padding: {
+    left: 0;
+    right: 0;
+  };
 
-  img {
-    width: 33%;
+  & > .row {
+    margin: {
+      left: 0;
+      right: 0;
+    }
+
+    & > .col-sm-12 {
+      padding: 0;
+    }
+  }
+
+  .panels-flexible-region {
+    width: 100%;
+
+    .panel-pane {
+      padding: 50px 0;
+    }
   }
 }
 

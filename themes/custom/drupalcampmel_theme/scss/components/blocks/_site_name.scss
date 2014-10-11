@@ -1,0 +1,48 @@
+#block-blockify-blockify-site-name {
+  font-size: 24px;
+  margin-top: -16px;
+  text-align: center;
+
+  @include respond-to('tablet') {
+    font-size: 59px;
+    margin-top: -48px;
+  }
+  @include respond-to('desktop') {
+    font-size: 78px;
+    margin-top: -64px;
+  }
+  @include respond-to('wide') {
+    font-size: 94px;
+    margin-top: -80px;
+  }
+
+  .part-drupal {
+    color: $color-blue-drupal;
+  }
+
+  .part-camp {
+    color: $color-blue-dark;
+  }
+
+  .part-melbourne {
+    color: $color-orange;
+  }
+}
+
+body.not-front {
+  #block-blockify-blockify-site-name {
+    @include respond-to('phone') {
+      margin-top: -8px;
+    }
+
+    @include respond-to('tablet') {
+      margin-top: -32px;
+    }
+    @include respond-to('desktop') {
+      margin-top: -48px;
+    }
+    @include respond-to('wide') {
+      margin-top: -64px;
+    }
+  }
+}

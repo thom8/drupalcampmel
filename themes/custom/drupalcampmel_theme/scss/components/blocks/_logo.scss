@@ -1,0 +1,17 @@
+#block-blockify-blockify-logo {
+  text-align: center;
+
+  img {
+    width: 33%;
+  }
+}
+
+body.not-front {
+  #block-blockify-blockify-logo {
+    text-align: center;
+
+    img {
+      width: 25%;
+    }
+  }
+}

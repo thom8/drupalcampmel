@@ -1,0 +1,28 @@
+
+#block-blockify-blockify-site-slogan {
+  span {
+    display: block;
+    font-size: 15px;
+    margin-top: 1px;
+    text-align: right;
+
+    @include respond-to('phone') {
+      text-align: center;
+    }
+    @include respond-to('tablet') {
+      font-size: 29px;
+      margin-right: 65px;
+      margin-top: -27px;
+    }
+    @include respond-to('desktop') {
+      font-size: 39px;
+      margin-right: 80px;
+      margin-top: -33px;
+    }
+    @include respond-to('wide') {
+      font-size: 47px;
+      margin-right: 102px;
+      margin-top: -36px;
+    }
+  }
+}

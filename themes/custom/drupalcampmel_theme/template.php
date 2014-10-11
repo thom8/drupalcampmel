@@ -39,7 +39,14 @@ function drupalcampmel_theme_form_register_interest_entityform_edit_form_alter(&
  * Implements hook_preprocess().
  */
 function drupalcampmel_theme_preprocess(&$vars, $hook) {
-  if ($hook == 'block') {
+  if ('block' == $hook) {
+    // Wrap all content blocks (excepting system main block) with bootstrap
+    // container class.
+    if ('content' == $vars['block']->region && 'block-system-main' != $vars['block_html_id']) {
+      $vars['classes_array'][] = 'container';
+    }
+
+    // Block specific modifications.
     switch ($vars['block_html_id']) {
       // Use SVG logo.
       case 'block-blockify-blockify-logo':
@@ -58,6 +65,14 @@ function drupalcampmel_theme_preprocess(&$vars, $hook) {
         break;
     }
   }
+}
+
+/**
+ * Implements hook_preprocess_panels_pane().
+ */
+function drupalcampmel_theme_preprocess_panels_pane(&$vars) {
+  // Add bootstrap container class to all panels panes.
+//  $vars['classes_array'][] = 'container';
 }
 
 /**

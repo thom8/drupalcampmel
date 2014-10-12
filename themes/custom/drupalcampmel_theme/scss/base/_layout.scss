@@ -12,7 +12,7 @@ body {
   padding: {
     left: 0;
     right: 0;
-  };
+  }
 
   & > .row {
     margin: {
@@ -27,6 +27,11 @@ body {
 
   .panels-flexible-region {
     width: 100%;
+
+    .pane-title {
+      position: relative;
+      top: -25px;
+    }
 
     .panel-pane {
       padding: 50px 0;

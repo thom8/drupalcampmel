@@ -40,9 +40,9 @@ function drupalcampmel_theme_form_register_interest_entityform_edit_form_alter(&
  */
 function drupalcampmel_theme_preprocess(&$vars, $hook) {
   if ('block' == $hook) {
-    // Wrap all content blocks (excepting system main block) with bootstrap
-    // container class.
-    if ('content' == $vars['block']->region && 'block-system-main' != $vars['block_html_id']) {
+    // Wrap all content blocks (excepting system main block on front page) with
+    // bootstrap container class.
+    if ('content' == $vars['block']->region && (!drupal_is_front_page() || 'block-system-main' != $vars['block_html_id'])) {
       $vars['classes_array'][] = 'container';
     }
 
@@ -65,14 +65,6 @@ function drupalcampmel_theme_preprocess(&$vars, $hook) {
         break;
     }
   }
-}
-
-/**
- * Implements hook_preprocess_panels_pane().
- */
-function drupalcampmel_theme_preprocess_panels_pane(&$vars) {
-  // Add bootstrap container class to all panels panes.
-//  $vars['classes_array'][] = 'container';
 }
 
 /**

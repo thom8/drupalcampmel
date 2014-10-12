@@ -4,43 +4,18 @@
  * Code for the DrupalCampMelbourne: Core feature.
  */
 
+/**
+ * Features include.
+ */
 include_once 'drupalcampmel_core.features.inc';
 
 /**
- * Implements HOOK_form_alter().
+ * Include additional files.
  */
-function drupalcampmel_core_form_alter(&$form, &$form_state, $form_id) {
-  if ($form['#form_id'] == 'register_interest_entityform_edit_form') {
-    $form['field_mailchimp']['#access'] = FALSE;
+$dirname  = dirname(__FILE__);
+$includes = file_scan_directory("{$dirname}/includes", '/.inc$/');
+foreach (module_list() as $module) {
+  if (isset($includes[$file = "{$dirname}/includes/{$module}.inc"])) {
+    require_once $file;
   }
-}
-
-/**
-* Implements hook_block_info().
-*/
-function drupalcampmel_core_block_info() {
-  $blocks['copyright'] = array(
-    'info' => t('Copyright Block'),
-    'status' => TRUE,
-    'weight' => 0,
-    'visibility' => 0,
-  );
-
-  return $blocks;
-}
-
-/**
-  * Implements hook_block_view().
-  */
-function drupalcampmel_core_block_view($delta='') {
-  $block = array();
-
-  switch ($delta) {
-    case 'copyright':
-      $block['subject'] = t('');
-      $block['content'] = '&copy; 2014 DrupalMelbourne Community. <br>' . l('Fork this site on Github', 'https://github.com/drupalmel/drupalcampmel') . '.';
-      break;
-  }
-
-  return $block;
 }

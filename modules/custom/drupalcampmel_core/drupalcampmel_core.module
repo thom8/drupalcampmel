@@ -19,3 +19,14 @@ foreach (module_list() as $module) {
     require_once $file;
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function drupalcampmel_core_preprocess_panels_flexible(&$vars) {
+  foreach ($vars['settings']['items'] as &$item) {
+    if ('region' == $item['type'] && !is_null($item['parent'])) {
+      $item['class'] = isset($item['class']) ? $item['class'] .= ' container' : 'container';
+    }
+  }
+}

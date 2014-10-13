@@ -26,15 +26,28 @@ body {
   }
 
   .panels-flexible-region {
-    width: 100%;
+    float: none;
+    padding: {
+      left: 15px;
+      right: 15px;
+    }
 
     .pane-title {
       position: relative;
       top: -25px;
+
+      @include respond-to('phone') {
+        top: -12.5px;
+      }
+
     }
 
     .panel-pane {
       padding: 50px 0;
+
+      @include respond-to('phone') {
+        padding: 25px 0;
+      }
     }
   }
 }

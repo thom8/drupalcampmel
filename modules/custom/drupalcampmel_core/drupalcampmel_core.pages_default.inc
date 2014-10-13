@@ -77,6 +77,7 @@ function drupalcampmel_core_default_page_manager_pages() {
           0 => 'center',
         ),
         'parent' => 'main',
+        'class' => 'color-bg-orange',
       ),
       'center' => array(
         'type' => 'region',
@@ -84,7 +85,7 @@ function drupalcampmel_core_default_page_manager_pages() {
         'width' => 100,
         'width_type' => '%',
         'parent' => 'main-row',
-        'class' => 'color-bg-orange',
+        'class' => '',
       ),
       1 => array(
         'type' => 'row',
@@ -127,7 +128,7 @@ function drupalcampmel_core_default_page_manager_pages() {
           0 => 'region_04',
         ),
         'parent' => 'main',
-        'class' => '',
+        'class' => 'color-bg-grey-light',
       ),
       'region_04' => array(
         'type' => 'region',
@@ -135,7 +136,7 @@ function drupalcampmel_core_default_page_manager_pages() {
         'width' => 100,
         'width_type' => '%',
         'parent' => '3',
-        'class' => 'color-bg-grey-light',
+        'class' => '',
       ),
       4 => array(
         'type' => 'row',
@@ -161,7 +162,7 @@ function drupalcampmel_core_default_page_manager_pages() {
           0 => 'region_06',
         ),
         'parent' => 'main',
-        'class' => '',
+        'class' => 'color-bg-grey-light',
       ),
       'region_06' => array(
         'type' => 'region',
@@ -169,7 +170,7 @@ function drupalcampmel_core_default_page_manager_pages() {
         'width' => 100,
         'width_type' => '%',
         'parent' => '5',
-        'class' => 'color-bg-grey-light',
+        'class' => '',
       ),
       6 => array(
         'type' => 'row',
@@ -195,7 +196,7 @@ function drupalcampmel_core_default_page_manager_pages() {
         'width' => 100,
         'width_type' => '%',
         'parent' => '6',
-        'class' => 'col-sm-12',
+        'class' => '',
       ),
       'region_08' => array(
         'type' => 'region',
@@ -449,7 +450,7 @@ We need some volunteers on the day to help out with a few minor tasks. If you\'r
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-md-6 ',
+      'css_class' => 'col-md-4 col-md-push-1',
     );
     $pane->extras = array();
     $pane->position = 0;
@@ -477,7 +478,7 @@ We need some volunteers on the day to help out with a few minor tasks. If you\'r
     );
     $pane->css = array(
       'css_id' => '',
-      'css_class' => 'col-md-6',
+      'css_class' => 'col-md-4 col-md-push-3',
     );
     $pane->extras = array();
     $pane->position = 1;

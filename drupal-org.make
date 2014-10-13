@@ -120,6 +120,8 @@ projects[mailchimp][subdir] = contrib
 projects[mailchimp][version] = 3.1
 ; Errors when adding a Mailchimp Subscribe field - https://www.drupal.org/node/2262321#comment-9067843
 projects[mailchimp][patch][] = https://www.drupal.org/files/issues/intgroups_check-2262321-16.patch
+; Add variable support - https://www.drupal.org/node/2355283#comment-9241663
+projects[mailchimp][patch][] = https://www.drupal.org/files/issues/add_variable_support-2355283-1.patch
 
 projects[mailsystem][type] = module
 projects[mailsystem][subdir] = contrib

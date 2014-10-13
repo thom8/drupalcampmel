@@ -150,8 +150,9 @@ function drupalcampmel_core_context_default_contexts() {
       'navbar' => 'enable',
       'navbar_region' => 'enable',
       'reroute_email' => 'enable',
-      'speedy' => 'disable',
       'rules_admin' => 'enable',
+      'speedy' => 'disable',
+      'escape_admin' => 'enable',
     ),
     'variable' => array(
       '#set' => array(
@@ -233,6 +234,7 @@ function drupalcampmel_core_context_default_contexts() {
       'navbar_region' => 'disable',
       'reroute_email' => 'disable',
       'rules_admin' => 'disable',
+      'escape_admin' => 'disable',
     ),
   );
   $context->condition_mode = 0;

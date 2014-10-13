@@ -157,12 +157,14 @@ function drupalcampmel_core_context_default_contexts() {
       '#set' => array(
         'cache' => 0,
         'googleanalytics_account' => 0,
+        'mailchimp_api_key' => 0,
         'prepro' => 0,
         'preprocess_css' => 0,
         'preprocess_js' => 0,
       ),
       'cache' => 0,
       'googleanalytics_account' => '',
+      'mailchimp_api_key' => '1234567890',
       'prepro' => array(
         'filetypes' => array(
           'sass' => array(

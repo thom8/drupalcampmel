@@ -161,6 +161,10 @@ projects[rules][type] = module
 projects[rules][subdir] = contrib
 projects[rules][version] = 2.7
 
+projects[rules_conditional][type] = module
+projects[rules_conditional][subdir] = contrib
+projects[rules_conditional][version] = 1.0-beta2
+
 projects[sassy][type] = module
 projects[sassy][subdir] = contrib
 projects[sassy][version] = 2.13

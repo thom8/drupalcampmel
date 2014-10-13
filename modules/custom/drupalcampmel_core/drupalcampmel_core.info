@@ -2,7 +2,7 @@ name = DrupalCampMelbourne: Core
 description = Core Feature for DrupalCampMelbourne
 core = 7.x
 package = DrupalCampMelbourne
-version = 7.x-2014.0
+version = 7.x-2014.1
 project = drupalcampmel_core
 
 
@@ -35,6 +35,8 @@ dependencies[] = page_manager
 dependencies[] = panels
 dependencies[] = prepro
 dependencies[] = realname
+dependencies[] = rules
+dependencies[] = rules_conditional
 dependencies[] = sassy
 dependencies[] = sassy_compass
 dependencies[] = smtp
@@ -79,6 +81,8 @@ features[filter][] = full_html
 features[filter][] = plain_text
 
 features[page_manager_pages][] = home
+
+features[rules_config][] = rules_signup_create_notify_user
 
 features[user_permission][] = change own username
 

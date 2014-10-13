@@ -151,6 +151,7 @@ function drupalcampmel_core_context_default_contexts() {
       'navbar_region' => 'enable',
       'reroute_email' => 'enable',
       'speedy' => 'disable',
+      'rules_admin' => 'enable',
     ),
     'variable' => array(
       '#set' => array(
@@ -219,6 +220,7 @@ function drupalcampmel_core_context_default_contexts() {
   );
   $context->reactions = array(
     'module' => array(
+      'speedy' => 'enable',
       'coffee' => 'disable',
       'context_ui' => 'disable',
       'dblog' => 'disable',
@@ -228,7 +230,7 @@ function drupalcampmel_core_context_default_contexts() {
       'navbar' => 'disable',
       'navbar_region' => 'disable',
       'reroute_email' => 'disable',
-      'speedy' => 'enable',
+      'rules_admin' => 'disable',
     ),
   );
   $context->condition_mode = 0;

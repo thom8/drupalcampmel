@@ -89,6 +89,8 @@ features[filter][] = plain_text
 features[page_manager_pages][] = home
 
 features[rules_config][] = rules_contact_new_submission
+features[rules_config][] = rules_signup_create_notify_user
+features[rules_config][] = rules_signup_create_notify_user_trigger
 
 features[user_permission][] = change own username
 
@@ -128,6 +130,7 @@ features[variable][] = theme_default
 features[variable][] = theme_drupalcampmel_theme_settings
 features[variable][] = update_notification_threshold
 features[variable][] = user_email_verification
+features[variable][] = user_mail_register_no_approval_required_body
 features[variable][] = user_register
 
 

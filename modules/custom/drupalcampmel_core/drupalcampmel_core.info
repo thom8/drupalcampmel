@@ -116,3 +116,9 @@ features[variable][] = theme_drupalcampmel_theme_settings
 features[variable][] = update_notification_threshold
 features[variable][] = user_email_verification
 features[variable][] = user_register
+
+
+
+; Files
+
+files[] = drupalcampmel_core.mailsystem.inc

@@ -61,15 +61,21 @@ features[ctools][] = strongarm:strongarm:1
 features[ds_layout_settings][] = user|user|default
 features[ds_layout_settings][] = user|user|form
 
+features[entityform_type][] = contact
 features[entityform_type][] = register_interest
 
 features[features_api][] = api:2
 
+features[field_base][] = field_body
 features[field_base][] = field_email_address
 features[field_base][] = field_first_name
 features[field_base][] = field_last_name
 features[field_base][] = field_mailchimp
 
+features[field_instance][] = entityform-contact-field_body
+features[field_instance][] = entityform-contact-field_email_address
+features[field_instance][] = entityform-contact-field_first_name
+features[field_instance][] = entityform-contact-field_last_name
 features[field_instance][] = entityform-register_interest-field_email_address
 features[field_instance][] = entityform-register_interest-field_first_name
 features[field_instance][] = entityform-register_interest-field_last_name
@@ -82,7 +88,7 @@ features[filter][] = plain_text
 
 features[page_manager_pages][] = home
 
-features[rules_config][] = rules_signup_create_notify_user
+features[rules_config][] = rules_contact_new_submission
 
 features[user_permission][] = change own username
 

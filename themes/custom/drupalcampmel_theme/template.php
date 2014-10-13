@@ -7,32 +7,43 @@
 /**
  * Implements hook_form_alter().
  */
-function drupalcampmel_theme_form_register_interest_entityform_edit_form_alter(&$form, $form_state) {
-  foreach (element_children($form) as $child) {
-    if (isset($form[$child][LANGUAGE_NONE][0])) {
-      foreach (element_children($form[$child][LANGUAGE_NONE][0]) as $key) {
-        // Use placeholder instead of title.
-        $form[$child][LANGUAGE_NONE][0][$key]['#title_display']             = 'invisible';
-        $form[$child][LANGUAGE_NONE][0][$key]['#attributes']['placeholder'] = $form[$child][LANGUAGE_NONE][0][$key]['#title'];
+function drupalcampmel_theme_form_alter(&$form, $form_state, $form_id) {
+  switch ($form_id) {
+    case 'register_interest_entityform_edit_form':
+    case 'contact_entityform_edit_form':
+      foreach (element_children($form) as $child) {
+        if (isset($form[$child][LANGUAGE_NONE][0])) {
+          foreach (element_children($form[$child][LANGUAGE_NONE][0]) as $key) {
+            // Use placeholder instead of title.
+            $form[$child][LANGUAGE_NONE][0][$key]['#title_display']             = 'invisible';
+            $form[$child][LANGUAGE_NONE][0][$key]['#attributes']['placeholder'] = $form[$child][LANGUAGE_NONE][0][$key]['#title'];
+          }
+        }
       }
-    }
+
+      // Modify field sizes.
+      $form['field_first_name']['#prefix'] = '<div class="row">';
+      $form['field_last_name']['#suffix']  = '</div>';
+
+      $form['field_email_address']['#prefix'] = '<div class="row">';
+      $form['field_email_address']['#suffix'] = '</div>';
+
+      $form['field_first_name']['#attributes']['class'][]    = 'col-sm-6';
+      $form['field_last_name']['#attributes']['class'][]     = 'col-sm-6';
+      $form['field_email_address']['#attributes']['class'][] = 'col-sm-12';
+
+      // Add classes to submit button.
+      $form['actions']['submit']['#attributes']['class'][] = 'btn';
+      $form['actions']['submit']['#attributes']['class'][] = 'btn-primary';
+      $form['actions']['submit']['#attributes']['class'][] = 'btn-lg';
+      break;
   }
 
-  // Modify field sizes.
-  $form['field_first_name']['#prefix'] = '<div class="row">';
-  $form['field_last_name']['#suffix']  = '</div>';
-
-  $form['field_email_address']['#prefix'] = '<div class="row">';
-  $form['field_email_address']['#suffix'] = '</div>';
-
-  $form['field_first_name']['#attributes']['class'][]    = 'col-sm-6';
-  $form['field_last_name']['#attributes']['class'][]     = 'col-sm-6';
-  $form['field_email_address']['#attributes']['class'][] = 'col-sm-12';
-
-  // Add classes to submit button.
-  $form['actions']['submit']['#attributes']['class'][] = 'btn';
-  $form['actions']['submit']['#attributes']['class'][] = 'btn-primary';
-  $form['actions']['submit']['#attributes']['class'][] = 'btn-lg';
+  if ('contact_entityform_edit_form' == $form_id) {
+    $form['field_body']['#prefix']                = '<div class="row">';
+    $form['field_body']['#suffix']                = '</div>';
+    $form['field_body']['#attributes']['class'][] = 'col-sm-12';
+  }
 }
 
 /**
@@ -72,6 +83,6 @@ function drupalcampmel_theme_preprocess(&$vars, $hook) {
  */
 function drupalcampmel_theme_preprocess_page(&$vars) {
   $vars['breadcrumb'] = '';
-  $vars['title'] = '';
+  $vars['title']      = '';
   unset($vars['tabs']);
 }

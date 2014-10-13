@@ -188,7 +188,7 @@ function drupalcampmel_core_default_page_manager_pages() {
           0 => 'region_08',
         ),
         'parent' => 'main',
-        'class' => '',
+        'class' => 'color-bg-grey-light',
       ),
       'region_07' => array(
         'type' => 'region',
@@ -204,7 +204,7 @@ function drupalcampmel_core_default_page_manager_pages() {
         'width' => 100,
         'width_type' => '%',
         'parent' => '7',
-        'class' => 'color-bg-grey-light',
+        'class' => '',
       ),
     ),
   );
@@ -387,9 +387,9 @@ BoF\'s and Mentored Sprints
 <h3>Give a lightning talk</h3>
 Give a short informal summary of a longer presentation (no longer than 5 minutes) during the opening session on the day.
 <h3>Make a presentation</h3>
-We\'re looking for presentations from [n] minutes long. Submit your talk now!
-<h3>Organise a BOF</h3>
-BOF stands for Birds of the Feature, which are an informal gathering of like-minded individuals who wish to discuss a certain topic without a pre-planned agenda. You can organize a BOF on the day or if you have one already in mind just fill out the form.
+We\'re looking for presentations from 30 minutes long.
+<h3>Organise a BoF</h3>
+BoF stands for Birds of a Feather, which are an informal gathering of like-minded individuals who wish to discuss a certain topic without a pre-planned agenda.
 <h3>Help with organisation and promotion</h3>
 We need some volunteers on the day to help out with a few minor tasks. If you\'re interested, please contact us. And don\'t forget to spread the word!!!
 ',
@@ -434,8 +434,30 @@ We need some volunteers on the day to help out with a few minor tasks. If you\'r
     $display->content['new-d916c451-2d4c-4129-bf13-36dddd50f611'] = $pane;
     $display->panels['region_06'][0] = 'new-d916c451-2d4c-4129-bf13-36dddd50f611';
     $pane = new stdClass();
-    $pane->pid = 'new-5a58819b-907c-4c65-add2-827f96e14296';
+    $pane->pid = 'new-6ef96251-5dab-4909-a7af-28b3608d9ae7';
     $pane->panel = 'region_07';
+    $pane->type = 'block';
+    $pane->subtype = 'entityform_block-contact';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Get in contact',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '6ef96251-5dab-4909-a7af-28b3608d9ae7';
+    $display->content['new-6ef96251-5dab-4909-a7af-28b3608d9ae7'] = $pane;
+    $display->panels['region_07'][0] = 'new-6ef96251-5dab-4909-a7af-28b3608d9ae7';
+    $pane = new stdClass();
+    $pane->pid = 'new-5a58819b-907c-4c65-add2-827f96e14296';
+    $pane->panel = 'region_08';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -460,10 +482,10 @@ We need some volunteers on the day to help out with a few minor tasks. If you\'r
     $pane->locks = array();
     $pane->uuid = '5a58819b-907c-4c65-add2-827f96e14296';
     $display->content['new-5a58819b-907c-4c65-add2-827f96e14296'] = $pane;
-    $display->panels['region_07'][0] = 'new-5a58819b-907c-4c65-add2-827f96e14296';
+    $display->panels['region_08'][0] = 'new-5a58819b-907c-4c65-add2-827f96e14296';
     $pane = new stdClass();
     $pane->pid = 'new-2fae9a2e-8f52-4ef6-a2d8-d71efda512b0';
-    $pane->panel = 'region_07';
+    $pane->panel = 'region_08';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
@@ -488,7 +510,7 @@ We need some volunteers on the day to help out with a few minor tasks. If you\'r
     $pane->locks = array();
     $pane->uuid = '2fae9a2e-8f52-4ef6-a2d8-d71efda512b0';
     $display->content['new-2fae9a2e-8f52-4ef6-a2d8-d71efda512b0'] = $pane;
-    $display->panels['region_07'][1] = 'new-2fae9a2e-8f52-4ef6-a2d8-d71efda512b0';
+    $display->panels['region_08'][1] = 'new-2fae9a2e-8f52-4ef6-a2d8-d71efda512b0';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

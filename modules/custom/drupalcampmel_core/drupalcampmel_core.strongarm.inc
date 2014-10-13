@@ -61,6 +61,7 @@ function drupalcampmel_core_strongarm() {
   $strongarm->name = 'entityform_block_types';
   $strongarm->value = array(
     0 => 'register_interest',
+    1 => 'contact',
   );
   $export['entityform_block_types'] = $strongarm;
 
@@ -328,7 +329,7 @@ function drupalcampmel_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'smtp_library';
-  $strongarm->value = 'sites/all/modules/smtp/smtp.module';
+  $strongarm->value = 'profiles/drupalcampmel/modules/contrib/smtp/smtp.module';
   $export['smtp_library'] = $strongarm;
 
   $strongarm = new stdClass();

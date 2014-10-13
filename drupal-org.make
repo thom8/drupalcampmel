@@ -62,6 +62,10 @@ projects[dindent][type] = module
 projects[dindent][subdir] = contrib
 projects[dindent][version] = 1.2
 
+projects[ds][type] = module
+projects[ds][subdir] = contrib
+projects[ds][version] = 2.6
+
 projects[email][type] = module
 projects[email][subdir] = contrib
 projects[email][version] = 1.3
@@ -133,6 +137,10 @@ projects[panels][version] = 3.4
 projects[prepro][type] = module
 projects[prepro][subdir] = contrib
 projects[prepro][version] = 1.4
+
+projects[realname][type] = module
+projects[realname][subdir] = contrib
+projects[realname][version] = 1.2
 
 projects[reroute_email][type] = module
 projects[reroute_email][subdir] = contrib

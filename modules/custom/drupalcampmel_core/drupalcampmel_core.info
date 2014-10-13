@@ -17,6 +17,8 @@ dependencies[] = context_server_vars
 dependencies[] = context_variable
 dependencies[] = ctools
 dependencies[] = dindent
+dependencies[] = ds
+dependencies[] = ds_forms
 dependencies[] = email
 dependencies[] = entity
 dependencies[] = entityform
@@ -30,10 +32,12 @@ dependencies[] = mailchimp_lists
 dependencies[] = page_manager
 dependencies[] = panels
 dependencies[] = prepro
+dependencies[] = realname
 dependencies[] = sassy
 dependencies[] = sassy_compass
 dependencies[] = strongarm
 dependencies[] = text
+dependencies[] = user
 dependencies[] = xmlsitemap
 
 
@@ -45,8 +49,12 @@ features[context][] = server-development
 features[context][] = server-production
 
 features[ctools][] = context:context:3
+features[ctools][] = ds:ds:1
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = strongarm:strongarm:1
+
+features[ds_layout_settings][] = user|user|default
+features[ds_layout_settings][] = user|user|form
 
 features[entityform_type][] = register_interest
 
@@ -61,11 +69,15 @@ features[field_instance][] = entityform-register_interest-field_email_address
 features[field_instance][] = entityform-register_interest-field_first_name
 features[field_instance][] = entityform-register_interest-field_last_name
 features[field_instance][] = entityform-register_interest-field_mailchimp
+features[field_instance][] = user-user-field_first_name
+features[field_instance][] = user-user-field_last_name
 
 features[filter][] = full_html
 features[filter][] = plain_text
 
 features[page_manager_pages][] = home
+
+features[user_permission][] = change own username
 
 features[variable][] = admin_theme
 features[variable][] = blockify_blocks
@@ -81,7 +93,10 @@ features[variable][] = page_cache_maximum_age
 features[variable][] = prepro
 features[variable][] = preprocess_css
 features[variable][] = preprocess_js
+features[variable][] = realname_pattern
 features[variable][] = site_frontpage
 features[variable][] = theme_default
 features[variable][] = theme_drupalcampmel_theme_settings
 features[variable][] = update_notification_threshold
+features[variable][] = user_email_verification
+features[variable][] = user_register

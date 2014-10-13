@@ -234,6 +234,13 @@ function drupalcampmel_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'realname_pattern';
+  $strongarm->value = '[user:field-first-name] [user:field-last-name]';
+  $export['realname_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'site_frontpage';
   $strongarm->value = 'home';
   $export['site_frontpage'] = $strongarm;
@@ -318,6 +325,20 @@ function drupalcampmel_core_strongarm() {
   $strongarm->name = 'update_notification_threshold';
   $strongarm->value = 'security';
   $export['update_notification_threshold'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_email_verification';
+  $strongarm->value = 0;
+  $export['user_email_verification'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_register';
+  $strongarm->value = '0';
+  $export['user_register'] = $strongarm;
 
   return $export;
 }

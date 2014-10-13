@@ -6,11 +6,23 @@
 }
 
 body {
-  &, h1, h2 {
-    font-family: 'BreeRegular';
-  }
+
+}
+
+h1, h2, h3 {
+  font-family: 'BreeRegular';
+}
+
+h2 {
+  color: $color-blue-drupal;
 }
 
 .pane-title {
   text-align: center;
+}
+
+.typo-heading-black {
+  h1, h2, h3 {
+    color: $color-black;
+  }
 }

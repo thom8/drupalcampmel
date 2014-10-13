@@ -470,8 +470,8 @@ We need some volunteers on the day to help out with a few minor tasks. If you\'r
     $pane->access = array();
     $pane->configuration = array(
       'admin_title' => '',
-      'title' => 'Volunteers',
-      'body' => 'Brian Gilbert (<a href="https://www.drupal.org/user/139189" target="_blank">realityloop</a>), Stuart Clark (<a href="https://www.drupal.org/user/103796" target="_blank">Dechiphered</a>)',
+      'title' => 'Contributors',
+      'body' => 'Brian Gilbert (<a href="https://www.drupal.org/user/139189" target="_blank">realityloop</a>), Luis Saavedra (<a href="https://www.drupal.org/user/373022" target="_blank">Luisga</a>), Stuart Clark (<a href="https://www.drupal.org/user/103796" target="_blank">Deciphered</a>)',
       'format' => 'full_html',
       'substitute' => TRUE,
     );

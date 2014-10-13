@@ -103,6 +103,10 @@ projects[google_analytics][download][revision] = d5c42e145e218cf54397b70bb275484
 ; Allow empty Web Property ID variable - http://drupal.org/node/1964052#comment-7269728
 projects[google_analytics][patch][] = http://drupal.org/files/variable_empty_id-1964052-1.patch
 
+projects[htmlmail][type] = module
+projects[htmlmail][subdir] = contrib
+projects[htmlmail][version] = 2.65
+
 projects[jquery_update][type] = module
 projects[jquery_update][subdir] = contrib
 projects[jquery_update][version] = 2.4
@@ -116,6 +120,10 @@ projects[mailchimp][subdir] = contrib
 projects[mailchimp][version] = 3.1
 ; Errors when adding a Mailchimp Subscribe field - https://www.drupal.org/node/2262321#comment-9067843
 projects[mailchimp][patch][] = https://www.drupal.org/files/issues/intgroups_check-2262321-16.patch
+
+projects[mailsystem][type] = module
+projects[mailsystem][subdir] = contrib
+projects[mailsystem][version] = 2.34
 
 projects[module_filter][type] = module
 projects[module_filter][subdir] = contrib
@@ -162,6 +170,10 @@ projects[sassy][patch][] = http://drupal.org/files/squish_text-1539310-5.patch
 projects[site_verify][type] = module
 projects[site_verify][subdir] = contrib
 projects[site_verify][version] = 1.1
+
+projects[smtp][type] = module
+projects[smtp][subdir] = contrib
+projects[smtp][version] = 1.0
 
 projects[speedy][type] = module
 projects[speedy][subdir] = contrib

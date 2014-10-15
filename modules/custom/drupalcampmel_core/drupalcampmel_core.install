@@ -7,7 +7,7 @@
 /**
  * Enable dependencies, flush caches and revert the feature.
  */
-function drupalcampmel_core_update_7100() {
+function drupalcampmel_core_update_7101() {
   _drupalcampmel_core_flush_revert();
 }
 

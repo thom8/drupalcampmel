@@ -5,6 +5,10 @@ api = 2
 
 ; Modules
 
+projects[bean][type] = module
+projects[bean][subdir] = contrib
+projects[bean][version] = 1.8
+
 projects[blockify][type] = module
 projects[blockify][subdir] = contrib
 projects[blockify][version] = 1.2
@@ -96,6 +100,10 @@ projects[features][version] = 2.2
 ; Cleaner info format - https://drupal.org/comment/8270327#comment-8270327
 projects[features][patch][] = https://drupal.org/files/issues/cleaner_info-2155793-1.patch
 
+projects[filefield_paths][type] = module
+projects[filefield_paths][subdir] = contrib
+projects[filefield_paths][version] = 1.0-beta4
+
 projects[google_analytics][type] = module
 projects[google_analytics][subdir] = contrib
 projects[google_analytics][download][type] = git
@@ -143,6 +151,14 @@ projects[navbar_region][download][revision] = 9e260b98e8e261ad9c963c93fc4e963a41
 projects[panels][type] = module
 projects[panels][subdir] = contrib
 projects[panels][version] = 3.4
+
+projects[pathauto][type] = module
+projects[pathauto][subdir] = contrib
+projects[pathauto][version] = 1.2
+
+projects[picture][type] = module
+projects[picture][subdir] = contrib
+projects[picture][version] = 2.7
 
 projects[prepro][type] = module
 projects[prepro][subdir] = contrib
@@ -193,6 +209,10 @@ projects[token][type] = module
 projects[token][subdir] = contrib
 projects[token][version] = 1.5
 
+projects[url][type] = module
+projects[url][subdir] = contrib
+projects[url][version] = 1.0
+
 projects[variable][type] = module
 projects[variable][subdir] = contrib
 projects[variable][version] = 2.5
@@ -200,6 +220,10 @@ projects[variable][version] = 2.5
 projects[views][type] = module
 projects[views][subdir] = contrib
 projects[views][version] = 3.8
+
+projects[views_slideshow][type] = module
+projects[views_slideshow][subdir] = contrib
+projects[views_slideshow][version] = 3.1
 
 projects[xmlsitemap][type] = module
 projects[xmlsitemap][subdir] = contrib
@@ -230,6 +254,10 @@ libraries[bootstrap][overwrite] = TRUE
 
 libraries[dindent][download][type] = get
 libraries[dindent][download][url] = https://raw.githubusercontent.com/Decipher/dindent/master/src/Parser.php
+
+libraries[jquery.cycle][download][type] = git
+libraries[jquery.cycle][download][url] = https://github.com/malsup/cycle.git
+libraries[jquery.cycle][download][revision] = db79722719a8a5a8b93fb5d5970d7296ff6bd8bc
 
 libraries[mailchimp][download][type] = get
 libraries[mailchimp][download][url] = https://bitbucket.org/mailchimp/mailchimp-api-php/get/2.0.5.zip

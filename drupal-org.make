@@ -114,6 +114,8 @@ projects[google_analytics][patch][] = http://drupal.org/files/variable_empty_id-
 projects[htmlmail][type] = module
 projects[htmlmail][subdir] = contrib
 projects[htmlmail][version] = 2.65
+; Fix issue with undefined function 'mailsystem_html_to_text()' - https://www.drupal.org/node/1692966#comment-6251940
+projects[htmlmail][patch][] = https://www.drupal.org/files/1692966-htmlmail-mailsystem-html-to-text.patch
 
 projects[jquery_update][type] = module
 projects[jquery_update][subdir] = contrib

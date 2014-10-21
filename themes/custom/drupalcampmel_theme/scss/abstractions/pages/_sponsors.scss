@@ -1,0 +1,21 @@
+.page-sponsors {
+  #block-blockify-blockify-page-title {
+    text-align: center;
+  }
+
+  #block-system-main {
+    text-align: center;
+
+    .panel {
+      height: 125px;
+      padding: {
+        top: 25px;
+        bottom: 25px;
+      }
+
+      @include respond-to('phone') {
+        height: inherit;
+      }
+    }
+  }
+}

@@ -83,6 +83,7 @@ function drupalcampmel_theme_preprocess(&$vars, $hook) {
  */
 function drupalcampmel_theme_preprocess_page(&$vars) {
   $vars['breadcrumb'] = '';
+  $vars['logo']       = NULL;
   $vars['title']      = '';
-  unset($vars['tabs']);
+  unset($vars['site_slogan'], $vars['tabs']);
 }

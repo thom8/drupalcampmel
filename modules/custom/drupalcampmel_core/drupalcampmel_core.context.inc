@@ -93,6 +93,41 @@ function drupalcampmel_core_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'layout-node_form-session';
+  $context->description = '';
+  $context->tag = 'DrupalCampMel::Layout';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'session' => 'session',
+      ),
+      'options' => array(
+        'node_form' => '2',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'bean-creating-session' => array(
+          'module' => 'bean',
+          'delta' => 'creating-session',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('DrupalCampMel::Layout');
+  $export['layout-node_form-session'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'layout-sponsors';
   $context->description = '';
   $context->tag = 'DrupalCampMel::Layout';

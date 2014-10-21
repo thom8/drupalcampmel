@@ -36,6 +36,35 @@ function drupalcampmel_core_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'bean|misc|default';
+  $ds_layout->entity_type = 'bean';
+  $ds_layout->bundle = 'misc';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'panel';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'body' => array(
+        0 => 'field_body',
+      ),
+    ),
+    'fields' => array(
+      'field_body' => 'body',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'body' => 'div',
+      'footer' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['bean|misc|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|session|default';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'session';

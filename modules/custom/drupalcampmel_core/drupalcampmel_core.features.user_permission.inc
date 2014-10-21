@@ -47,6 +47,26 @@ function drupalcampmel_core_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'view any misc bean'.
+  $permissions['view any misc bean'] = array(
+    'name' => 'view any misc bean',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'bean',
+  );
+
+  // Exported permission: 'view any sponsor bean'.
+  $permissions['view any sponsor bean'] = array(
+    'name' => 'view any sponsor bean',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'bean',
+  );
+
   // Exported permission: 'view own unpublished content'.
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',

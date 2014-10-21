@@ -11,6 +11,10 @@ function drupalcampmel_core_install() {
   // Configure Node limit modules.
   drupalcampmel_core_install_node_limit();
 
+  // Create the 'Creating a session' bean.
+  drupalcampmel_core_install_create_session_bean();
+}
+
 /**
  * Configure Node limit modules.
  */
@@ -31,6 +35,26 @@ function drupalcampmel_core_install_node_limit() {
   ))->execute();
 }
 
+/**
+ * Create the 'Creating a session' bean.
+ */
+function drupalcampmel_core_install_create_session_bean() {
+  $bean        = bean_create(array('type' => 'misc'));
+  $bean->label = 'Creating a session';
+  $bean->title = '';
+  $bean->delta = 'creating-session';
+
+  $bean->field_body[LANGUAGE_NONE][0] = array(
+    'value'  => '<p>Please note that only one session per attendee can be created, but you are free to edit you proposed session as much as needed.</p><p>On the first day of DrupalCampMelbourne all attendees will be encouraged to give a short (1-2 minutes) lightning talk about their proposed session, giving each attendee a chance to both promote their talk and vote on the talks they wish to attend during the day.</p>',
+    'format' => 'full_html',
+  );
+
+  $bean->field_block_class[LANGUAGE_NONE][0]['value'] = 'panel-info';
+
+  $bean->save();
+}
+
+/**
  * Enable dependencies, flush caches and revert the feature.
  */
 function drupalcampmel_core_update_7101() {
@@ -38,8 +62,9 @@ function drupalcampmel_core_update_7101() {
 }
 
 /**
- * Enable dependencies, flush caches and revert the feature and configure Node
- * limit modules.
+ * Enable dependencies, flush caches and revert the feature, configure Node
+ * limit modules, create the 'Creating a session' bean and turn
+ * 'register_interest' submissions into users.
  */
 function drupalcampmel_core_update_7102() {
   // Enable dependencies, flush caches and revert the feature.
@@ -47,6 +72,23 @@ function drupalcampmel_core_update_7102() {
 
   // Configure Node limit modules.
   drupalcampmel_core_install_node_limit();
+
+  // Create the 'Creating a session' bean.
+  drupalcampmel_core_install_create_session_bean();
+
+  // Turn 'register_interest' submissions into users.
+  $query  = new EntityFieldQuery();
+  $result = $query->entityCondition('entity_type', 'entityform')
+    ->entityCondition('bundle', 'register_interest')
+    ->execute();
+  if (!empty($result['entityform'])) {
+    $entities = entityform_load_multiple(array_keys($result['entityform']));
+    foreach ($entities as $entity) {
+      if ('stuart@realityloop.com' == $entity->field_email_address[LANGUAGE_NONE][0]['email']) {
+        rules_invoke_component('rules_signup_create_notify_user', $entity);
+      }
+    }
+  }
 }
 
 /**

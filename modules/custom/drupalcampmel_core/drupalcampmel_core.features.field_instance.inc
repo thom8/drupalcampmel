@@ -10,6 +10,77 @@
 function drupalcampmel_core_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'bean-misc-field_block_class'
+  $field_instances['bean-misc-field_block_class'] = array(
+    'bundle' => 'misc',
+    'default_value' => array(
+      0 => array(
+        'value' => 'panel',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Space separated list of classes to be applied to the block.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'bean',
+    'field_name' => 'field_block_class',
+    'label' => 'Class(es)',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'bean-misc-field_body'
+  $field_instances['bean-misc-field_body'] = array(
+    'bundle' => 'misc',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'bean',
+    'field_name' => 'field_body',
+    'label' => 'Body',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'bean-sponsor-field_logo'
   $field_instances['bean-sponsor-field_logo'] = array(
     'bundle' => 'sponsor',
@@ -626,6 +697,8 @@ function drupalcampmel_core_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Body');
+  t('Class(es)');
   t('Description');
   t('Email address');
   t('Experience level');
@@ -634,6 +707,7 @@ function drupalcampmel_core_field_default_field_instances() {
   t('Logo');
   t('Mailchimp');
   t('Message');
+  t('Space separated list of classes to be applied to the block.');
   t('Style');
   t('Summary');
   t('URL');

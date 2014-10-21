@@ -150,6 +150,10 @@ projects[navbar_region][subdir] = contrib
 projects[navbar_region][download][type] = git
 projects[navbar_region][download][revision] = 9e260b98e8e261ad9c963c93fc4e963a41feb1f5
 
+projects[node_limit][type] = module
+projects[node_limit][subdir] = contrib
+projects[node_limit][version] = 1.0-alpha5
+
 projects[panels][type] = module
 projects[panels][subdir] = contrib
 projects[panels][version] = 3.4

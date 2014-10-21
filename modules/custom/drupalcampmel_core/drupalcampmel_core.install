@@ -5,10 +5,48 @@
  */
 
 /**
+ * Implements hook_install().
+ */
+function drupalcampmel_core_install() {
+  // Configure Node limit modules.
+  drupalcampmel_core_install_node_limit();
+
+/**
+ * Configure Node limit modules.
+ */
+function drupalcampmel_core_install_node_limit() {
+  db_insert('node_limit')->fields(array(
+    'lid'    => 1,
+    'nlimit' => 1,
+    'title'  => 'Session limit',
+    'weight' => 0,
+  ))->execute();
+  db_insert('node_limit_type')->fields(array(
+    'lid'  => 1,
+    'type' => 'session',
+  ))->execute();
+  db_insert('node_limit_userofrole')->fields(array(
+    'lid' => 1,
+    'rid' => 2,
+  ))->execute();
+}
+
  * Enable dependencies, flush caches and revert the feature.
  */
 function drupalcampmel_core_update_7101() {
   _drupalcampmel_core_flush_revert();
+}
+
+/**
+ * Enable dependencies, flush caches and revert the feature and configure Node
+ * limit modules.
+ */
+function drupalcampmel_core_update_7102() {
+  // Enable dependencies, flush caches and revert the feature.
+  _drupalcampmel_core_flush_revert();
+
+  // Configure Node limit modules.
+  drupalcampmel_core_install_node_limit();
 }
 
 /**

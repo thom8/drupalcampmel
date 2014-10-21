@@ -67,6 +67,7 @@ features[breakpoints][] = custom.user.tablet
 features[breakpoints][] = custom.user.wide
 
 features[context][] = layout-global
+features[context][] = layout-sponsors
 features[context][] = server-development
 features[context][] = server-production
 

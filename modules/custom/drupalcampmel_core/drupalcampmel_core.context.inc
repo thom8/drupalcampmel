@@ -78,7 +78,7 @@ function drupalcampmel_core_context_default_contexts() {
           'module' => 'drupalcampmel_core',
           'delta' => 'copyright',
           'region' => 'footer',
-          'weight' => '-10',
+          'weight' => '0',
         ),
       ),
     ),
@@ -89,6 +89,44 @@ function drupalcampmel_core_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('DrupalCampMel::Layout');
   $export['layout-global'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'layout-sponsors';
+  $context->description = '';
+  $context->tag = 'DrupalCampMel::Layout';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        '~<front>' => '~<front>',
+        '~sponsors' => '~sponsors',
+      ),
+    ),
+    'theme' => array(
+      'values' => array(
+        'drupalcampmel_theme' => 'drupalcampmel_theme',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-sponsors-block' => array(
+          'module' => 'views',
+          'delta' => 'sponsors-block',
+          'region' => 'footer',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('DrupalCampMel::Layout');
+  $export['layout-sponsors'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
@@ -151,8 +189,9 @@ function drupalcampmel_core_context_default_contexts() {
       'navbar_region' => 'enable',
       'reroute_email' => 'enable',
       'rules_admin' => 'enable',
-      'speedy' => 'disable',
       'escape_admin' => 'enable',
+      'views_ui' => 'enable',
+      'speedy' => 'disable',
     ),
     'variable' => array(
       '#set' => array(
@@ -235,6 +274,7 @@ function drupalcampmel_core_context_default_contexts() {
       'reroute_email' => 'disable',
       'rules_admin' => 'disable',
       'escape_admin' => 'disable',
+      'views_ui' => 'disable',
     ),
   );
   $context->condition_mode = 0;

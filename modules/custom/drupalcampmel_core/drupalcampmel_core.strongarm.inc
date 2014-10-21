@@ -52,7 +52,7 @@ function drupalcampmel_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'dindent_non_cacheable_pages';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['dindent_non_cacheable_pages'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -179,6 +179,22 @@ function drupalcampmel_core_strongarm() {
     'default-system' => 'drupalCampMelMailSystem',
   );
   $export['mail_system'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_session';
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
+  $export['menu_options_session'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_session';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_session'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

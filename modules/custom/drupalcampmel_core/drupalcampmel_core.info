@@ -36,6 +36,7 @@ dependencies[] = list
 dependencies[] = mailchimp
 dependencies[] = mailchimp_lists
 dependencies[] = mailsystem
+dependencies[] = menu
 dependencies[] = node
 dependencies[] = node_limit
 dependencies[] = node_limit_type
@@ -138,8 +139,13 @@ features[image][] = logo_custom_user_desktop_1x
 features[image][] = logo_custom_user_tablet_1x
 features[image][] = logo_custom_user_wide_1x
 
+features[menu_custom][] = user-menu
+
+features[menu_links][] = user-menu_create-session:node/add/session
+
 features[node][] = session
 
+features[page_manager_pages][] = edit_my_session
 features[page_manager_pages][] = home
 
 features[picture_mapping][] = logo

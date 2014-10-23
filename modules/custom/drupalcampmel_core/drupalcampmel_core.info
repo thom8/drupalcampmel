@@ -29,6 +29,7 @@ dependencies[] = entityform_block
 dependencies[] = features
 dependencies[] = filefield_paths
 dependencies[] = filter
+dependencies[] = fontawesome
 dependencies[] = googleanalytics
 dependencies[] = htmlmail
 dependencies[] = image

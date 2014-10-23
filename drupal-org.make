@@ -104,6 +104,14 @@ projects[filefield_paths][type] = module
 projects[filefield_paths][subdir] = contrib
 projects[filefield_paths][version] = 1.0-beta4
 
+projects[fontawesome][type] = module
+projects[fontawesome][subdir] = contrib
+projects[fontawesome][download][type] = git
+projects[fontawesome][download][revision] = 2821d8b3b5c9aea7a7dd6cd2fa330a38beed797d
+;Support FA 4.2.0 - https://www.drupal.org/node/2312935#comment-9273529
+projects[fontawesome][patch][] = https://www.drupal.org/files/issues/fontawesome_7.x_2.x-2312935-17.patch
+
+
 projects[google_analytics][type] = module
 projects[google_analytics][subdir] = contrib
 projects[google_analytics][download][type] = git
@@ -260,6 +268,9 @@ libraries[bootstrap][overwrite] = TRUE
 
 libraries[dindent][download][type] = get
 libraries[dindent][download][url] = https://raw.githubusercontent.com/Decipher/dindent/master/src/Parser.php
+
+libraries[fontawesome][download][type] = get
+libraries[fontawesome][download][url] = https://github.com/FortAwesome/Font-Awesome/archive/v4.2.0.zip
 
 libraries[jquery.cycle][download][type] = git
 libraries[jquery.cycle][download][url] = https://github.com/malsup/cycle.git

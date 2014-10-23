@@ -119,7 +119,8 @@ function drupalcampmel_core_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="/sponsors">Become a Sponsor</a>';
+  $handler->display->display_options['footer']['area']['empty'] = TRUE;
+  $handler->display->display_options['footer']['area']['content'] = 'To become a sponsor (which only costs $330 AUD) use the contact form below.';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
 
   /* Display: Page */
@@ -135,40 +136,6 @@ function drupalcampmel_core_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['empty'] = TRUE;
-  $handler->display->display_options['footer']['area']['content'] = '<h2>Become a Sponsor</h2>
-<p>As someone that most likley works at a company that develops projects using Drupal or a company of interest to the Drupal community we are inviting you to be a sponsor of this event.</p>
-
-<p>You can lock it in right now by making a <a href="http://rl.cm/DCMelbourne2014SponsorPayment">Sponsor payment for $330 AUD via PayPal</a> and emailing a copy of the receipt and your logo to drupalmelbourne(-at-)gmail.com, this payment is being assigned directly to our Drupal Camp Melbourne account owned by the Drupal Association.</p>
- 
-<p>For your low cost sponsorship we will offer the following benefits:
-<ul>
-<li>Your logo on the camp website</li>
-<li>Your logo on pre-presentation slides</li>
-<li>Public thanks during the opening and closing sessions</li>
-<li>The good karma and brand recognition that comes with visibly supporting the local Drupal community</li>
-</ul>
-Your sponsorship will go towards, but not be limited to:
-<ul>
-<li>High quality, healthy catering</li>
-<li>Free beverages for attendees</li>
-<li>Custom Drupal Camp Melbourne swag (t-shirts and stickers)</li>
-<li>Lowering the ticket cost for attendees</li>
-</ul></p>
-<p>All unspent proceeds will be held by the Drupal Association for us to use toward future events, this is entirely an event by the community for the community.</p>
- 
-<p>We\'ve secured a great location and already have a substantial number of pre-registrations via this website.</p>
- 
-<p>Your support will help this be a great annual event for the community, and we encourage you and your staff to attend and present.</p>
- 
-<p>If you have any outstanding questions please feel free to call Brian on 0419 327 646.</p>
-
-<p style="font-size: small;">*You are welcome to support us with a smaller donation but only payments for the full amount of $330 AUD will receive logo based listings as per the benefits above.</p>';
-  $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Block: URL */
   $handler->display->display_options['fields']['field_url']['id'] = 'field_url';

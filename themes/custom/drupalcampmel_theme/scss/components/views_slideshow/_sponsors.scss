@@ -1,29 +1,36 @@
-#views_slideshow_cycle_teaser_section_sponsors-block {
-  width: 100% !important;
-
-  @include respond-to('phone') {
-    height: 150px !important;
-  }
-  @include respond-to('tablet') {
-    height: 75px !important;
-  }
-
-  .views-slideshow-cycle-main-frame-row {
-    text-align: center;
+.view-sponsors {
+  #views_slideshow_cycle_teaser_section_sponsors-block {
     width: 100% !important;
 
-    .views-row {
-      @include respond-to('phone') {
-        padding-bottom: 15px;
-        height: 75px;
+    @include respond-to('phone') {
+      height: 150px !important;
+    }
+    @include respond-to('tablet') {
+      height: 75px !important;
+    }
+
+    .views-slideshow-cycle-main-frame-row {
+      text-align: center;
+      width: 100% !important;
+
+      .views-row {
+        @include respond-to('phone') {
+          padding-bottom: 15px;
+          height: 75px;
+        }
+      }
+
+      img {
+        @include respond-to('phone') {
+          height: auto;
+          width: 66%;
+        }
       }
     }
 
-    img {
-      @include respond-to('phone') {
-        height: auto;
-        width: 66%;
-      }
-    }
+  }
+
+  .view-footer {
+    margin-top: 25px;
   }
 }

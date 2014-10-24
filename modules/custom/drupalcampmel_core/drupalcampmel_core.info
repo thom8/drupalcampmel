@@ -43,6 +43,7 @@ dependencies[] = node
 dependencies[] = node_limit
 dependencies[] = node_limit_type
 dependencies[] = node_limit_userofrole
+dependencies[] = number
 dependencies[] = options
 dependencies[] = page_manager
 dependencies[] = panels
@@ -118,6 +119,7 @@ features[field_base][] = field_session_level
 features[field_base][] = field_session_style
 features[field_base][] = field_summary
 features[field_base][] = field_url
+features[field_base][] = field_user_order
 
 features[field_instance][] = bean-misc-field_block_class
 features[field_instance][] = bean-misc-field_body
@@ -137,6 +139,7 @@ features[field_instance][] = node-session-field_session_style
 features[field_instance][] = node-session-field_summary
 features[field_instance][] = user-user-field_first_name
 features[field_instance][] = user-user-field_last_name
+features[field_instance][] = user-user-field_user_order
 
 features[filter][] = full_html
 features[filter][] = plain_text

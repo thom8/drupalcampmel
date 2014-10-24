@@ -316,5 +316,25 @@ function drupalcampmel_core_field_default_field_bases() {
     'type' => 'url',
   );
 
+  // Exported field_base: 'field_user_order'
+  $field_bases['field_user_order'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_user_order',
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'decimal_separator' => '.',
+      'precision' => 10,
+      'scale' => 0,
+    ),
+    'translatable' => 0,
+    'type' => 'number_decimal',
+  );
+
   return $field_bases;
 }

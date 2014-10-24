@@ -45,7 +45,7 @@ function drupalcampmel_core_install_create_session_bean() {
   $bean->delta = 'creating-session';
 
   $bean->field_body[LANGUAGE_NONE][0] = array(
-    'value'  => '<p>Please note that only one session per attendee can be created, but you are free to edit you proposed session as much as needed.</p><p>On the first day of DrupalCampMelbourne all attendees will be encouraged to give a short (1-2 minutes) lightning talk about their proposed session, giving each attendee a chance to both promote their talk and vote on the talks they wish to attend during the day.</p>',
+    'value'  => '<p>Please note that only one session per attendee can be created, but you are free to edit your proposed session as much as needed.</p><p>On the first day of DrupalCampMelbourne all attendees will be encouraged to give a short (1-2 minutes) lightning talk about their proposed session, giving each attendee a chance to both promote their talk and vote on the talks they wish to attend during the day.</p>',
     'format' => 'full_html',
   );
 

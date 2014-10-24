@@ -227,6 +227,7 @@ function drupalcampmel_core_context_default_contexts() {
       'escape_admin' => 'enable',
       'views_ui' => 'enable',
       'speedy' => 'disable',
+      'contextual' => 'enable',
     ),
     'variable' => array(
       '#set' => array(
@@ -314,6 +315,7 @@ function drupalcampmel_core_context_default_contexts() {
       'rules_admin' => 'disable',
       'escape_admin' => 'disable',
       'views_ui' => 'disable',
+      'contextual' => 'disable',
     ),
   );
   $context->condition_mode = 0;

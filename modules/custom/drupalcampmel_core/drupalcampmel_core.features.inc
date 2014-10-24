@@ -86,7 +86,7 @@ function drupalcampmel_core_default_entityform_type() {
       "draft_redirect_path" : "",
       "draft_button_text" : "",
       "draft_save_text" : { "value" : "", "format" : "plain_text" },
-      "submit_button_text" : "Register interest",
+      "submit_button_text" : "Register",
       "submit_confirm_msg" : "Thank you for registering your interest in DrupalCampMelbourne 2014. More information will be supplied by email shortly.",
       "your_submissions" : "",
       "disallow_resubmit_msg" : "",

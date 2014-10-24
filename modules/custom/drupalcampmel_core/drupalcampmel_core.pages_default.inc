@@ -312,15 +312,31 @@ function drupalcampmel_core_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-c27a1fed-5431-4642-a6c1-50b66ff22040';
+    $pane->pid = 'new-91125be3-4301-4291-851c-b54daefaec7b';
     $pane->panel = 'center';
-    $pane->type = 'block';
-    $pane->subtype = 'entityform_block-register_interest';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 1,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
-      'override_title' => 1,
-      'override_title_text' => '',
+      'admin_title' => '',
+      'title' => 'Tickets on sale now!',
+      'body' => '[PUT TEXT HERE]',
+      'format' => 'full_html',
+      'substitute' => TRUE,
     );
     $pane->cache = array();
     $pane->style = array(
@@ -330,9 +346,85 @@ function drupalcampmel_core_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
+    $pane->uuid = '91125be3-4301-4291-851c-b54daefaec7b';
+    $display->content['new-91125be3-4301-4291-851c-b54daefaec7b'] = $pane;
+    $display->panels['center'][0] = 'new-91125be3-4301-4291-851c-b54daefaec7b';
+    $pane = new stdClass();
+    $pane->pid = 'new-c27a1fed-5431-4642-a6c1-50b66ff22040';
+    $pane->panel = 'center';
+    $pane->type = 'block';
+    $pane->subtype = 'entityform_block-register_interest';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 1,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-sm-5',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
     $pane->uuid = 'c27a1fed-5431-4642-a6c1-50b66ff22040';
     $display->content['new-c27a1fed-5431-4642-a6c1-50b66ff22040'] = $pane;
-    $display->panels['center'][0] = 'new-c27a1fed-5431-4642-a6c1-50b66ff22040';
+    $display->panels['center'][1] = 'new-c27a1fed-5431-4642-a6c1-50b66ff22040';
+    $pane = new stdClass();
+    $pane->pid = 'new-dcfaf694-a63c-432d-8305-4215ef8f1d56';
+    $pane->panel = 'center';
+    $pane->type = 'block';
+    $pane->subtype = 'user-login';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 1,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-sm-5 col-sm-push-2',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'dcfaf694-a63c-432d-8305-4215ef8f1d56';
+    $display->content['new-dcfaf694-a63c-432d-8305-4215ef8f1d56'] = $pane;
+    $display->panels['center'][2] = 'new-dcfaf694-a63c-432d-8305-4215ef8f1d56';
     $pane = new stdClass();
     $pane->pid = 'new-6a9e3ccd-ee53-447f-8594-7bb3650096cd';
     $pane->panel = 'region_01';
@@ -362,39 +454,6 @@ function drupalcampmel_core_default_page_manager_pages() {
     $display->content['new-6a9e3ccd-ee53-447f-8594-7bb3650096cd'] = $pane;
     $display->panels['region_01'][0] = 'new-6a9e3ccd-ee53-447f-8594-7bb3650096cd';
     $pane = new stdClass();
-    $pane->pid = 'new-74316545-b326-4cdc-8f61-ab2a2f1e7828';
-    $pane->panel = 'region_03';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => 'Tickets',
-      'body' => '<p>We are keeping the cost of the event to a minimum for participants. Tickets cost $[n] (excluding GST and Eventbrite cost) per day. A ticket includes:
-<ul>
-<li>Entry to the event</li>
-<li>Drinks and snacks throughout the day</li>
-<li>Wifi at the venue</li>
-<li>Lunch</li>
-</ul>
-
-[Buy your ticket now]</p>',
-      'format' => 'full_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '74316545-b326-4cdc-8f61-ab2a2f1e7828';
-    $display->content['new-74316545-b326-4cdc-8f61-ab2a2f1e7828'] = $pane;
-    $display->panels['region_03'][0] = 'new-74316545-b326-4cdc-8f61-ab2a2f1e7828';
-    $pane = new stdClass();
     $pane->pid = 'new-579d67ac-b97a-4e0c-aeff-1aa0183bb713';
     $pane->panel = 'region_03';
     $pane->type = 'custom';
@@ -418,11 +477,11 @@ Vic 3008</p>',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '579d67ac-b97a-4e0c-aeff-1aa0183bb713';
     $display->content['new-579d67ac-b97a-4e0c-aeff-1aa0183bb713'] = $pane;
-    $display->panels['region_03'][1] = 'new-579d67ac-b97a-4e0c-aeff-1aa0183bb713';
+    $display->panels['region_03'][0] = 'new-579d67ac-b97a-4e0c-aeff-1aa0183bb713';
     $pane = new stdClass();
     $pane->pid = 'new-c220e791-5334-4053-981e-5f2f24160203';
     $pane->panel = 'region_04';

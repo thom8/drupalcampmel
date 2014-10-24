@@ -47,6 +47,25 @@ function drupalcampmel_theme_form_alter(&$form, $form_state, $form_id) {
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function drupalcampmel_theme_form_user_login_block_alter(&$form, $form_state) {
+  // Use placeholder instead of title.
+  $form['name']['#title_display']             = 'invisible';
+  $form['name']['#attributes']['placeholder'] = $form['name']['#title'];
+  $form['pass']['#title_display']             = 'invisible';
+  $form['pass']['#attributes']['placeholder'] = $form['pass']['#title'];
+
+  // Remove 'request new password' link.
+  unset($form['links']);
+
+  // Add classes to submit button.
+  $form['actions']['submit']['#attributes']['class'][] = 'btn';
+  $form['actions']['submit']['#attributes']['class'][] = 'btn-primary';
+  $form['actions']['submit']['#attributes']['class'][] = 'btn-lg';
+}
+
+/**
  * Implements hook_preprocess().
  */
 function drupalcampmel_theme_preprocess(&$vars, $hook) {

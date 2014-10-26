@@ -441,6 +441,16 @@ function drupalcampmel_core_default_page_manager_pages() {
           ),
           'not' => TRUE,
         ),
+        1 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 2,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
       ),
     );
     $pane->configuration = array(
@@ -479,6 +489,16 @@ function drupalcampmel_core_default_page_manager_pages() {
             'php' => 'return drupalcampmel_core_has_eventbrite_order();',
           ),
           'not' => TRUE,
+        ),
+        2 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 2,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
         ),
       ),
     );

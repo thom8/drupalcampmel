@@ -2,7 +2,7 @@ name = DrupalCampMelbourne: Core
 description = Core Feature for DrupalCampMelbourne
 core = 7.x
 package = DrupalCampMelbourne
-version = 7.x-2014.1
+version = 7.x-2014.3
 project = drupalcampmel_core
 
 

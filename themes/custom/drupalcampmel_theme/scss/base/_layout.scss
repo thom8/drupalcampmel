@@ -28,8 +28,10 @@ body {
   .panels-flexible-region {
     float: none;
     padding: {
+      bottom: 50px;
       left: 15px;
       right: 15px;
+      top: 50px;
     }
 
     .pane-title {
@@ -43,8 +45,6 @@ body {
     }
 
     .panel-pane {
-      padding: 50px 0;
-
       @include respond-to('phone') {
         padding: 25px 0;
       }

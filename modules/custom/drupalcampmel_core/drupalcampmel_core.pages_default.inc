@@ -332,9 +332,11 @@ function drupalcampmel_core_default_page_manager_pages() {
       ),
     );
     $pane->configuration = array(
-      'admin_title' => '',
-      'title' => 'Tickets on sale now!',
-      'body' => '[PUT TEXT HERE]',
+      'admin_title' => 'Tickets on sale now!',
+      'title' => '',
+      'body' => '<i class="fa fa-ticket"></i>
+<h2 class="pane-title">Tickets on sale now!</h2>
+<div class="text">Tickets are now on sale,  sign up below and do the following once you have logged in:<ul><li>Purchase your ticket</li><li>Connect your account to your ticket purchase</li><li>Submit your presentation</li></ul>Seats are limited so don\'t wait!</div>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
@@ -342,7 +344,10 @@ function drupalcampmel_core_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -426,6 +431,52 @@ function drupalcampmel_core_default_page_manager_pages() {
     $display->content['new-dcfaf694-a63c-432d-8305-4215ef8f1d56'] = $pane;
     $display->panels['center'][2] = 'new-dcfaf694-a63c-432d-8305-4215ef8f1d56';
     $pane = new stdClass();
+    $pane->pid = 'new-8d2006e6-b35b-4ddd-b901-20c16427dc84';
+    $pane->panel = 'center';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'php',
+          'settings' => array(
+            'description' => 'Eventbrite order',
+            'php' => 'return drupalcampmel_core_has_eventbrite_order();',
+          ),
+          'not' => TRUE,
+        ),
+        1 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 2,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => 'Ticket icon',
+      'title' => '',
+      'body' => '<i class="fa fa-ticket"></i>',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '8d2006e6-b35b-4ddd-b901-20c16427dc84';
+    $display->content['new-8d2006e6-b35b-4ddd-b901-20c16427dc84'] = $pane;
+    $display->panels['center'][3] = 'new-8d2006e6-b35b-4ddd-b901-20c16427dc84';
+    $pane = new stdClass();
     $pane->pid = 'new-b111eec2-1158-4802-80c6-8b537ad3223b';
     $pane->panel = 'center';
     $pane->type = 'custom';
@@ -469,11 +520,11 @@ function drupalcampmel_core_default_page_manager_pages() {
       'css_class' => 'col-sm-5',
     );
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = 'b111eec2-1158-4802-80c6-8b537ad3223b';
     $display->content['new-b111eec2-1158-4802-80c6-8b537ad3223b'] = $pane;
-    $display->panels['center'][3] = 'new-b111eec2-1158-4802-80c6-8b537ad3223b';
+    $display->panels['center'][4] = 'new-b111eec2-1158-4802-80c6-8b537ad3223b';
     $pane = new stdClass();
     $pane->pid = 'new-e987b753-9edb-4826-96e5-c961c9344acd';
     $pane->panel = 'center';
@@ -515,11 +566,11 @@ function drupalcampmel_core_default_page_manager_pages() {
       'css_class' => 'col-sm-5 col-sm-push-2',
     );
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 5;
     $pane->locks = array();
     $pane->uuid = 'e987b753-9edb-4826-96e5-c961c9344acd';
     $display->content['new-e987b753-9edb-4826-96e5-c961c9344acd'] = $pane;
-    $display->panels['center'][4] = 'new-e987b753-9edb-4826-96e5-c961c9344acd';
+    $display->panels['center'][5] = 'new-e987b753-9edb-4826-96e5-c961c9344acd';
     $pane = new stdClass();
     $pane->pid = 'new-5e124459-2625-4cec-b23b-74ab968b025b';
     $pane->panel = 'center';
@@ -569,20 +620,30 @@ function drupalcampmel_core_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 5;
+    $pane->position = 6;
     $pane->locks = array();
     $pane->uuid = '5e124459-2625-4cec-b23b-74ab968b025b';
     $display->content['new-5e124459-2625-4cec-b23b-74ab968b025b'] = $pane;
-    $display->panels['center'][5] = 'new-5e124459-2625-4cec-b23b-74ab968b025b';
+    $display->panels['center'][6] = 'new-5e124459-2625-4cec-b23b-74ab968b025b';
     $pane = new stdClass();
     $pane->pid = 'new-a17de792-60fb-4c94-bac3-6835c3c8a9cb';
     $pane->panel = 'center';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'user_node',
+          'settings' => array(
+            'content_type' => 'session',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
-      'admin_title' => '',
+      'admin_title' => 'Star',
       'title' => '',
       'body' => '<i class="fa fa-star"></i>
 You\'re a star!',
@@ -595,11 +656,11 @@ You\'re a star!',
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 6;
+    $pane->position = 7;
     $pane->locks = array();
     $pane->uuid = 'a17de792-60fb-4c94-bac3-6835c3c8a9cb';
     $display->content['new-a17de792-60fb-4c94-bac3-6835c3c8a9cb'] = $pane;
-    $display->panels['center'][6] = 'new-a17de792-60fb-4c94-bac3-6835c3c8a9cb';
+    $display->panels['center'][7] = 'new-a17de792-60fb-4c94-bac3-6835c3c8a9cb';
     $pane = new stdClass();
     $pane->pid = 'new-6a9e3ccd-ee53-447f-8594-7bb3650096cd';
     $pane->panel = 'region_01';

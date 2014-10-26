@@ -335,7 +335,7 @@ function drupalcampmel_core_default_page_manager_pages() {
       'admin_title' => 'Tickets on sale now!',
       'title' => '',
       'body' => '<i class="fa fa-ticket"></i>
-<h2 class="pane-title">Tickets on sale now!</h2>
+<h2 class="pane-title" id="tickets">Tickets on sale now!</h2>
 <div class="text">Tickets are now on sale,  sign up below and do the following once you have logged in:<ul><li>Purchase your ticket</li><li>Connect your account to your ticket purchase</li><li>Submit your presentation</li></ul>Seats are limited so don\'t wait!</div>',
       'format' => 'full_html',
       'substitute' => TRUE,

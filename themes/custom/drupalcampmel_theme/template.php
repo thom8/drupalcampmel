@@ -8,19 +8,19 @@
  * Implements hook_form_alter().
  */
 function drupalcampmel_theme_form_alter(&$form, $form_state, $form_id) {
+  // Move field labels into bootstrap placeholders.
+  $form_ids = array(
+    'confirm_order_entityform_edit_form',
+    'contact_entityform_edit_form',
+    'register_interest_entityform_edit_form'
+  );
+  if (in_array($form_id, $form_ids)) {
+    _drupalcampmel_theme_add_field_placeholders($form);
+  }
+
   switch ($form_id) {
     case 'register_interest_entityform_edit_form':
     case 'contact_entityform_edit_form':
-      foreach (element_children($form) as $child) {
-        if (isset($form[$child][LANGUAGE_NONE][0])) {
-          foreach (element_children($form[$child][LANGUAGE_NONE][0]) as $key) {
-            // Use placeholder instead of title.
-            $form[$child][LANGUAGE_NONE][0][$key]['#title_display']             = 'invisible';
-            $form[$child][LANGUAGE_NONE][0][$key]['#attributes']['placeholder'] = $form[$child][LANGUAGE_NONE][0][$key]['#title'];
-          }
-        }
-      }
-
       // Modify field sizes.
       $form['field_first_name']['#prefix'] = '<div class="row">';
       $form['field_last_name']['#suffix']  = '</div>';
@@ -63,6 +63,21 @@ function drupalcampmel_theme_form_user_login_block_alter(&$form, $form_state) {
   $form['actions']['submit']['#attributes']['class'][] = 'btn';
   $form['actions']['submit']['#attributes']['class'][] = 'btn-primary';
   $form['actions']['submit']['#attributes']['class'][] = 'btn-lg';
+}
+
+/**
+ * Move field labels into bootstrap placeholders.
+ */
+function _drupalcampmel_theme_add_field_placeholders(&$form) {
+  foreach (element_children($form) as $child) {
+    if (isset($form[$child][LANGUAGE_NONE][0])) {
+      foreach (element_children($form[$child][LANGUAGE_NONE][0]) as $key) {
+        // Use placeholder instead of title.
+        $form[$child][LANGUAGE_NONE][0][$key]['#title_display']             = 'invisible';
+        $form[$child][LANGUAGE_NONE][0][$key]['#attributes']['placeholder'] = $form[$child][LANGUAGE_NONE][0][$key]['#title'];
+      }
+    }
+  }
 }
 
 /**

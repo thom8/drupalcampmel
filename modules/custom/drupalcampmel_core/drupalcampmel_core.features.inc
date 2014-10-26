@@ -46,6 +46,40 @@ function drupalcampmel_core_views_api($module = NULL, $api = NULL) {
  */
 function drupalcampmel_core_default_entityform_type() {
   $items = array();
+  $items['confirm_order'] = entity_import('entityform_type', '{
+    "type" : "confirm_order",
+    "label" : "Confirm order",
+    "data" : {
+      "draftable" : 0,
+      "draft_redirect_path" : "",
+      "draft_button_text" : "",
+      "draft_save_text" : { "value" : "", "format" : "full_html" },
+      "submit_button_text" : "Confirm ticket",
+      "submit_confirm_msg" : "Thank you for confirming your ticket.",
+      "your_submissions" : "",
+      "disallow_resubmit_msg" : "",
+      "delete_confirm_msg" : "",
+      "page_title_view" : "",
+      "preview_page" : 0,
+      "submission_page_title" : "",
+      "submission_text" : { "value" : "", "format" : "full_html" },
+      "submission_show_submitted" : 0,
+      "submissions_view" : "default",
+      "user_submissions_view" : "default",
+      "form_status" : "ENTITYFORM_OPEN",
+      "roles" : { "2" : "2", "1" : 0 },
+      "resubmit_action" : "disallow",
+      "redirect_path" : "\\u003Cfront\\u003E",
+      "instruction_pre" : {
+        "value" : "Add your Eventbrite order number here so we can assign your ticket to your user, and confirm you are a verified attendee.",
+        "format" : "full_html"
+      },
+      "current_type" : "confirm_order",
+      "enable_block" : 1
+    },
+    "weight" : "0",
+    "paths" : []
+  }');
   $items['contact'] = entity_import('entityform_type', '{
     "type" : "contact",
     "label" : "Contact",
@@ -76,7 +110,8 @@ function drupalcampmel_core_default_entityform_type() {
       },
       "enable_block" : 1
     },
-    "weight" : "0"
+    "weight" : "0",
+    "paths" : []
   }');
   $items['register_interest'] = entity_import('entityform_type', '{
     "type" : "register_interest",
@@ -106,7 +141,8 @@ function drupalcampmel_core_default_entityform_type() {
       "current_type" : "register_interest",
       "enable_block" : 1
     },
-    "weight" : "0"
+    "weight" : "0",
+    "paths" : []
   }');
   return $items;
 }

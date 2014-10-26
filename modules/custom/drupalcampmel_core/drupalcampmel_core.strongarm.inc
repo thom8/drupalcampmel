@@ -62,6 +62,7 @@ function drupalcampmel_core_strongarm() {
   $strongarm->value = array(
     0 => 'register_interest',
     1 => 'contact',
+    2 => 'confirm_order',
   );
   $export['entityform_block_types'] = $strongarm;
 

@@ -426,6 +426,81 @@ function drupalcampmel_core_default_page_manager_pages() {
     $display->content['new-dcfaf694-a63c-432d-8305-4215ef8f1d56'] = $pane;
     $display->panels['center'][2] = 'new-dcfaf694-a63c-432d-8305-4215ef8f1d56';
     $pane = new stdClass();
+    $pane->pid = 'new-b111eec2-1158-4802-80c6-8b537ad3223b';
+    $pane->panel = 'center';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'php',
+          'settings' => array(
+            'description' => 'Eventbrite order',
+            'php' => 'return drupalcampmel_core_has_eventbrite_order();',
+          ),
+          'not' => TRUE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'Get your ticket now!',
+      'body' => '[TEXT GOES HERE]',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-sm-5',
+    );
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = 'b111eec2-1158-4802-80c6-8b537ad3223b';
+    $display->content['new-b111eec2-1158-4802-80c6-8b537ad3223b'] = $pane;
+    $display->panels['center'][3] = 'new-b111eec2-1158-4802-80c6-8b537ad3223b';
+    $pane = new stdClass();
+    $pane->pid = 'new-e987b753-9edb-4826-96e5-c961c9344acd';
+    $pane->panel = 'center';
+    $pane->type = 'block';
+    $pane->subtype = 'entityform_block-confirm_order';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        1 => array(
+          'name' => 'php',
+          'settings' => array(
+            'description' => 'Eventbrite order',
+            'php' => 'return drupalcampmel_core_has_eventbrite_order();',
+          ),
+          'not' => TRUE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Already have a ticket?',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-sm-5 col-sm-push-2',
+    );
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = 'e987b753-9edb-4826-96e5-c961c9344acd';
+    $display->content['new-e987b753-9edb-4826-96e5-c961c9344acd'] = $pane;
+    $display->panels['center'][4] = 'new-e987b753-9edb-4826-96e5-c961c9344acd';
+    $pane = new stdClass();
     $pane->pid = 'new-6a9e3ccd-ee53-447f-8594-7bb3650096cd';
     $pane->panel = 'region_01';
     $pane->type = 'custom';

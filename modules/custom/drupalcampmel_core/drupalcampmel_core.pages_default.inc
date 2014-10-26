@@ -521,6 +521,86 @@ function drupalcampmel_core_default_page_manager_pages() {
     $display->content['new-e987b753-9edb-4826-96e5-c961c9344acd'] = $pane;
     $display->panels['center'][4] = 'new-e987b753-9edb-4826-96e5-c961c9344acd';
     $pane = new stdClass();
+    $pane->pid = 'new-5e124459-2625-4cec-b23b-74ab968b025b';
+    $pane->panel = 'center';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 2,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'php',
+          'settings' => array(
+            'description' => 'Eventbrite order.',
+            'php' => 'return drupalcampmel_core_has_eventbrite_order();',
+          ),
+          'not' => FALSE,
+        ),
+        2 => array(
+          'name' => 'user_node',
+          'settings' => array(
+            'content_type' => 'session',
+          ),
+          'not' => TRUE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'Submit your session now!',
+      'body' => '[TEXT HERE]
+<a href="/node/add/session" class="btn btn-lg btn-primary">Add your session</a>',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $pane->uuid = '5e124459-2625-4cec-b23b-74ab968b025b';
+    $display->content['new-5e124459-2625-4cec-b23b-74ab968b025b'] = $pane;
+    $display->panels['center'][5] = 'new-5e124459-2625-4cec-b23b-74ab968b025b';
+    $pane = new stdClass();
+    $pane->pid = 'new-a17de792-60fb-4c94-bac3-6835c3c8a9cb';
+    $pane->panel = 'center';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '<i class="fa fa-star"></i>
+You\'re a star!',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = 'a17de792-60fb-4c94-bac3-6835c3c8a9cb';
+    $display->content['new-a17de792-60fb-4c94-bac3-6835c3c8a9cb'] = $pane;
+    $display->panels['center'][6] = 'new-a17de792-60fb-4c94-bac3-6835c3c8a9cb';
+    $pane = new stdClass();
     $pane->pid = 'new-6a9e3ccd-ee53-447f-8594-7bb3650096cd';
     $pane->panel = 'region_01';
     $pane->type = 'custom';

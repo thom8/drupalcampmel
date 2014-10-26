@@ -108,7 +108,6 @@ function drupalcampmel_core_default_rules_configuration() {
   $items['rules_signup_create_notify_user_trigger'] = entity_import('rules_config', '{ "rules_signup_create_notify_user_trigger" : {
       "LABEL" : "Signup: Create and notify user",
       "PLUGIN" : "reaction rule",
-      "ACTIVE" : false,
       "OWNER" : "rules",
       "REQUIRES" : [ "rules", "entityform" ],
       "ON" : { "entityform_insert" : [] },

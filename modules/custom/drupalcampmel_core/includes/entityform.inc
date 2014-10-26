@@ -36,7 +36,7 @@ function drupalcampmel_core_user_eventbrite_validation($form, $form_state) {
       }
 
       $data = json_decode($request->data);
-      if ('13845017821' != $data->event->id) {
+      if ('13596805411' != $data->event->id) {
         form_set_error('field_eventbrite_order', t('The Eventbrite order you entered is invalid.'));
 
         return;

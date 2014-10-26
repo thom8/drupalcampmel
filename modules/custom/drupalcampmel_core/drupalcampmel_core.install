@@ -90,6 +90,11 @@ function drupalcampmel_core_update_7102() {
 }
 
 /**
+ * This was used during the great site failed migration workaround.
+ */
+function drupalcampmel_core_update_7103() {}
+
+/**
  * Helper function; Enable dependencies, flush caches and revert the feature.
  */
 function _drupalcampmel_core_flush_revert() {

@@ -654,7 +654,8 @@ Things you might like to talk about:
       'admin_title' => 'Star',
       'title' => '',
       'body' => '<i class="fa fa-star"></i>
-You\'re a star!',
+<h2 class="pane-title">You\'re a star!</h2>
+You\'ve connected your ticket and added a session, thats awersome, we look forward to seeing you at the camp!',
       'format' => 'full_html',
       'substitute' => TRUE,
     );

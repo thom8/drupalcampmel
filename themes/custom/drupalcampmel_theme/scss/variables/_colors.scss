@@ -17,6 +17,10 @@ $color-orange: #F89A20;
 .color-bg-orange {
   background-color: $color-orange;
   color: $color-white;
+
+  h2 {
+    color: $color-white;
+  }
 }
 
 $color-grey-light: #EDEDED;

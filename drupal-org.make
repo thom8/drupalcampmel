@@ -48,7 +48,7 @@ projects[context_server_vars][download][revision] = 1d61d973ddb7513de9c3d82b33c8
 projects[context_variable][type] = module
 projects[context_variable][subdir] = contrib
 projects[context_variable][download][type] = git
-projects[context_variable][download][revision] = cd9b3b9b64acd5ac3a1c6c180eadff34294c3f11
+projects[context_variable][download][revision] = b6e3219391d2830b732fa0ffbf7818cff8b8571e
 
 projects[ctools][type] = module
 projects[ctools][subdir] = contrib

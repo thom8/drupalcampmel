@@ -373,6 +373,20 @@ function drupalcampmel_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'prlp_destination';
+  $strongarm->value = '<front>';
+  $export['prlp_destination'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'prlp_password_required';
+  $strongarm->value = 1;
+  $export['prlp_password_required'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'realname_pattern';
   $strongarm->value = '[user:field-first-name] [user:field-last-name]';
   $export['realname_pattern'] = $strongarm;

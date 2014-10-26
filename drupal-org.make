@@ -178,6 +178,10 @@ projects[prepro][type] = module
 projects[prepro][subdir] = contrib
 projects[prepro][version] = 1.4
 
+projects[prlp][type] = module
+projects[prlp][subdir] = contrib
+projects[prlp][version] = 1.0
+
 projects[realname][type] = module
 projects[realname][subdir] = contrib
 projects[realname][version] = 1.2

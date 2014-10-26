@@ -609,8 +609,16 @@ function drupalcampmel_core_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => 'Submit your session now!',
-      'body' => '[TEXT HERE]
-<a href="/node/add/session" class="btn btn-lg btn-primary">Add your session</a>',
+      'body' => 'This camp works best when the attendees present something, this means you too!
+Things you might like to talk about:
+<ul>
+<li>How to use a module, group of modules or a Drupal distribution</li>
+<li>Case study for one of your projects</li>
+<li>Demonstartion of something interesting to the Drupal community</li>
+<li>Open discussion on a subject you are interested in</li>
+<li>Ask the community for input on a problem your experiencing</li>
+</ul>
+<div class="center"><a href="/node/add/session" class="btn btn-lg btn-primary">Add your session</a></div>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );

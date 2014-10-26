@@ -507,7 +507,8 @@ function drupalcampmel_core_default_page_manager_pages() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => 'Get your ticket now!',
-      'body' => '[TEXT GOES HERE]',
+      'body' => '<p>There are limited tickets available, and we have more registrations of interest than seats available.</p> <p>Thanks to our awesome sponsors, tickets are only $5.</p>Get yours now, before they\'re all gone!</p>
+<a href="https://www.eventbrite.com/e/test-event-tickets-13845017821" class="btn btn-primary form-submit">Buy ticket now</a>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );

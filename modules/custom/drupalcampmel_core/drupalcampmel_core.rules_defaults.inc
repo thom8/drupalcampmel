@@ -35,6 +35,26 @@ function drupalcampmel_core_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_session_created_updated'] = entity_import('rules_config', '{ "rules_session_created_updated" : {
+      "LABEL" : "Session: Created\\/Updated",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : {
+        "node_insert--session" : { "bundle" : "session" },
+        "node_update--session" : { "bundle" : "session" }
+      },
+      "DO" : [
+        { "mail" : {
+            "to" : [ "site:mail" ],
+            "subject" : "A Session has been created or updated",
+            "message" : "\\u003Cp\\u003E[node:author] has created\\/updated their session.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003E\\u0026nbsp;\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003E\\u003Cstrong\\u003ETitle:\\u003C\\/strong\\u003E \\u003Ca href=\\u0022[node:url]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n\\u003Cstrong\\u003ESummary:\\u003C\\/strong\\u003E\\u003Cbr \\/\\u003E\\r\\n[node:field-summary]",
+            "language" : [ "" ]
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_signup_create_notify_user'] = entity_import('rules_config', '{ "rules_signup_create_notify_user" : {
       "LABEL" : "Signup: Create and notify user",
       "PLUGIN" : "rule",

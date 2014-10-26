@@ -84,9 +84,7 @@ function drupalcampmel_core_update_7102() {
   if (!empty($result['entityform'])) {
     $entities = entityform_load_multiple(array_keys($result['entityform']));
     foreach ($entities as $entity) {
-      if ('brian@realityloop.com' == $entity->field_email_address[LANGUAGE_NONE][0]['email']) {
-        rules_invoke_component('rules_signup_create_notify_user', $entity);
-      }
+      rules_invoke_component('rules_signup_create_notify_user', $entity);
     }
   }
 }

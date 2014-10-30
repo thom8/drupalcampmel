@@ -115,13 +115,6 @@ function drupalcampmel_core_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['empty'] = TRUE;
-  $handler->display->display_options['footer']['area']['content'] = 'To become a sponsor (which only costs $330 AUD) use the contact form below.';
-  $handler->display->display_options['footer']['area']['format'] = 'full_html';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');

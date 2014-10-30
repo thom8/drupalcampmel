@@ -904,7 +904,7 @@ We need some volunteers on the day to help out with a few minor tasks. If you\'r
     $pane->configuration = array(
       'admin_title' => '',
       'title' => 'Contributors',
-      'body' => 'Brian Gilbert (<a href="https://www.drupal.org/user/139189" target="_blank">realityloop</a>), Luis Saavedra (<a href="https://www.drupal.org/user/373022" target="_blank">Luisga</a>), Stuart Clark (<a href="https://www.drupal.org/user/103796" target="_blank">Deciphered</a>)',
+      'body' => 'Brian&nbsp;Gilbert&nbsp;(<a href="https://www.drupal.org/user/139189" target="_blank">realityloop</a>), Guy&nbsp;Owen&nbsp;(<a href="https://www.drupal.org/user/1159450">GRO</a>), Luis&nbsp;Saavedra&nbsp;(<a href="https://www.drupal.org/user/373022" target="_blank">Luisga</a>), Stuart&nbsp;Clark&nbsp;(<a href="https://www.drupal.org/user/103796" target="_blank">Deciphered</a>)',
       'format' => 'full_html',
       'substitute' => TRUE,
     );

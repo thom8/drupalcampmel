@@ -95,6 +95,13 @@ function drupalcampmel_core_update_7102() {
 function drupalcampmel_core_update_7103() {}
 
 /**
+ * Enable dependencies, flush caches and revert the feature.
+ */
+function drupalcampmel_core_update_7104() {
+  _drupalcampmel_core_flush_revert();
+}
+
+/**
  * Helper function; Enable dependencies, flush caches and revert the feature.
  */
 function _drupalcampmel_core_flush_revert() {

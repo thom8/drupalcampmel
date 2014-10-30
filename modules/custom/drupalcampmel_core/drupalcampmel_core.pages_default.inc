@@ -527,6 +527,56 @@ function drupalcampmel_core_default_page_manager_pages() {
     $display->content['new-b111eec2-1158-4802-80c6-8b537ad3223b'] = $pane;
     $display->panels['center'][4] = 'new-b111eec2-1158-4802-80c6-8b537ad3223b';
     $pane = new stdClass();
+    $pane->pid = 'new-437e2917-ce32-4fe5-87ac-9c0b9cea04ab';
+    $pane->panel = 'center';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = FALSE;
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'php',
+          'settings' => array(
+            'description' => 'Eventbrite order',
+            'php' => 'return drupalcampmel_core_has_eventbrite_order();',
+          ),
+          'not' => TRUE,
+        ),
+        1 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 2,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'Join the waiting list.',
+      'body' => '<p>Tickets are now officially sold out, but don\'t fret, there is a waiting list, so get your name down now and we will alert you when/if more tickets become available.</p>
+<a href="https://www.eventbrite.com/e/drupalcampmelbourne2014-2732-tickets-13596805411" class="btn btn-primary form-submit">Buy ticket now</a>',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-sm-5',
+    );
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $pane->uuid = '437e2917-ce32-4fe5-87ac-9c0b9cea04ab';
+    $display->content['new-437e2917-ce32-4fe5-87ac-9c0b9cea04ab'] = $pane;
+    $display->panels['center'][5] = 'new-437e2917-ce32-4fe5-87ac-9c0b9cea04ab';
+    $pane = new stdClass();
     $pane->pid = 'new-e987b753-9edb-4826-96e5-c961c9344acd';
     $pane->panel = 'center';
     $pane->type = 'block';
@@ -567,11 +617,11 @@ function drupalcampmel_core_default_page_manager_pages() {
       'css_class' => 'col-sm-5 col-sm-push-2',
     );
     $pane->extras = array();
-    $pane->position = 5;
+    $pane->position = 6;
     $pane->locks = array();
     $pane->uuid = 'e987b753-9edb-4826-96e5-c961c9344acd';
     $display->content['new-e987b753-9edb-4826-96e5-c961c9344acd'] = $pane;
-    $display->panels['center'][5] = 'new-e987b753-9edb-4826-96e5-c961c9344acd';
+    $display->panels['center'][6] = 'new-e987b753-9edb-4826-96e5-c961c9344acd';
     $pane = new stdClass();
     $pane->pid = 'new-5e124459-2625-4cec-b23b-74ab968b025b';
     $pane->panel = 'center';
@@ -629,11 +679,11 @@ Things you might like to talk about:
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 6;
+    $pane->position = 7;
     $pane->locks = array();
     $pane->uuid = '5e124459-2625-4cec-b23b-74ab968b025b';
     $display->content['new-5e124459-2625-4cec-b23b-74ab968b025b'] = $pane;
-    $display->panels['center'][6] = 'new-5e124459-2625-4cec-b23b-74ab968b025b';
+    $display->panels['center'][7] = 'new-5e124459-2625-4cec-b23b-74ab968b025b';
     $pane = new stdClass();
     $pane->pid = 'new-a17de792-60fb-4c94-bac3-6835c3c8a9cb';
     $pane->panel = 'center';
@@ -666,11 +716,11 @@ You\'ve connected your ticket and added a session, thats awersome, we look forwa
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 7;
+    $pane->position = 8;
     $pane->locks = array();
     $pane->uuid = 'a17de792-60fb-4c94-bac3-6835c3c8a9cb';
     $display->content['new-a17de792-60fb-4c94-bac3-6835c3c8a9cb'] = $pane;
-    $display->panels['center'][7] = 'new-a17de792-60fb-4c94-bac3-6835c3c8a9cb';
+    $display->panels['center'][8] = 'new-a17de792-60fb-4c94-bac3-6835c3c8a9cb';
     $pane = new stdClass();
     $pane->pid = 'new-6a9e3ccd-ee53-447f-8594-7bb3650096cd';
     $pane->panel = 'region_01';

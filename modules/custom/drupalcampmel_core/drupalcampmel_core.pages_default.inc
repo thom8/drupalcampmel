@@ -977,7 +977,7 @@ Whatever your Drupal interest, you\'re sure to find something of interest.
     $pane->configuration = array(
       'admin_title' => '',
       'title' => 'Contributors',
-      'body' => 'Brian&nbsp;Gilbert&nbsp;(<a href="https://www.drupal.org/user/139189" target="_blank">realityloop</a>), Guy&nbsp;Owen&nbsp;(<a href="https://www.drupal.org/user/1159450">GRO</a>), Luis&nbsp;Saavedra&nbsp;(<a href="https://www.drupal.org/user/373022" target="_blank">Luisga</a>), Stuart&nbsp;Clark&nbsp;(<a href="https://www.drupal.org/user/103796" target="_blank">Deciphered</a>)',
+      'body' => 'Brian&nbsp;Gilbert&nbsp;(<a href="https://www.drupal.org/user/139189" target="_blank">realityloop</a>), Guy&nbsp;Owen&nbsp;(<a href="https://www.drupal.org/user/1159450">GRO</a>), Jarkko&nbsp;Oksanen&nbsp;(<a href="https://www.drupal.org/user/2352292" target="_blank">jOksanen</a>), Luis&nbsp;Saavedra&nbsp;(<a href="https://www.drupal.org/user/373022" target="_blank">Luisga</a>), Stuart&nbsp;Clark&nbsp;(<a href="https://www.drupal.org/user/103796" target="_blank">Deciphered</a>)',
       'format' => 'full_html',
       'substitute' => TRUE,
     );

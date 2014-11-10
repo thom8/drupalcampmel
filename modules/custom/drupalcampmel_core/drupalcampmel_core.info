@@ -29,6 +29,7 @@ dependencies[] = entityform_block
 dependencies[] = features
 dependencies[] = filefield_paths
 dependencies[] = filter
+dependencies[] = flag
 dependencies[] = fontawesome
 dependencies[] = googleanalytics
 dependencies[] = htmlmail
@@ -146,6 +147,8 @@ features[field_instance][] = user-user-field_last_name
 features[filter][] = full_html
 features[filter][] = plain_text
 
+features[flag][] = vote
+
 features[image][] = logo
 features[image][] = logo_custom_user_desktop_1x
 features[image][] = logo_custom_user_tablet_1x
@@ -171,6 +174,8 @@ features[user_permission][] = access content
 features[user_permission][] = change own username
 features[user_permission][] = create session content
 features[user_permission][] = edit own session content
+features[user_permission][] = flag vote
+features[user_permission][] = unflag vote
 features[user_permission][] = view any misc bean
 features[user_permission][] = view any sponsor bean
 features[user_permission][] = view own unpublished content
@@ -223,6 +228,7 @@ features[variable][] = user_email_verification
 features[variable][] = user_mail_register_no_approval_required_body
 features[variable][] = user_register
 
+features[views_view][] = session_vote
 features[views_view][] = sponsors
 
 

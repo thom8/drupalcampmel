@@ -104,6 +104,10 @@ projects[filefield_paths][type] = module
 projects[filefield_paths][subdir] = contrib
 projects[filefield_paths][version] = 1.0-beta4
 
+projects[flag][type] = module
+projects[flag][subdir] = contrib
+projects[flag][version] = 3.5
+
 projects[fontawesome][type] = module
 projects[fontawesome][subdir] = contrib
 projects[fontawesome][download][type] = git

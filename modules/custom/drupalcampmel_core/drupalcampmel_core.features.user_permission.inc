@@ -47,6 +47,24 @@ function drupalcampmel_core_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'flag vote'.
+  $permissions['flag vote'] = array(
+    'name' => 'flag vote',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'flag',
+  );
+
+  // Exported permission: 'unflag vote'.
+  $permissions['unflag vote'] = array(
+    'name' => 'unflag vote',
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'flag',
+  );
+
   // Exported permission: 'view any misc bean'.
   $permissions['view any misc bean'] = array(
     'name' => 'view any misc bean',

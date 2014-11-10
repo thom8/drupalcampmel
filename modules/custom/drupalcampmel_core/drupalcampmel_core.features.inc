@@ -148,6 +148,48 @@ function drupalcampmel_core_default_entityform_type() {
 }
 
 /**
+ * Implements hook_flag_default_flags().
+ */
+function drupalcampmel_core_flag_default_flags() {
+  $flags = array();
+  // Exported flag: "Vote".
+  $flags['vote'] = array(
+    'entity_type' => 'node',
+    'title' => 'Vote',
+    'global' => 0,
+    'types' => array(),
+    'flag_short' => 'Vote this session',
+    'flag_long' => '',
+    'flag_message' => '',
+    'unflag_short' => 'Unvote this session',
+    'unflag_long' => '',
+    'unflag_message' => '',
+    'unflag_denied_text' => '',
+    'link_type' => 'toggle',
+    'weight' => 0,
+    'show_in_links' => array(
+      'full' => 'full',
+      'teaser' => 'teaser',
+      'rss' => 0,
+      'token' => 0,
+      'revision' => 0,
+    ),
+    'show_as_field' => 0,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'show_contextual_link' => 0,
+    'i18n' => 0,
+    'api_version' => 3,
+    'module' => 'drupalcampmel_core',
+    'locked' => array(
+      0 => 'name',
+    ),
+  );
+  return $flags;
+
+}
+
+/**
  * Implements hook_image_default_styles().
  */
 function drupalcampmel_core_image_default_styles() {

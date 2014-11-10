@@ -162,6 +162,7 @@ features[node][] = session
 
 features[page_manager_pages][] = edit_my_session
 features[page_manager_pages][] = home
+features[page_manager_pages][] = vote_sessions
 
 features[picture_mapping][] = logo
 

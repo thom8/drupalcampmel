@@ -22,7 +22,6 @@ function drupalcampmel_core_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Lightning talks';
   $handler->display->display_options['css_class'] = 'table-responsive';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
@@ -145,15 +144,8 @@ function drupalcampmel_core_views_default_views() {
     'session' => 'session',
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'sessions/vote';
-  $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'Vote';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
   $export['session_vote'] = $view;
 
   $view = new view();

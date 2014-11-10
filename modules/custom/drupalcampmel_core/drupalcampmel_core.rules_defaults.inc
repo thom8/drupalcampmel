@@ -9,6 +9,29 @@
  */
 function drupalcampmel_core_default_rules_configuration() {
   $items = array();
+  $items['rules_confirm_order_new_submission'] = entity_import('rules_config', '{ "rules_confirm_order_new_submission" : {
+      "LABEL" : "Confirm order: New submission",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "entityform" ],
+      "ON" : { "entityform_insert" : [] },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "entityform" ],
+            "type" : "entityform",
+            "bundle" : { "value" : { "confirm_order" : "confirm_order" } }
+          }
+        }
+      ],
+      "DO" : [
+        { "user_add_role" : {
+            "account" : [ "site:current-user" ],
+            "roles" : { "value" : { "3" : "3" } }
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_contact_new_submission'] = entity_import('rules_config', '{ "rules_contact_new_submission" : {
       "LABEL" : "Contact: New submission",
       "PLUGIN" : "reaction rule",

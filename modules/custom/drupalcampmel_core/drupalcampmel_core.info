@@ -165,6 +165,7 @@ features[page_manager_pages][] = home
 
 features[picture_mapping][] = logo
 
+features[rules_config][] = rules_confirm_order_new_submission
 features[rules_config][] = rules_contact_new_submission
 features[rules_config][] = rules_session_created_updated
 features[rules_config][] = rules_signup_create_notify_user
@@ -179,6 +180,8 @@ features[user_permission][] = unflag vote
 features[user_permission][] = view any misc bean
 features[user_permission][] = view any sponsor bean
 features[user_permission][] = view own unpublished content
+
+features[user_role][] = ticket holder
 
 features[variable][] = admin_theme
 features[variable][] = blockify_blocks

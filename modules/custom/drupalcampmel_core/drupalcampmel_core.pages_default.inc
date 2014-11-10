@@ -481,7 +481,7 @@ function drupalcampmel_core_default_page_manager_pages() {
     $pane->panel = 'center';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array(
       'plugins' => array(
         0 => array(
@@ -531,7 +531,7 @@ function drupalcampmel_core_default_page_manager_pages() {
     $pane->panel = 'center';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
-    $pane->shown = FALSE;
+    $pane->shown = TRUE;
     $pane->access = array(
       'plugins' => array(
         0 => array(
@@ -760,10 +760,18 @@ You\'ve connected your ticket and added a session, thats awersome, we look forwa
       'admin_title' => '',
       'title' => 'Where',
       'body' => '<p>Catch Tram <a href="http://ptv.vic.gov.au/route/view/2903" target="_blank">48</a> or <a href="http://ptv.vic.gov.au/route/view/3343" target="_blank">11</a> to stop D18 where it’s just a 3 minute walk to:<p>
-<p>Library at the Dock<br>
-107 Victoria Harbour Promenade<br>
-Docklands<br>
-Vic 3008</p>',
+<div class="row">
+  <div class="col-sm-6">
+    <p><h3>Library At The Dock</h3><br>
+    107 Victoria Harbour Promenade<br>
+    Docklands<br>
+    VIC 3008</p>
+  </div>
+  <div class="col-sm-6">
+    <iframe width="100%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAjBQD17FoR341SBcPnqU-KpFTsw7i-OW8&q=Library+At+The+Dock">
+</iframe>
+  </div>
+</div>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
@@ -792,12 +800,16 @@ Vic 3008</p>',
 
 Whatever your Drupal interest, you\'re sure to find something of interest.
 
-<h3>Friday:</h3>
-Presentations and BoF\'s
-
-<h3>Saturday:</h3>
-BoF\'s and Mentored Sprints
-',
+<div class="row">
+  <div class="col-sm-6">
+    <h3>Friday:</h3>
+    Presentations and BoF\'s
+  </div>
+  <div class="col-sm-6">
+    <h3>Saturday:</h3>
+    BoF\'s and Mentored Sprints
+  </div>
+</div>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );
@@ -823,15 +835,26 @@ BoF\'s and Mentored Sprints
       'admin_title' => '',
       'title' => 'You make the camp',
       'body' => 'If you have any cool ideas for the camp then please be sure to contact us. You might like to:
-<h3>Give a lightning talk</h3>
-Give a short informal summary of a longer presentation (no longer than 5 minutes) during the opening session on the day.
-<h3>Make a presentation</h3>
-We\'re looking for presentations from 30 minutes long.
-<h3>Organise a BoF</h3>
-BoF stands for Birds of a Feather, which are an informal gathering of like-minded individuals who wish to discuss a certain topic without a pre-planned agenda.
-<h3>Help with organisation and promotion</h3>
-We need some volunteers on the day to help out with a few minor tasks. If you\'re interested, please contact us. And don\'t forget to spread the word!!!
-',
+<div class="row">
+  <div class="col-sm-6">
+    <h3>Give a lightning talk</h3>
+    Give a short informal summary of a longer presentation (no longer than 5 minutes) during the opening session on the day.
+  </div>
+  <div class="col-sm-6">
+    <h3>Make a presentation</h3>
+    We\'re looking for presentations from 30-45 minutes long.
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <h3>Organise a BoF</h3>
+    BoF stands for Birds of a Feather, which are an informal gathering of like-minded individuals who wish to discuss a certain topic without a pre-planned agenda.
+  </div>
+  <div class="col-sm-6">
+    <h3>Help with organisation and promotion</h3>
+    We need some volunteers on the day to help out with a few minor tasks. If you\'re interested, please contact us. And don\'t forget to spread the word!!!
+  </div>
+</div>',
       'format' => 'full_html',
       'substitute' => TRUE,
     );

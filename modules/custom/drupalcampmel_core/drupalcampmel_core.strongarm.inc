@@ -388,7 +388,7 @@ function drupalcampmel_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'realname_pattern';
-  $strongarm->value = '[user:field-first-name] [user:field-last-name]';
+  $strongarm->value = '[user:field_first_name] [user:field_last_name]';
   $export['realname_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

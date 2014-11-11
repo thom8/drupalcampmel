@@ -122,6 +122,28 @@ function drupalcampmel_core_update_7105() {
 
   // Enable dependencies, flush caches and revert the feature.
   _drupalcampmel_core_flush_revert();
+
+  // Create the 'Create a session' bean for the session/vote page.
+  drupalcampmel_core_install_creating_a_session_bean();
+}
+
+/**
+ * Create the 'Create a session' bean for the
+ */
+function drupalcampmel_core_install_creating_a_session_bean() {
+  $bean        = bean_create(array('type' => 'misc'));
+  $bean->label = 'Create a session';
+  $bean->title = '';
+  $bean->delta = 'creating-a-session';
+
+  $bean->field_body[LANGUAGE_NONE][0] = array(
+    'value'  => '<p>Todo<div><br><a href="/node/add/session"><button type="button" class="btn btn-default">Create a session</button></a></div></p>',
+    'format' => 'full_html',
+  );
+
+  $bean->field_block_class[LANGUAGE_NONE][0]['value'] = 'panel-info';
+
+  $bean->save();
 }
 
 /**

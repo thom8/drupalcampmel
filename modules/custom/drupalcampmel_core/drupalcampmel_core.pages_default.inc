@@ -1002,7 +1002,7 @@ Whatever your Drupal interest, you\'re sure to find something of interest.
   $pages['home'] = $page;
 
   $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->disabled = TRUE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
   $page->name = 'vote_sessions';
   $page->task = 'page';

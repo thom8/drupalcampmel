@@ -92,7 +92,8 @@ function drupalcampmel_core_update_7102() {
 /**
  * This was used during the great site failed migration workaround.
  */
-function drupalcampmel_core_update_7103() {}
+function drupalcampmel_core_update_7103() {
+}
 
 /**
  * Enable dependencies, flush caches and revert the feature.
@@ -102,26 +103,28 @@ function drupalcampmel_core_update_7104() {
 }
 
 /**
- * Assign 'ticket holder' role to ticket holders and enable dependencies, flush caches and revert the feature.
+ * Enable dependencies, flush caches and revert the feature, assign 'ticket
+ * holder' role to ticket holders and create the 'Create a session' bean for the
+ * session/vote page.
  */
 function drupalcampmel_core_update_7105() {
+  // Enable dependencies, flush caches and revert the feature.
+  _drupalcampmel_core_flush_revert();
+
   // Assign 'ticket holder' role to ticket holders.
-  $query = new EntityFieldQuery();
+  $query   = new EntityFieldQuery();
   $results = $query->entityCondition('entity_type', 'entityform')
     ->entityCondition('bundle', 'confirm_order')
     ->execute();
 
-  if (!empty($results['entityform'])){
+  if (!empty($results['entityform'])) {
     $entityforms = entityform_load_multiple(array_keys($results['entityform']));
     foreach ($entityforms as $entityform) {
-      $user = user_load($entityform->uid);
+      $user           = user_load($entityform->uid);
       $user->roles[3] = 'ticket holder';
       user_save($user);
     }
   }
-
-  // Enable dependencies, flush caches and revert the feature.
-  _drupalcampmel_core_flush_revert();
 
   // Create the 'Create a session' bean for the session/vote page.
   drupalcampmel_core_install_creating_a_session_bean();

@@ -64,6 +64,7 @@ dependencies[] = text
 dependencies[] = url
 dependencies[] = user
 dependencies[] = views
+dependencies[] = views_matrix
 dependencies[] = views_slideshow
 dependencies[] = views_slideshow_cycle
 dependencies[] = xmlsitemap
@@ -237,6 +238,7 @@ features[variable][] = user_email_verification
 features[variable][] = user_mail_register_no_approval_required_body
 features[variable][] = user_register
 
+features[views_view][] = schedule
 features[views_view][] = session_vote
 features[views_view][] = sponsors
 

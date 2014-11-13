@@ -100,6 +100,10 @@ projects[features][version] = 2.2
 ; Cleaner info format - https://drupal.org/comment/8270327#comment-8270327
 projects[features][patch][] = https://drupal.org/files/issues/cleaner_info-2155793-1.patch
 
+projects[field_permissions][type] = module
+projects[field_permissions][subdir] = contrib
+projects[field_permissions][version] = 1.0-beta2
+
 projects[filefield_paths][type] = module
 projects[filefield_paths][subdir] = contrib
 projects[filefield_paths][version] = 1.0-beta4
@@ -242,6 +246,11 @@ projects[variable][version] = 2.5
 projects[views][type] = module
 projects[views][subdir] = contrib
 projects[views][version] = 3.8
+
+projects[views_matrix][type] = module
+projects[views_matrix][subdir] = contrib
+projects[views_matrix][download][type] = git
+projects[views_matrix][download][revision] = 888fff43a6d4a40021a78b9d1ec338deb5b1765b
 
 projects[views_slideshow][type] = module
 projects[views_slideshow][subdir] = contrib

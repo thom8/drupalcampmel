@@ -121,3 +121,51 @@ function drupalcampmel_theme_preprocess_page(&$vars) {
   $vars['title']      = '';
   unset($vars['site_slogan'], $vars['tabs']);
 }
+
+/**
+ * Implements hook_preprocess_views_view_matrix().
+ */
+function drupalcampmel_theme_preprocess_views_view_matrix(&$vars) {
+  // Attach proper styles.
+  $vars['matrix_attributes']['class'] = array('table', 'table-responsive');
+
+  // Name rooms.
+  $rooms = array('Activity room', 'Meeting room 1', 'Meeting room 2');
+  foreach ($vars['header'] as $id => $header) {
+    if ($id == 0) {
+      continue;
+    }
+
+    $vars['header'][$id]['data'] = $rooms[$id - 1];
+  }
+
+  // Schedule.
+  if (count($vars['rows']) <= 6) {
+    $schedule = array(
+      1 => '10:45 - 11:30',
+      2 => '11:40 - 12:25',
+      3 => '13:10 - 13:55',
+      4 => '14:05 - 14:50',
+      5 => '15:05 - 15:50',
+      6 => '16:00 - 16:45',
+    );
+  }
+  else {
+    $schedule = array(
+      1 => '10:45 - 11:30',
+      2 => '11:35 - 12:05',
+      3 => '12:55 - 13:25',
+      4 => '13:30 - 14:00',
+      5 => '14:05 - 14:35',
+      6 => '15:00 - 15:30',
+      7 => '15:35 - 16:05',
+      8 => '16:10 - 16:40',
+    );
+  }
+
+  $i = 0;
+  foreach ($vars['rows'] as $id => $row) {
+    $i++;
+    $vars['rows'][$id]['header']['data'] = $schedule[$i];
+  }
+}

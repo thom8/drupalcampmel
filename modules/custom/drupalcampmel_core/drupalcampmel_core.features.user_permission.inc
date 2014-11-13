@@ -85,6 +85,26 @@ function drupalcampmel_core_user_default_permissions() {
     'module' => 'bean',
   );
 
+  // Exported permission: 'view field_session_room'.
+  $permissions['view field_session_room'] = array(
+    'name' => 'view field_session_room',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view field_session_slot'.
+  $permissions['view field_session_slot'] = array(
+    'name' => 'view field_session_slot',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'view own unpublished content'.
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',

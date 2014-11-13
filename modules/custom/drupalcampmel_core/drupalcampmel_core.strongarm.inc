@@ -94,10 +94,10 @@ function drupalcampmel_core_strongarm() {
           'weight' => '0',
         ),
         'options' => array(
-          'weight' => '5',
+          'weight' => '4',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
       ),
       'display' => array(),

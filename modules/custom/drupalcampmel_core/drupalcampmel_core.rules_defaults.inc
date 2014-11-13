@@ -71,7 +71,7 @@ function drupalcampmel_core_default_rules_configuration() {
         { "mail" : {
             "to" : [ "site:mail" ],
             "subject" : "A Session has been created or updated",
-            "message" : "\\u003Cp\\u003E[node:author] has created\\/updated their session.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003E\\u0026nbsp;\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003E\\u003Cstrong\\u003ETitle:\\u003C\\/strong\\u003E \\u003Ca href=\\u0022[node:url]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n\\u003Cstrong\\u003ESummary:\\u003C\\/strong\\u003E\\u003Cbr \\/\\u003E\\r\\n[node:field-summary]",
+            "message" : "\\u003Cp\\u003E[node:author] has created\\/updated their session.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003E\\u0026nbsp;\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003E\\u003Cstrong\\u003ETitle:\\u003C\\/strong\\u003E \\u003Ca href=\\u0022[node:url]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n\\u003Cstrong\\u003EDescription:\\u003C\\/strong\\u003E\\u003Cbr \\/\\u003E\\r\\n[node:body:value]",
             "language" : [ "" ]
           }
         }

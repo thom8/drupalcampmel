@@ -534,7 +534,7 @@ function drupalcampmel_core_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Description',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'display_summary' => 0,
       'text_processing' => 1,
@@ -548,14 +548,18 @@ function drupalcampmel_core_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
   // Exported field_instance: 'node-session-field_session_level'
   $field_instances['node-session-field_session_level'] = array(
     'bundle' => 'session',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'beginner',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -585,7 +589,90 @@ function drupalcampmel_core_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 3,
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-session-field_session_room'
+  $field_instances['node-session-field_session_room'] = array(
+    'bundle' => 'session',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_session_room',
+    'label' => 'Room',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-session-field_session_slot'
+  $field_instances['node-session-field_session_slot'] = array(
+    'bundle' => 'session',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_session_slot',
+    'label' => 'Slot',
+    'required' => 0,
+    'settings' => array(
+      'max' => 8,
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 6,
     ),
   );
 
@@ -626,46 +713,7 @@ function drupalcampmel_core_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-session-field_summary'
-  $field_instances['node-session-field_summary'] = array(
-    'bundle' => 'session',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_summary',
-    'label' => 'Summary',
-    'required' => 1,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 1,
+      'weight' => 3,
     ),
   );
 
@@ -748,9 +796,10 @@ function drupalcampmel_core_field_default_field_instances() {
   t('Logo');
   t('Mailchimp');
   t('Message');
+  t('Room');
+  t('Slot');
   t('Space separated list of classes to be applied to the block.');
   t('Style');
-  t('Summary');
   t('URL');
 
   return $field_instances;

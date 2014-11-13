@@ -51,7 +51,7 @@ function drupalcampmel_core_user_default_permissions() {
   $permissions['flag vote'] = array(
     'name' => 'flag vote',
     'roles' => array(
-      'authenticated user' => 'authenticated user',
+      'ticket holder' => 'ticket holder',
     ),
     'module' => 'flag',
   );
@@ -60,7 +60,7 @@ function drupalcampmel_core_user_default_permissions() {
   $permissions['unflag vote'] = array(
     'name' => 'unflag vote',
     'roles' => array(
-      'authenticated user' => 'authenticated user',
+      'ticket holder' => 'ticket holder',
     ),
     'module' => 'flag',
   );

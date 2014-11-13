@@ -21,6 +21,93 @@ foreach (module_list() as $module) {
 }
 
 /**
+ * Implements hook_menu().
+ */
+function drupalcampmel_core_menu() {
+  $items['schedule/generate'] = array(
+    'title'            => 'Generate schedule',
+    'page callback'    => 'drupal_get_form',
+    'page arguments'   => array('drupalcampmel_core_schedule_generate_confirm'),
+    'access callback'  => 'user_access',
+    'access arguments' => array('administer site configuration'),
+  );
+
+  return $items;
+}
+
+/**
+ * Form callback for schedule generate confirmation.
+ */
+function drupalcampmel_core_schedule_generate_confirm($form, $form_state) {
+  return confirm_form($form, t('Are you sure you want to (re-)generate the schedule?'), '<front>');
+}
+
+/**
+ * Submit callback for schedule generate confirmation.
+ */
+function drupalcampmel_core_schedule_generate_confirm_submit($form, $form_state) {
+  // Ensure rules don't trigger during this process.
+  $GLOBALS['conf']['rules_event_whitelist'] = array();
+
+  // Build list of votes and sort.
+  $counts    = array();
+  $flag_data = flag_get_flag_flagging_data('vote');
+  foreach ($flag_data as $flag) {
+    $counts[$flag->entity_id] = isset($counts[$flag->entity_id]) ? $counts[$flag->entity_id] + 1 : 1;
+  }
+  arsort($counts);
+
+  // Set the number of concurrent sessions.
+  $sessions = 6;
+  if (count($counts) > 18) {
+    $sessions = 8;
+  }
+
+  $room    = 1;
+  $session = 0;
+  $i       = 0;
+  foreach ($counts as $nid => $count) {
+    // Ensure we don't have more than 24 sessions, that's the current cap.
+    $i++;
+    if ($i > 24) {
+      continue;
+    }
+
+    // Increment the current session.
+    $session++;
+
+    // If we have iterated over all available sessions, increment the room.
+    if ($session > $sessions) {
+      $room++;
+      $session = 1;
+    }
+
+    // Update nodes with schedule information.
+    $node = node_load($nid);
+    $node = entity_metadata_wrapper('node', $node);
+    $node->field_session_room->set($room);
+    $node->field_session_slot->set($session);
+    $node->save();
+  }
+
+  // Set schedule flag and revert features.
+  variable_set('drupalcampmel_schedule', TRUE);
+  $GLOBALS['conf']['drupcampmel_schedule'] = TRUE;
+  drupal_flush_all_caches();
+  features_revert(array(
+      'drupalcampmel_core' => array(
+        'page_manager_pages',
+        'views_view'
+      )
+    ));
+  views_invalidate_cache();
+
+  // Redirect to schedule.
+  drupal_set_message('Schedule generated!');
+  drupal_goto('schedule');
+}
+
+/**
  * Implements hook_preprocess_HOOK().
  */
 function drupalcampmel_core_preprocess_panels_flexible(&$vars) {

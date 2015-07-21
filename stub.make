@@ -6,7 +6,7 @@ api = 2
 ; Drupal core
 
 projects[drupal][type] = core
-projects[drupal][version] = 7.32
+projects[drupal][version] = 7.38
 
 
 
@@ -15,4 +15,4 @@ projects[drupal][version] = 7.32
 projects[drupalcampmel][type] = profile
 projects[drupalcampmel][download][type] = git
 projects[drupalcampmel][download][url] = https://github.com/drupalmel/drupalcampmel.git
-projects[drupalcampmel][download][branch] = 2014.x
+projects[drupalcampmel][download][branch] = 2015.x

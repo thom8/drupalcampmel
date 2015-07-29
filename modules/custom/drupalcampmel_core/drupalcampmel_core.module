@@ -111,9 +111,11 @@ function drupalcampmel_core_schedule_generate_confirm_submit($form, $form_state)
  * Implements hook_preprocess_HOOK().
  */
 function drupalcampmel_core_preprocess_panels_flexible(&$vars) {
-  foreach ($vars['settings']['items'] as &$item) {
-    if ('region' == $item['type'] && !is_null($item['parent'])) {
-      $item['class'] = isset($item['class']) ? $item['class'] .= ' container' : 'container';
+  if (isset($vars['settings']['items']) && is_array($vars['settings']['items'])) {
+    foreach ($vars['settings']['items'] as &$item) {
+      if ('region' == $item['type'] && !is_null($item['parent'])) {
+        $item['class'] = isset($item['class']) ? $item['class'] .= ' container' : 'container';
+      }
     }
   }
 }

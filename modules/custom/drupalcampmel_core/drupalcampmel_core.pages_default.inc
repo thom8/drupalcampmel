@@ -91,13 +91,246 @@ function drupalcampmel_core_default_page_manager_pages() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'page_home__pre';
+  $handler->task = 'page';
+  $handler->subtask = 'home';
+  $handler->handler = 'panel_context';
+  $handler->weight = -30;
+  $handler->conf = array(
+    'title' => 'Pre',
+    'no_blocks' => 1,
+    'pipeline' => 'ipe',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'name' => 'pre',
+  );
+  $display = new panels_display();
+  $display->layout = 'bootstrap';
+  $display->layout_settings = array(
+    'items' => array(
+      'canvas' => array(
+        'type' => 'container',
+        'contains' => 'row',
+        'children' => array(
+          0 => 1,
+          1 => 'main',
+        ),
+        'parent' => NULL,
+        'wrapper' => 'div',
+        'element_id_default' => 0,
+        'element_id' => '',
+        'class' => '',
+        'class_default_add' => 0,
+        'container_class_add' => 0,
+        'container_full_class_add' => 0,
+        'column_class' => '',
+        'row_class' => '',
+        'region_class' => '',
+        'container_class' => '',
+      ),
+      'main' => array(
+        'type' => 'row',
+        'children' => array(
+          0 => 'main-column',
+        ),
+        'parent' => 'canvas',
+        'wrapper' => 'div',
+        'element_id_default' => 0,
+        'element_id' => '',
+        'class' => '',
+        'class_default_add' => 0,
+      ),
+      'main-column' => array(
+        'type' => 'column',
+        'contains' => 'region',
+        'bootstrap_class' => array(
+          'xs' => 'col-xs-12',
+          'sm' => 'col-sm-12',
+          'md' => 'col-md-12',
+          'lg' => 'col-lg-12',
+        ),
+        'children' => array(
+          0 => 'center',
+        ),
+        'parent' => 'main',
+      ),
+      'center' => array(
+        'type' => 'region',
+        'title' => 'Register your interest',
+        'parent' => 'main-column',
+        'wrapper' => 'div',
+        'element_id_default' => 0,
+        'element_id' => '',
+        'class' => '',
+        'class_default_add' => 0,
+        'container_class_add' => 1,
+        'container_full_class_add' => 0,
+      ),
+      1 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 2,
+        ),
+        'parent' => 'canvas',
+        'wrapper' => 'div',
+        'element_id_default' => 0,
+        'element_id' => '',
+        'class' => '',
+        'class_default_add' => 0,
+      ),
+      2 => array(
+        'type' => 'column',
+        'parent' => '1',
+        'children' => array(
+          0 => 'about',
+        ),
+        'wrapper' => 'div',
+        'element_id_default' => 0,
+        'element_id' => '',
+        'class' => '',
+        'class_default_add' => 0,
+        'contains' => 'region',
+        'bootstrap_class' => array(
+          'xs' => '',
+          'sm' => '',
+          'md' => '',
+          'lg' => '',
+        ),
+      ),
+      'about' => array(
+        'type' => 'region',
+        'title' => 'About',
+        'parent' => '2',
+        'wrapper' => 'div',
+        'element_id_default' => 0,
+        'element_id' => '',
+        'class' => '',
+        'class_default_add' => 0,
+        'container_class_add' => 1,
+        'container_full_class_add' => 0,
+      ),
+    ),
+  );
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'center' => array(
+        'region_title' => '',
+        'hide_classes' => array(
+          'hidden-xs' => 0,
+          'hidden-sm' => 0,
+          'hidden-md' => 0,
+          'hidden-lg' => 0,
+        ),
+        'additional_classes' => array(
+          'pull-left' => 0,
+          'pull-right' => 0,
+          'clearfix' => 0,
+        ),
+      ),
+      'test' => array(
+        'region_title' => 'Test',
+        'modifier_class' => '',
+        'collapsible' => 0,
+        'collapsed' => 0,
+        'hide_classes' => array(
+          'hidden-xs' => 0,
+          'hidden-sm' => 0,
+          'hidden-md' => 0,
+          'hidden-lg' => 0,
+        ),
+        'additional_classes' => array(
+          'pull-left' => 0,
+          'pull-right' => 0,
+          'clearfix' => 0,
+        ),
+      ),
+      'about' => array(),
+    ),
+    'center' => array(
+      'style' => 'bootstrap_styles:well',
+    ),
+    'test' => array(
+      'style' => 'bootstrap_styles:panel',
+    ),
+    'about' => array(
+      'style' => 'bootstrap_region',
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '5021fa66-3010-4f35-a89b-732ae1c02164';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-f4016f4d-ba46-4154-948c-47fbc37f6528';
+    $pane->panel = 'about';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'About',
+      'title' => '',
+      'body' => '<h2>A two-day event aimed at bringing Drupal enthusiasts together to share knowledge, network, and most of all have fun!</h2>',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+      'style' => 'default',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'f4016f4d-ba46-4154-948c-47fbc37f6528';
+    $display->content['new-f4016f4d-ba46-4154-948c-47fbc37f6528'] = $pane;
+    $display->panels['about'][0] = 'new-f4016f4d-ba46-4154-948c-47fbc37f6528';
+    $pane = new stdClass();
+    $pane->pid = 'new-f32b35a3-8f95-4db5-9306-7fcd973096a1';
+    $pane->panel = 'center';
+    $pane->type = 'block';
+    $pane->subtype = 'entityform_block-register_interest';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'style' => 'default',
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'f32b35a3-8f95-4db5-9306-7fcd973096a1';
+    $display->content['new-f32b35a3-8f95-4db5-9306-7fcd973096a1'] = $pane;
+    $display->panels['center'][0] = 'new-f32b35a3-8f95-4db5-9306-7fcd973096a1';
+  $display->hide_title = PANELS_TITLE_NONE;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'page_home_panel_context';
   $handler->task = 'page';
   $handler->subtask = 'home';
   $handler->handler = 'panel_context';
-  $handler->weight = 0;
+  $handler->weight = -29;
   $handler->conf = array(
-    'title' => 'Panel',
+    'title' => 'Live',
     'no_blocks' => 1,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',

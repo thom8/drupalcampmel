@@ -21,17 +21,6 @@ function drupalcampmel_theme_form_alter(&$form, $form_state, $form_id) {
   switch ($form_id) {
     case 'register_interest_entityform_edit_form':
     case 'contact_entityform_edit_form':
-      // Modify field sizes.
-      $form['field_first_name']['#prefix'] = '<div class="row">';
-      $form['field_last_name']['#suffix']  = '</div>';
-
-      $form['field_email_address']['#prefix'] = '<div class="row">';
-      $form['field_email_address']['#suffix'] = '</div>';
-
-      $form['field_first_name']['#attributes']['class'][]    = 'col-sm-6';
-      $form['field_last_name']['#attributes']['class'][]     = 'col-sm-6';
-      $form['field_email_address']['#attributes']['class'][] = 'col-sm-12';
-
       // Add classes to submit button.
       $form['actions']['submit']['#attributes']['class'][] = 'btn';
       $form['actions']['submit']['#attributes']['class'][] = 'btn-primary';
@@ -116,10 +105,7 @@ function drupalcampmel_theme_preprocess(&$vars, $hook) {
  * Implements hook_preprocess_page().
  */
 function drupalcampmel_theme_preprocess_page(&$vars) {
-  $vars['breadcrumb'] = '';
-  $vars['logo']       = NULL;
-  $vars['title']      = '';
-  unset($vars['site_slogan'], $vars['tabs']);
+  $vars['logo'] = NULL;
 }
 
 /**

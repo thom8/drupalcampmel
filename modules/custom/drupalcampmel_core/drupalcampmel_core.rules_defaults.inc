@@ -118,9 +118,7 @@ function drupalcampmel_core_default_rules_configuration() {
                     "PROVIDE" : { "entity_created" : { "user" : "User" } }
                   }
                 },
-                { "data_set" : { "data" : [ "user:status" ], "value" : "1" } },
-                { "entity_save" : { "data" : [ "user" ], "immediate" : 1 } },
-                { "user_send_account_email" : { "account" : [ "user" ], "email_type" : "register_no_approval_required" } }
+                { "entity_save" : { "data" : [ "user" ], "immediate" : 1 } }
               ]
             }
           ]

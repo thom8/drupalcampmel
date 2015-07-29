@@ -486,9 +486,10 @@ function drupalcampmel_core_field_default_field_instances() {
     'settings' => array(
       'interest_groups_title' => 'Interest Groups',
       'mergefields' => array(
-        'EMAIL' => 'field_email_address',
-        'FNAME' => 'field_first_name',
-        'LNAME' => 'field_last_name',
+        'EMAIL' => '[entityform:field-email-address]',
+        'FNAME' => '[entityform:field-first-name]',
+        'LNAME' => '[entityform:field-last-name]',
+        'advanced' => 0,
       ),
       'options' => array(
         'interest_groups' => array(),

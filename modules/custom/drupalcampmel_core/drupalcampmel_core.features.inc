@@ -122,7 +122,7 @@ function drupalcampmel_core_default_entityform_type() {
       "draft_button_text" : "",
       "draft_save_text" : { "value" : "", "format" : "plain_text" },
       "submit_button_text" : "Register",
-      "submit_confirm_msg" : "Thank you for registering your interest in DrupalCampMelbourne 2014. More information will be supplied by email shortly.",
+      "submit_confirm_msg" : "Thank you for registering your interest in DrupalCampMelbourne 2015. More information will be supplied by email shortly.",
       "your_submissions" : "",
       "disallow_resubmit_msg" : "",
       "delete_confirm_msg" : "",
@@ -134,7 +134,7 @@ function drupalcampmel_core_default_entityform_type() {
       "submissions_view" : "default",
       "user_submissions_view" : "default",
       "form_status" : "ENTITYFORM_OPEN",
-      "roles" : { "1" : "1", "2" : 0 },
+      "roles" : { "1" : "1", "2" : 0, "3" : 0 },
       "resubmit_action" : "new",
       "redirect_path" : "\\u003Cfront\\u003E",
       "instruction_pre" : { "value" : "", "format" : "plain_text" },
@@ -199,17 +199,9 @@ function drupalcampmel_core_image_default_styles() {
 
   // Exported image style: logo.
   $styles['logo'] = array(
-    'name' => 'logo',
     'label' => 'Logo',
     'effects' => array(
       5 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 250,
@@ -223,17 +215,9 @@ function drupalcampmel_core_image_default_styles() {
 
   // Exported image style: logo_custom_user_desktop_1x.
   $styles['logo_custom_user_desktop_1x'] = array(
-    'name' => 'logo_custom_user_desktop_1x',
     'label' => 'Logo: Desktop',
     'effects' => array(
       3 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 205,
@@ -247,17 +231,9 @@ function drupalcampmel_core_image_default_styles() {
 
   // Exported image style: logo_custom_user_tablet_1x.
   $styles['logo_custom_user_tablet_1x'] = array(
-    'name' => 'logo_custom_user_tablet_1x',
     'label' => 'Logo: Tablet',
     'effects' => array(
       4 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 150,
@@ -271,17 +247,9 @@ function drupalcampmel_core_image_default_styles() {
 
   // Exported image style: logo_custom_user_wide_1x.
   $styles['logo_custom_user_wide_1x'] = array(
-    'name' => 'logo_custom_user_wide_1x',
     'label' => 'Logo: Wide',
     'effects' => array(
       2 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 255,

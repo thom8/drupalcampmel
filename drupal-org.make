@@ -99,6 +99,10 @@ projects[node_limit][version] = 1.0-alpha5
 
 projects[panels][version] = 3.5
 
+projects[panels_bootstrap_layout_builder][download][revision] = af430d4
+
+projects[panels_bootstrap_styles][download][revision] = e570c4c
+
 projects[pathauto][version] = 1.2
 
 projects[picture][version] = 2.11
@@ -160,7 +164,7 @@ libraries[backbone][download][type] = get
 libraries[backbone][download][url] = https://github.com/jashkenas/backbone/archive/1.1.2.zip
 
 libraries[bootstrap][download][type] = get
-libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/v3.0.2.zip
+libraries[bootstrap][download][url] = https://github.com/twbs/bootstrap/archive/v3.2.0.zip
 libraries[bootstrap][directory_name] = bootstrap
 libraries[bootstrap][destination] = themes/contrib/bootstrap
 libraries[bootstrap][overwrite] = TRUE

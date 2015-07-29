@@ -30,10 +30,10 @@ function drupalcampmel_core_menu_default_menu_links() {
     'weight' => 0,
     'customized' => 1,
   );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Create session');
-
 
   return $menu_links;
 }

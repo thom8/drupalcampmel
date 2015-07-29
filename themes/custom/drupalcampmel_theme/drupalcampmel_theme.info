@@ -5,33 +5,19 @@ base theme = bootstrap
 
 
 
-;;;;;;;;;;;;;;;;;;;;;
-;; Regions
-;;;;;;;;;;;;;;;;;;;;;
+; Regions
 
 regions[content] = Content
 regions[footer]  = Footer
 
 
+; Settings
 
-;;;;;;;;;;;;;;;;;;;;;
-;; Stylesheets
-;;;;;;;;;;;;;;;;;;;;;
+settings[bootstrap_navbar_inverse] = 1
+settings[bootstrap_navbar_position] = fixed-top
+
+
+
+; Stylesheets
 
 stylesheets[all][] = scss/style.scss
-
-
-
-;;;;;;;;;;;;;;;;;;;;;
-;; Scripts
-;;;;;;;;;;;;;;;;;;;;;
-
-scripts[] = js/drupalcampmel_theme.js
-
-
-
-;;;;;;;;;;;;;;;;;;;;;
-;; Fonts
-;;;;;;;;;;;;;;;;;;;;;
-
-fonts[google_fonts_api][] = "Bree Serif&subset=latin#regular"

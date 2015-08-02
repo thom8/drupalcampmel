@@ -10,6 +10,13 @@ dependencies[] = drupalcampmel_core
 
 
 
+; Files - Simpletest
+
+; No Simpletests defined and/or needed yet.
+; files[] = tests/drupalcampmel.test
+
+
+
 ; Profiler - Variables
 
 variables[site_mail] = drupalmelbourne@gmail.com

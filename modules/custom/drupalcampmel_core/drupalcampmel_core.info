@@ -173,8 +173,10 @@ features[image][] = logo_custom_user_desktop_1x
 features[image][] = logo_custom_user_tablet_1x
 features[image][] = logo_custom_user_wide_1x
 
+features[menu_custom][] = main-menu
 features[menu_custom][] = user-menu
 
+features[menu_links][] = main-menu_contact-us:eform/submit/contact
 features[menu_links][] = user-menu_create-session:node/add/session
 
 features[node][] = session

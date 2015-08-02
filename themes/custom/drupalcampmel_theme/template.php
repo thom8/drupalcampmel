@@ -39,12 +39,6 @@ function drupalcampmel_theme_form_alter(&$form, $form_state, $form_id) {
       }
       break;
   }
-
-  if ('contact_entityform_edit_form' == $form_id) {
-    $form['field_body']['#prefix']                = '<div class="row">';
-    $form['field_body']['#suffix']                = '</div>';
-    $form['field_body']['#attributes']['class'][] = 'col-sm-12';
-  }
 }
 
 /**

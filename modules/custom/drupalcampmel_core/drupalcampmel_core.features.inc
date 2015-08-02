@@ -101,17 +101,23 @@ function drupalcampmel_core_default_entityform_type() {
       "submissions_view" : "default",
       "user_submissions_view" : "default",
       "form_status" : "ENTITYFORM_OPEN",
-      "roles" : { "1" : "1", "2" : "2" },
+      "roles" : { "1" : "1", "2" : "2", "3" : 0 },
       "resubmit_action" : "new",
       "redirect_path" : "\\u003Cfront\\u003E",
       "instruction_pre" : {
-        "value" : "Got a question or suggestion? Looking to sponsor or contribute to the event? Leave a message with the DrupalCampMelbourne team and we will get back to you ASAP.",
+        "value" : "\\u003Cp\\u003EGot a question or suggestion? Looking to sponsor or contribute to the event? Leave a message with the DrupalCampMelbourne team and we will get back to you ASAP.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003E\\u0026nbsp;\\u003C\\/p\\u003E",
         "format" : "full_html"
       },
+      "current_type" : "contact",
       "enable_block" : 1
     },
     "weight" : "0",
-    "paths" : []
+    "paths" : { "submit" : {
+        "source" : "eform\\/submit\\/contact",
+        "alias" : "contact",
+        "language" : "und"
+      }
+    }
   }');
   $items['poll'] = entity_import('entityform_type', '{
     "type" : "poll",

@@ -6,7 +6,8 @@ DrupalCampMelbourne2015 website.
 
 
 ## Building
------------
+
+[![Build Status](https://travis-ci.org/drupalmel/drupalcampmel.svg)](https://travis-ci.org/drupalmel/drupalcampmel)
 
 [Drush (DRUpal SHell)](https://github.com/drush-ops/drush) is required to build
 a usable codebase from this repository with the following command:

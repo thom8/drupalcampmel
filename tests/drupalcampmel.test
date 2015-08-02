@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Tests for the DrupalCampMelbourne website.
+ */
+
+/**
+ * Class DrupalCampMelTestCase
+ */
+class DrupalCampMelTestCase extends DrupalWebTestCase {
+  var $admin_user = NULL;
+
+  /**
+   * @return array
+   */
+  public static function getInfo() {
+    return array(
+      'name'        => 'Site functionality',
+      'description' => 'Tests DrupalCampMelbourne site functionality.',
+      'group'       => 'DrupalCampMelbourne',
+    );
+  }
+
+  /**
+   * Setup a DrupalCampMelbourne site for tests.
+   */
+  function setUp() {
+    parent::setUp();
+
+    $this->admin_user = $this->drupalCreateUser();
+  }
+}

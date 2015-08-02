@@ -5,6 +5,13 @@ base theme = bootstrap
 
 
 
+; Offline development - Uncomment the following lines for offline development.
+
+; scripts[] = ../../contrib/bootstrap/bootstrap/dist/js/bootstrap.min.js
+; stylesheets[all][] = ../../contrib/bootstrap/bootstrap/dist/css/bootstrap.min.css
+
+
+
 ; Regions
 
 regions[content] = Content

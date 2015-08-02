@@ -113,6 +113,39 @@ function drupalcampmel_core_default_entityform_type() {
     "weight" : "0",
     "paths" : []
   }');
+  $items['poll'] = entity_import('entityform_type', '{
+    "type" : "poll",
+    "label" : "Have your say",
+    "data" : {
+      "draftable" : 0,
+      "draft_redirect_path" : "",
+      "draft_button_text" : "",
+      "draft_save_text" : { "value" : "", "format" : "full_html" },
+      "submit_button_text" : "",
+      "submit_confirm_msg" : "",
+      "your_submissions" : "",
+      "disallow_resubmit_msg" : "",
+      "delete_confirm_msg" : "",
+      "page_title_view" : "",
+      "preview_page" : 0,
+      "submission_page_title" : "",
+      "submission_text" : { "value" : "", "format" : "full_html" },
+      "submission_show_submitted" : 0,
+      "submissions_view" : "default",
+      "user_submissions_view" : "default",
+      "form_status" : "ENTITYFORM_OPEN",
+      "roles" : { "1" : "1", "2" : 0, "3" : 0 },
+      "resubmit_action" : "new",
+      "redirect_path" : "\\u003Cfront\\u003E",
+      "instruction_pre" : {
+        "value" : "\\u003Cp\\u003EAfter the success of last years DrupalCampMelbourne, it\\u0027s time to do it all again, and we want your help to do it even better.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EDrupalCampMelbourne2015 is an event by the community for the community, it is what you want it to be and what you make of it.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ELast year was a two day event; one day of sessions followed by a code sprint, running from Friday to Saturday.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EDid that work for you? Do you want more? Less?\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ELet us know below:\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003E\\u0026nbsp;\\u003C\\/p\\u003E",
+        "format" : "full_html"
+      },
+      "enable_block" : 0
+    },
+    "weight" : "0",
+    "paths" : { "submit" : { "source" : "eform\\/submit\\/poll", "alias" : "poll", "language" : "und" } }
+  }');
   $items['register_interest'] = entity_import('entityform_type', '{
     "type" : "register_interest",
     "label" : "Register interest",

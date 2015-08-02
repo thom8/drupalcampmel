@@ -106,6 +106,7 @@ function drupalcampmel_theme_preprocess(&$vars, $hook) {
  */
 function drupalcampmel_theme_preprocess_page(&$vars) {
   $vars['logo'] = NULL;
+  $vars['title'] = '';
 }
 
 /**

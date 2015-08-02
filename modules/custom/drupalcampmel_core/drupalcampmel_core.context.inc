@@ -177,7 +177,7 @@ function drupalcampmel_core_context_default_contexts() {
             'name' => 'HTTP_HOST',
             'op' => '==',
             'negate' => 1,
-            'value' => 'dcm2015.melbourne.org.au',
+            'value' => 'dcm2015.drupal.org.au',
           ),
         ),
         'and_or' => 0,

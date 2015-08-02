@@ -362,7 +362,7 @@ function drupalcampmel_core_field_default_field_instances() {
     'bundle' => 'poll',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Should the camp include or would you attend a codesprint?',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -434,7 +434,7 @@ function drupalcampmel_core_field_default_field_instances() {
     'bundle' => 'poll',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'DrupalCampMelbourne2014 was a two day event, how long should DrupalCampMelbourne2015 be?',
+    'description' => 'How many days should the camp go for?',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -472,7 +472,7 @@ function drupalcampmel_core_field_default_field_instances() {
     'bundle' => 'poll',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'How long should each session be?',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -510,7 +510,7 @@ function drupalcampmel_core_field_default_field_instances() {
     'bundle' => 'poll',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Given your above choice, what day should the camp begin?',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -979,17 +979,20 @@ function drupalcampmel_core_field_default_field_instances() {
   t('Commencement day');
   t('Comments / Thoughts');
   t('Description');
-  t('DrupalCampMelbourne2014 was a two day event, how long should DrupalCampMelbourne2015 be?');
   t('Email address');
   t('Eventbrite order');
   t('Experience level');
   t('First name');
+  t('Given your above choice, what day should the camp begin?');
+  t('How long should each session be?');
+  t('How many days should the camp go for?');
   t('Last name');
   t('Logo');
   t('Mailchimp');
   t('Message');
   t('Room');
   t('Session length (minutes)');
+  t('Should the camp include or would you attend a codesprint?');
   t('Slot');
   t('Space separated list of classes to be applied to the block.');
   t('Style');

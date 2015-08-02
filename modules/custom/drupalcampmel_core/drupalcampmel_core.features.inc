@@ -138,7 +138,7 @@ function drupalcampmel_core_default_entityform_type() {
       "resubmit_action" : "new",
       "redirect_path" : "\\u003Cfront\\u003E",
       "instruction_pre" : {
-        "value" : "\\u003Cp\\u003EAfter the success of last years DrupalCampMelbourne, it\\u0027s time to do it all again, and we want your help to do it even better.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EDrupalCampMelbourne2015 is an event by the community for the community, it is what you want it to be and what you make of it.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ELast year was a two day event; one day of sessions followed by a code sprint, running from Friday to Saturday.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EDid that work for you? Do you want more? Less?\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ELet us know below:\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003E\\u0026nbsp;\\u003C\\/p\\u003E",
+        "value" : "\\u003Cp\\u003EAfter the success of last years DrupalCampMelbourne, it\\u0027s time to do it all again, and we want your help to do it even better.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ELast year was a two day event; one day of sessions followed by a code sprint, running from Friday to Saturday; Did that work for you? Do you want more? Less?\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ELet us know below:\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003E\\u0026nbsp;\\u003C\\/p\\u003E",
         "format" : "full_html"
       },
       "enable_block" : 0

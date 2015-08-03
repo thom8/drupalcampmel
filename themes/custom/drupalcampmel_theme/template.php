@@ -26,12 +26,18 @@ function drupalcampmel_theme_form_alter(&$form, $form_state, $form_id) {
       $form['actions']['submit']['#attributes']['class'][] = 'btn-primary';
       $form['actions']['submit']['#attributes']['class'][] = 'btn-lg';
       break;
-  }
 
-  if ('contact_entityform_edit_form' == $form_id) {
-    $form['field_body']['#prefix']                = '<div class="row">';
-    $form['field_body']['#suffix']                = '</div>';
-    $form['field_body']['#attributes']['class'][] = 'col-sm-12';
+    case 'poll_entityform_edit_form':
+      $instances = field_info_instances('entityform', 'poll');
+      foreach ($instances as $field_name => $instance) {
+        $lang_code = field_language('entityform', $form['#entity'], $field_name);
+        if (isset($form[$field_name][$lang_code]['#type']) && $form[$field_name][$lang_code]['#type'] == 'radios') {
+          foreach ($form[$field_name][$lang_code]['#options'] as $delta => $value) {
+            $form[$field_name][$lang_code][$delta]['#wrapper_attributes']['class'][] = 'radio-inline';
+          }
+        }
+      }
+      break;
   }
 }
 
@@ -105,7 +111,8 @@ function drupalcampmel_theme_preprocess(&$vars, $hook) {
  * Implements hook_preprocess_page().
  */
 function drupalcampmel_theme_preprocess_page(&$vars) {
-  $vars['logo'] = NULL;
+  $vars['logo']  = NULL;
+  $vars['title'] = '';
 }
 
 /**

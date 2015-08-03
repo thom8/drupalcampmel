@@ -5,16 +5,25 @@ base theme = bootstrap
 
 
 
+; Offline development - Uncomment the following lines for offline development.
+
+; scripts[] = ../../contrib/bootstrap/bootstrap/dist/js/bootstrap.min.js
+; stylesheets[all][] = ../../contrib/bootstrap/bootstrap/dist/css/bootstrap.min.css
+
+
+
 ; Regions
 
 regions[content] = Content
 regions[footer]  = Footer
 
 
+
 ; Settings
 
 settings[bootstrap_navbar_inverse] = 1
 settings[bootstrap_navbar_position] = fixed-top
+settings[bootstrap_tooltip_enabled] = 0
 
 
 

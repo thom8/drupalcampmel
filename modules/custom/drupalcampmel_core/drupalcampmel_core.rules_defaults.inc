@@ -58,6 +58,31 @@ function drupalcampmel_core_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_poll_new_submission'] = entity_import('rules_config', '{ "rules_poll_new_submission" : {
+      "LABEL" : "Poll: New submission",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "entityform" ],
+      "ON" : { "entityform_insert" : [] },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "entityform" ],
+            "type" : "entityform",
+            "bundle" : { "value" : { "poll" : "poll" } }
+          }
+        }
+      ],
+      "DO" : [
+        { "mail" : {
+            "to" : "drupalmelbourne@gmail.com",
+            "subject" : "Poll form submission",
+            "message" : "Camp length (days): [entityform:field-poll-days]\\r\\nCommencement day: [entityform:field-poll-start-day]\\r\\nCodesprint: [entityform:field-poll-codesprint]\\r\\nSession length (minutes): [entityform:field-poll-session-length]\\r\\n\\r\\nComments \\/ Thoughts:\\r\\n[entityform:field-poll-comments]",
+            "language" : [ "" ]
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_session_created_updated'] = entity_import('rules_config', '{ "rules_session_created_updated" : {
       "LABEL" : "Session: Created\\/Updated",
       "PLUGIN" : "reaction rule",

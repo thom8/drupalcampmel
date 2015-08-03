@@ -53,6 +53,7 @@ dependencies[] = panels_bootstrap_layout_builder
 dependencies[] = panels_bootstrap_styles
 dependencies[] = panels_ipe
 dependencies[] = pathauto
+dependencies[] = persistent_update
 dependencies[] = picture
 dependencies[] = prepro
 dependencies[] = prlp
@@ -111,6 +112,7 @@ features[ds_layout_settings][] = user|user|form
 
 features[entityform_type][] = confirm_order
 features[entityform_type][] = contact
+features[entityform_type][] = poll
 features[entityform_type][] = register_interest
 
 features[features_api][] = api:2
@@ -124,6 +126,11 @@ features[field_base][] = field_first_name
 features[field_base][] = field_last_name
 features[field_base][] = field_logo
 features[field_base][] = field_mailchimp
+features[field_base][] = field_poll_codesprint
+features[field_base][] = field_poll_comments
+features[field_base][] = field_poll_days
+features[field_base][] = field_poll_session_length
+features[field_base][] = field_poll_start_day
 features[field_base][] = field_session_level
 features[field_base][] = field_session_room
 features[field_base][] = field_session_slot
@@ -139,6 +146,11 @@ features[field_instance][] = entityform-contact-field_body
 features[field_instance][] = entityform-contact-field_email_address
 features[field_instance][] = entityform-contact-field_first_name
 features[field_instance][] = entityform-contact-field_last_name
+features[field_instance][] = entityform-poll-field_poll_codesprint
+features[field_instance][] = entityform-poll-field_poll_comments
+features[field_instance][] = entityform-poll-field_poll_days
+features[field_instance][] = entityform-poll-field_poll_session_length
+features[field_instance][] = entityform-poll-field_poll_start_day
 features[field_instance][] = entityform-register_interest-field_email_address
 features[field_instance][] = entityform-register_interest-field_first_name
 features[field_instance][] = entityform-register_interest-field_last_name
@@ -161,8 +173,10 @@ features[image][] = logo_custom_user_desktop_1x
 features[image][] = logo_custom_user_tablet_1x
 features[image][] = logo_custom_user_wide_1x
 
+features[menu_custom][] = main-menu
 features[menu_custom][] = user-menu
 
+features[menu_links][] = main-menu_contact-us:eform/submit/contact
 features[menu_links][] = user-menu_create-session:node/add/session
 
 features[node][] = session
@@ -175,6 +189,7 @@ features[picture_mapping][] = logo
 
 features[rules_config][] = rules_confirm_order_new_submission
 features[rules_config][] = rules_contact_new_submission
+features[rules_config][] = rules_poll_new_submission
 features[rules_config][] = rules_session_created_updated
 features[rules_config][] = rules_signup_create_notify_user
 features[rules_config][] = rules_signup_create_notify_user_trigger

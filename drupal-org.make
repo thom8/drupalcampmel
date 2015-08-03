@@ -70,7 +70,6 @@ projects[fontawesome][download][revision] = 2821d8b
 ; Support FA 4.2.0 - https://www.drupal.org/node/2312935#comment-9273529
 projects[fontawesome][patch][] = https://www.drupal.org/files/issues/fontawesome_7.x_2.x-2312935-17.patch
 
-
 projects[google_analytics][download][revision] = d5c42e1
 ; Allow empty Web Property ID variable - http://drupal.org/node/1964052#comment-7269728
 projects[google_analytics][patch][] = http://drupal.org/files/variable_empty_id-1964052-1.patch
@@ -104,6 +103,8 @@ projects[panels_bootstrap_layout_builder][download][revision] = af430d4
 projects[panels_bootstrap_styles][download][revision] = e570c4c
 
 projects[pathauto][version] = 1.2
+
+projects[persistent_update][version] = 1.0
 
 projects[picture][version] = 2.11
 

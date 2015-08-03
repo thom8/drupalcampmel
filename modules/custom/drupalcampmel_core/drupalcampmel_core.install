@@ -13,6 +13,9 @@ function drupalcampmel_core_install() {
 
   // Create the 'Creating a session' bean.
   drupalcampmel_core_install_create_session_bean();
+
+  // Enable dependencies, flush caches and revert the feature.
+  _drupalcampmel_core_flush_revert();
 }
 
 /**
@@ -53,6 +56,59 @@ function drupalcampmel_core_install_create_session_bean() {
 
   $bean->save();
 }
+
+/**
+ * Implements hook_persistent_update().
+ */
+function drupalcampmel_core_persistent_update() {
+  // Flush caches and revert features.
+  _drupalcampmel_core_flush_revert();
+}
+
+/**
+ * Helper function; Enable dependencies, flush caches and revert the feature.
+ */
+function _drupalcampmel_core_flush_revert() {
+  if (empty($modules)) {
+    $modules = basename(__FILE__, '.install');
+  }
+  if (!is_array($modules)) {
+    $modules = array($modules);
+  }
+
+  $revert = array();
+  foreach ($modules as $module) {
+    $info = system_get_info('module', $module);
+
+    // Enable all dependencies.
+    module_enable($info['dependencies']);
+
+    // Forcefully clear Features caches.
+    module_load_include('inc', 'features', 'features.export');
+    foreach (array_keys($info['features']) as $component) {
+      if ($component != 'features_api') {
+        features_get_components($component, NULL, TRUE);
+        features_include_defaults($component, TRUE);
+        features_get_default($component, $module, TRUE, TRUE);
+      }
+    }
+
+    // Revert all feature components except for 'OAuth Connector providers'.
+    unset($info['features']['oauthconnector_provider']);
+
+    // Build components list for feature revert.
+    $revert[$module] = array_keys($info['features']);
+  }
+
+  // Flush Prepro cache.
+  cache_clear_all('prepro:map', 'cache_prepro');
+
+  // Flush all standard Drupal caches.
+  drupal_flush_all_caches();
+
+  features_revert($revert);
+}
+
 
 /**
  * Enable dependencies, flush caches and revert the feature.
@@ -170,45 +226,9 @@ function drupalcampmel_core_update_7106() {
 }
 
 /**
- * Helper function; Enable dependencies, flush caches and revert the feature.
+ * Enable the Persistent Update module.
  */
-function _drupalcampmel_core_flush_revert() {
-  if (empty($modules)) {
-    $modules = basename(__FILE__, '.install');
-  }
-  if (!is_array($modules)) {
-    $modules = array($modules);
-  }
-
-  $revert = array();
-  foreach ($modules as $module) {
-    $info = system_get_info('module', $module);
-
-    // Enable all dependencies.
-    module_enable($info['dependencies']);
-
-    // Forcefully clear Features caches.
-    module_load_include('inc', 'features', 'features.export');
-    foreach (array_keys($info['features']) as $component) {
-      if ($component != 'features_api') {
-        features_get_components($component, NULL, TRUE);
-        features_include_defaults($component, TRUE);
-        features_get_default($component, $module, TRUE, TRUE);
-      }
-    }
-
-    // Revert all feature components except for 'OAuth Connector providers'.
-    unset($info['features']['oauthconnector_provider']);
-
-    // Build components list for feature revert.
-    $revert[$module] = array_keys($info['features']);
-  }
-
-  // Flush Prepro cache.
-  cache_clear_all('prepro:map', 'cache_prepro');
-
-  // Flush all standard Drupal caches.
-  drupal_flush_all_caches();
-
-  features_revert($revert);
+function drupalcampmel_core_update_7107() {
+  module_enable(array('persistent_update'));
+  drupalcampmel_core_persistent_update();
 }

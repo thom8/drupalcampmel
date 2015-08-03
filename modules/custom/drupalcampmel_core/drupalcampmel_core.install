@@ -13,6 +13,9 @@ function drupalcampmel_core_install() {
 
   // Create the 'Creating a session' bean.
   drupalcampmel_core_install_create_session_bean();
+
+  // Enable dependencies, flush caches and revert the feature.
+  _drupalcampmel_core_flush_revert();
 }
 
 /**

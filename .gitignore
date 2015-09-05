@@ -9,6 +9,14 @@ themes/*
 
 
 
+# Prevent Vagrant related files.
+
+.vagrant/
+docroot/
+
+
+
 # Prevent miscellaneous/system files.
 
 .DS_Store
+.idea

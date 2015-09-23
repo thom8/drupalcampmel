@@ -12,6 +12,8 @@ defaults[projects][type] = module
 
 ; Modules
 
+projects[addressfield][version] = 1.1
+
 projects[bean][version] = 1.9
 
 projects[blockify][version] = 1.2
@@ -21,6 +23,10 @@ projects[breakpoints][version] = 1.3
 projects[coder][version] = 2.2
 
 projects[coffee][version] = 2.2
+
+projects[commerce][version] = 1.11
+
+projects[commerce_paypal][version] = 2.3
 
 projects[context][version] = 3.6
 

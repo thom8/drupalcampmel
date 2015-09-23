@@ -40,7 +40,7 @@ projects[context_server_vars][download][revision] = 1d61d97
 
 projects[context_variable][download][revision] = b6e3219
 
-projects[ctools][version] = 1.7
+projects[ctools][version] = 1.9
 
 projects[devel][version] = 1.5
 
@@ -48,7 +48,7 @@ projects[diff][version] = 3.2
 
 projects[dindent][version] = 1.2
 
-projects[ds][version] = 2.10
+projects[ds][version] = 2.11
 
 projects[email][version] = 1.3
 
@@ -68,7 +68,7 @@ projects[features][patch][] = https://drupal.org/files/issues/cleaner_info-21557
 
 projects[field_permissions][version] = 1.0-beta2
 
-projects[filefield_paths][version] = 1.0-beta4
+projects[filefield_paths][version] = 1.0-rc1
 
 projects[flag][version] = 3.6
 
@@ -112,7 +112,7 @@ projects[pathauto][version] = 1.2
 
 projects[persistent_update][version] = 1.0
 
-projects[picture][version] = 2.11
+projects[picture][version] = 2.12
 
 projects[prepro][version] = 1.4
 

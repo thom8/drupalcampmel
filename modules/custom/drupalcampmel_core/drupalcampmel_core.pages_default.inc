@@ -107,6 +107,21 @@ function drupalcampmel_core_default_page_manager_pages() {
     'contexts' => array(),
     'relationships' => array(),
     'name' => 'pre',
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'php',
+          'settings' => array(
+            'description' => '',
+            'php' => 'if (is_null(variable_get(\'event_status\', $default = NULL))) {
+  return TRUE;
+}',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+    ),
   );
   $display = new panels_display();
   $display->layout = 'bootstrap';
@@ -339,6 +354,21 @@ function drupalcampmel_core_default_page_manager_pages() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'php',
+          'settings' => array(
+            'description' => '',
+            'php' => 'if (variable_get(\'event_status\', $default = NULL) == "tickets") {
+  return TRUE;
+}',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -1250,9 +1280,24 @@ Whatever your Drupal interest, you\'re sure to find something of interest.
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'php',
+          'settings' => array(
+            'description' => '',
+            'php' => 'if (variable_get(\'event_status\', $default = NULL) == "venue") {
+  return TRUE;
+}',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
   );
   $display = new panels_display();
-  $display->layout = 'flexible';
+  $display->layout = 'bootstrap';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
@@ -1279,6 +1324,12 @@ Whatever your Drupal interest, you\'re sure to find something of interest.
           8 => 8,
         ),
         'parent' => 'canvas',
+        'bootstrap_class' => array(
+          'xs' => '',
+          'sm' => '',
+          'md' => '',
+          'lg' => '',
+        ),
       ),
       'main-row' => array(
         'type' => 'row',

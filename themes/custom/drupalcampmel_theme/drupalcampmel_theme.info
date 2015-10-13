@@ -1,5 +1,5 @@
-name = DrupalCampMelbourne2014
-description = DrupalCampMelbourne2014; A Bootstrap Sub-theme.
+name = DrupalCampMelbourne
+description = DrupalCampMelbourne; A Bootstrap Sub-theme.
 core = 7.x
 base theme = bootstrap
 
@@ -9,6 +9,12 @@ base theme = bootstrap
 
 ; scripts[] = ../../contrib/bootstrap/bootstrap/dist/js/bootstrap.min.js
 ; stylesheets[all][] = ../../contrib/bootstrap/bootstrap/dist/css/bootstrap.min.css
+
+
+
+; Plugins
+
+plugins[panels][layouts] = layouts/panels
 
 
 
@@ -24,6 +30,7 @@ regions[footer]  = Footer
 settings[bootstrap_navbar_inverse] = 1
 settings[bootstrap_navbar_position] = fixed-top
 settings[bootstrap_tooltip_enabled] = 0
+settings[toggle_slogan] = 0
 
 
 

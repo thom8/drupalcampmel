@@ -66,6 +66,8 @@ projects[features][version] = 2.6
 ; Cleaner info format - https://drupal.org/comment/8270327#comment-8270327
 projects[features][patch][] = https://drupal.org/files/issues/cleaner_info-2155793-1.patch
 
+projects[fences][version] = 1.2
+
 projects[field_permissions][version] = 1.0-beta2
 
 projects[filefield_paths][version] = 1.0-rc1
@@ -104,11 +106,9 @@ projects[node_limit][version] = 1.0-alpha5
 
 projects[panels][version] = 3.5
 
-projects[panels_bootstrap_layout_builder][download][revision] = af430d4
+projects[panels_extra_styles][version] = 1.1
 
-projects[panels_bootstrap_styles][download][revision] = e570c4c
-
-projects[pathauto][version] = 1.2
+projects[pathauto][version] = 1.3
 
 projects[persistent_update][version] = 1.0
 
@@ -131,6 +131,8 @@ projects[rules_conditional][version] = 1.0-beta2
 projects[sassy][version] = 2.13
 ; Fix squish-text mixin - http://drupal.org/node/1539310#comment-7284702
 projects[sassy][patch][] = http://drupal.org/files/squish_text-1539310-5.patch
+
+projects[semantic_panels][version] = 1.2
 
 projects[site_verify][version] = 1.1
 
@@ -158,10 +160,18 @@ projects[xmlsitemap][patch][] = http://drupal.org/files/variable_integration-198
 
 
 
+; Modules - Deprecated
+
+projects[panels_bootstrap_layout_builder][download][revision] = f39d5f5
+
+projects[panels_bootstrap_styles][download][revision] = e570c4c
+
+
+
 ; Themes
 
 projects[bootstrap][type] = theme
-projects[bootstrap][version] = 3.1-beta2
+projects[bootstrap][version] = 3.1-beta3
 
 
 

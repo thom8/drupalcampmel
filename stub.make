@@ -15,4 +15,6 @@ projects[drupal][version] = 7.39
 projects[drupalcampmel][type] = profile
 projects[drupalcampmel][download][type] = git
 projects[drupalcampmel][download][url] = https://github.com/drupalmel/drupalcampmel.git
+; Uncomment the following line when working with Vagrant.
+;projects[drupalcampmel][download][url] = file:///drupal
 projects[drupalcampmel][download][branch] = 2015.x

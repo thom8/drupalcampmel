@@ -21,4 +21,4 @@ dependencies[] = drupalcampmel_core
 
 variables[site_mail] = drupalmelbourne@gmail.com
 variables[site_name] = DrupalCampMelbourne
-variables[site_slogan] = 2015
+variables[site_slogan] = November 27-28 2015

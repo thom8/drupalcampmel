@@ -214,7 +214,7 @@ function drupalcampmel_core_update_7106() {
   field_delete_field('field_summary');
 
   // Update text for 'create a session' bean.
-  $bean = bean_load_delta('creating-a-session');
+  $bean                               = bean_load_delta('creating-a-session');
   $bean->field_body[LANGUAGE_NONE][0] = array(
     'value'  => '<p>You haven\'t created a session yet, but it\'s not too late; We strongly encourage everyone to propose a talk, everyone has something worth saying and worth hearing!</p><div><br><a href="/node/add/session"><button type="button" class="btn btn-default">Create a session</button></a></div>',
     'format' => 'full_html',
@@ -231,4 +231,17 @@ function drupalcampmel_core_update_7106() {
 function drupalcampmel_core_update_7107() {
   module_enable(array('persistent_update'));
   drupalcampmel_core_persistent_update();
+}
+
+/**
+ * Disable and uninstall deprecated modules.
+ */
+function drupalcampmel_core_update_7108() {
+  $modules = array(
+    'panels_bootstrap_layout_builder',
+    'panels_bootstrap_styles',
+    'panels_ipe'
+  );
+  module_disable($modules);
+  drupal_uninstall_modules($modules);
 }

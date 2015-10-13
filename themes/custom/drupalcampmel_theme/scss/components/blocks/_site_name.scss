@@ -1,32 +1,35 @@
 #block-blockify-blockify-site-name {
-  font-family: 'BreeRegular';
-  font-size: 24px;
-  margin-top: -16px;
   text-align: center;
 
-  @include respond-to('tablet') {
-    font-size: 59px;
-    margin-top: -48px;
-  }
-  @include respond-to('desktop') {
-    font-size: 78px;
-    margin-top: -64px;
-  }
-  @include respond-to('wide') {
-    font-size: 94px;
-    margin-top: -80px;
-  }
+  span {
+    font-family: 'BreeRegular';
+    font-size: 24px;
+    margin-top: -16px;
 
-  .part-drupal {
-    color: $color-blue-drupal;
-  }
+    @include respond-to('tablet') {
+      font-size: 59px;
+      margin-top: -48px;
+    }
+    @include respond-to('desktop') {
+      font-size: 78px;
+      margin-top: -64px;
+    }
+    @include respond-to('wide') {
+      font-size: 94px;
+      margin-top: -80px;
+    }
 
-  .part-camp {
-    color: $color-blue-dark;
-  }
+    &.part-drupal {
+      color: $color-blue-drupal;
+    }
 
-  .part-melbourne {
-    color: $color-orange;
+    &.part-camp {
+      color: $color-blue-dark;
+    }
+
+    &.part-melbourne {
+      color: $color-orange;
+    }
   }
 }
 

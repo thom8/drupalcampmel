@@ -126,9 +126,7 @@ projects[prlp][version] = 1.1
 
 projects[realname][version] = 1.2
 
-projects[reroute_email][download][revision] = f2e3878
-; Variable integration - http://drupal.org/node/1964070#comment-7294928
-projects[reroute_email][patch][] = http://drupal.org/files/reroute_email-add-variable-module-integration-1964070-2.patch
+projects[reroute_email][version] = 1.2
 
 projects[rules][version] = 2.9
 

@@ -19,6 +19,9 @@ function drupalcampmel_core_install() {
 
   // Create the Ticket products.
   drupalcampmel_core_install_add_tickets();
+
+  // Disable unused rules.
+  drupalcampmel_core_install_disable_rules();
 }
 
 /**
@@ -73,15 +76,36 @@ function drupalcampmel_core_install_add_tickets() {
     /** @var EntityDrupalWrapper $wrapper */
     $wrapper = entity_metadata_wrapper('commerce_product', $product);
 
-    $wrapper->sku                   = "DAY{$day}";
-    $wrapper->title                 = "Day {$day}";
-    $wrapper->commerce_price        = array(
+    $wrapper->sku            = "DAY{$day}";
+    $wrapper->title          = "Day {$day}";
+    $wrapper->commerce_price = array(
       'amount'        => 1000,
       'currency_code' => 'AUD',
       'data'          => array('components' => array())
     );
     $wrapper->commerce_stock = $stock;
     $wrapper->save();
+  }
+}
+
+/**
+ * Disable unused rules.
+ */
+function drupalcampmel_core_install_disable_rules() {
+  $rules = array(
+    'commerce_cart_add_to_cart_message',
+    'commerce_checkout_new_account',
+    'commerce_checkout_order_email',
+    'commerce_checkout_order_convert',
+    'rules_confirm_order_new_submission',
+    'rules_decrement_stock_completing_order',
+    'rules_poll_new_submission',
+    'rules_signup_create_notify_user_trigger',
+  );
+  foreach ($rules as $rule) {
+    $rule         = rules_config_load($rule);
+    $rule->active = FALSE;
+    $rule->save();
   }
 }
 
@@ -274,7 +298,7 @@ function drupalcampmel_core_update_7108() {
 }
 
 /**
- * Create the Ticket products.
+ * Create the Ticket products and disable unused rules.
  */
 function drupalcampmel_core_update_7109() {
   // Enable dependencies, flush caches and revert the feature.
@@ -282,4 +306,7 @@ function drupalcampmel_core_update_7109() {
 
   // Create the Ticket products.
   drupalcampmel_core_install_add_tickets();
+
+  // Disable unused rules.
+  drupalcampmel_core_install_disable_rules();
 }

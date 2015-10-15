@@ -100,6 +100,8 @@ projects[mailchimp][version] = 3.4
 ; Errors when adding a Mailchimp Subscribe field - https://www.drupal.org/node/2262321#comment-9067843
 projects[mailchimp][patch][] = https://www.drupal.org/files/issues/intgroups_check-2262321-16.patch
 
+projects[mailcontrol][version] = 1.0
+
 projects[mailsystem][version] = 2.34
 
 projects[module_filter][version] = 2.0

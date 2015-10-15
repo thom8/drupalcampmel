@@ -29,6 +29,15 @@ function drupalcampmel_core_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'create field_tickets'.
+  $permissions['create field_tickets'] = array(
+    'name' => 'create field_tickets',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'create session content'.
   $permissions['create session content'] = array(
     'name' => 'create session content',

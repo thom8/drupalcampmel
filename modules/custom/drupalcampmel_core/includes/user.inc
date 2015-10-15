@@ -112,5 +112,6 @@ function drupalcampmel_core_purchase_tickets($form, $form_state) {
   // @TODO - React correctly to cancelled orders.
   $data['cancel_return'] = url('', array('absolute' => TRUE));
   $data['return']        = url('', array('absolute' => TRUE));
+  $data['item_name_1'] .= ' (2732)';
   drupal_goto($redirect_form['#action'], array('query' => $data));
 }

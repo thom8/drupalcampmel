@@ -26,7 +26,11 @@ projects[coffee][version] = 2.2
 
 projects[commerce][version] = 1.11
 
+projects[commerce_features][version] = 1.0
+
 projects[commerce_paypal][version] = 2.3
+
+projects[commerce_stock][version] = 2.1
 
 projects[context][version] = 3.6
 
@@ -78,6 +82,8 @@ projects[fontawesome][download][revision] = 2821d8b
 ; Support FA 4.2.0 - https://www.drupal.org/node/2312935#comment-9273529
 projects[fontawesome][patch][] = https://www.drupal.org/files/issues/fontawesome_7.x_2.x-2312935-17.patch
 
+projects[formblock][version] = 1.0-alpha1
+
 projects[google_analytics][download][revision] = d5c42e1
 ; Allow empty Web Property ID variable - http://drupal.org/node/1964052#comment-7269728
 projects[google_analytics][patch][] = http://drupal.org/files/variable_empty_id-1964052-1.patch
@@ -93,6 +99,8 @@ projects[libraries][version] = 2.2
 projects[mailchimp][version] = 3.4
 ; Errors when adding a Mailchimp Subscribe field - https://www.drupal.org/node/2262321#comment-9067843
 projects[mailchimp][patch][] = https://www.drupal.org/files/issues/intgroups_check-2262321-16.patch
+
+projects[mailcontrol][version] = 1.0
 
 projects[mailsystem][version] = 2.34
 
@@ -120,9 +128,7 @@ projects[prlp][version] = 1.1
 
 projects[realname][version] = 1.2
 
-projects[reroute_email][download][revision] = f2e3878
-; Variable integration - http://drupal.org/node/1964070#comment-7294928
-projects[reroute_email][patch][] = http://drupal.org/files/reroute_email-add-variable-module-integration-1964070-2.patch
+projects[reroute_email][version] = 1.2
 
 projects[rules][version] = 2.9
 

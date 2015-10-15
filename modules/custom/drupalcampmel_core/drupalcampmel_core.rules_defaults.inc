@@ -9,9 +9,67 @@
  */
 function drupalcampmel_core_default_rules_configuration() {
   $items = array();
+  $items['commerce_payment_paypal_wps_da'] = entity_import('rules_config', '{ "commerce_payment_paypal_wps_da" : {
+      "LABEL" : "PayPal WPS (Drupal Association)",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "DrupalCampMelbourne2015" ],
+      "REQUIRES" : [ "commerce_payment" ],
+      "ON" : { "commerce_payment_methods" : [] },
+      "DO" : [
+        { "commerce_payment_enable_paypal_wps" : {
+            "commerce_order" : [ "commerce-order" ],
+            "payment_method" : { "value" : {
+                "method_id" : "paypal_wps",
+                "settings" : {
+                  "business" : "accounting@association.drupal.org",
+                  "currency_code" : "AUD",
+                  "allow_supported_currencies" : 0,
+                  "language" : "AU",
+                  "server" : "live",
+                  "payment_action" : "sale",
+                  "ipn_logging" : "notification",
+                  "receiver_emails" : "",
+                  "ipn_create_billing_profile" : 1,
+                  "show_payment_instructions" : 0
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }');
+  $items['commerce_ss_ticket_purchased'] = entity_import('rules_config', '{ "commerce_ss_ticket_purchased" : {
+      "LABEL" : "Ticket purchased",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "DrupalCampMelbourne2015" ],
+      "REQUIRES" : [ "rules", "commerce_ss", "commerce_order", "commerce_payment" ],
+      "ON" : { "commerce_payment_order_paid_in_full" : [] },
+      "DO" : [
+        { "user_add_role" : {
+            "account" : [ "commerce-order:owner" ],
+            "roles" : { "value" : { "3" : "3" } }
+          }
+        },
+        { "user_unblock" : { "account" : [ "commerce-order:owner" ] } },
+        { "LOOP" : {
+            "USING" : { "list" : [ "commerce-order:commerce-line-items" ] },
+            "ITEM" : { "list_item" : "Current list item" },
+            "DO" : [
+              { "commerce_ss_decrease_by_line_item" : { "commerce_line_item" : [ "list-item" ] } }
+            ]
+          }
+        },
+        { "commerce_order_update_status" : { "commerce_order" : [ "commerce_order" ], "order_status" : "completed" } }
+      ]
+    }
+  }');
   $items['rules_confirm_order_new_submission'] = entity_import('rules_config', '{ "rules_confirm_order_new_submission" : {
       "LABEL" : "Confirm order: New submission",
       "PLUGIN" : "reaction rule",
+      "ACTIVE" : false,
       "OWNER" : "rules",
       "REQUIRES" : [ "rules", "entityform" ],
       "ON" : { "entityform_insert" : [] },
@@ -61,6 +119,7 @@ function drupalcampmel_core_default_rules_configuration() {
   $items['rules_poll_new_submission'] = entity_import('rules_config', '{ "rules_poll_new_submission" : {
       "LABEL" : "Poll: New submission",
       "PLUGIN" : "reaction rule",
+      "ACTIVE" : false,
       "OWNER" : "rules",
       "REQUIRES" : [ "rules", "entityform" ],
       "ON" : { "entityform_insert" : [] },
@@ -154,6 +213,7 @@ function drupalcampmel_core_default_rules_configuration() {
   $items['rules_signup_create_notify_user_trigger'] = entity_import('rules_config', '{ "rules_signup_create_notify_user_trigger" : {
       "LABEL" : "Signup: Create and notify user",
       "PLUGIN" : "reaction rule",
+      "ACTIVE" : false,
       "OWNER" : "rules",
       "REQUIRES" : [ "rules", "entityform" ],
       "ON" : { "entityform_insert" : [] },

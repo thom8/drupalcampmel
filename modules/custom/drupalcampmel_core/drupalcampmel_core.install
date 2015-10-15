@@ -16,6 +16,12 @@ function drupalcampmel_core_install() {
 
   // Enable dependencies, flush caches and revert the feature.
   _drupalcampmel_core_flush_revert();
+
+  // Create the Ticket products.
+  drupalcampmel_core_install_add_tickets();
+
+  // Disable unused rules.
+  drupalcampmel_core_install_disable_rules();
 }
 
 /**
@@ -55,6 +61,52 @@ function drupalcampmel_core_install_create_session_bean() {
   $bean->field_block_class[LANGUAGE_NONE][0]['value'] = 'panel-info';
 
   $bean->save();
+}
+
+/**
+ * Create the Ticket products.
+ */
+function drupalcampmel_core_install_add_tickets() {
+  $products = array(
+    '1' => '80',
+    '2' => '50',
+  );
+  foreach ($products as $day => $stock) {
+    $product = commerce_product_new('tickets');
+    /** @var EntityDrupalWrapper $wrapper */
+    $wrapper = entity_metadata_wrapper('commerce_product', $product);
+
+    $wrapper->sku            = "DAY{$day}";
+    $wrapper->title          = "Day {$day}";
+    $wrapper->commerce_price = array(
+      'amount'        => 1000,
+      'currency_code' => 'AUD',
+      'data'          => array('components' => array())
+    );
+    $wrapper->commerce_stock = $stock;
+    $wrapper->save();
+  }
+}
+
+/**
+ * Disable unused rules.
+ */
+function drupalcampmel_core_install_disable_rules() {
+  $rules = array(
+    'commerce_cart_add_to_cart_message',
+    'commerce_checkout_new_account',
+    'commerce_checkout_order_email',
+    'commerce_checkout_order_convert',
+    'rules_confirm_order_new_submission',
+    'rules_decrement_stock_completing_order',
+    'rules_poll_new_submission',
+    'rules_signup_create_notify_user_trigger',
+  );
+  foreach ($rules as $rule) {
+    $rule         = rules_config_load($rule);
+    $rule->active = FALSE;
+    $rule->save();
+  }
 }
 
 /**
@@ -108,7 +160,6 @@ function _drupalcampmel_core_flush_revert() {
 
   features_revert($revert);
 }
-
 
 /**
  * Enable dependencies, flush caches and revert the feature.
@@ -244,4 +295,18 @@ function drupalcampmel_core_update_7108() {
   );
   module_disable($modules);
   drupal_uninstall_modules($modules);
+}
+
+/**
+ * Create the Ticket products and disable unused rules.
+ */
+function drupalcampmel_core_update_7109() {
+  // Enable dependencies, flush caches and revert the feature.
+  _drupalcampmel_core_flush_revert();
+
+  // Create the Ticket products.
+  drupalcampmel_core_install_add_tickets();
+
+  // Disable unused rules.
+  drupalcampmel_core_install_disable_rules();
 }

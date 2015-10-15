@@ -187,17 +187,19 @@ function drupalcampmel_core_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_first_name',
-        1 => 'field_last_name',
-        2 => 'account',
+        0 => 'field_tickets',
+        1 => 'field_first_name',
+        2 => 'field_last_name',
+        3 => 'account',
       ),
       'hidden' => array(
-        3 => 'googleanalytics',
-        4 => 'timezone',
-        5 => '_add_existing_field',
+        4 => 'googleanalytics',
+        5 => 'timezone',
+        6 => '_add_existing_field',
       ),
     ),
     'fields' => array(
+      'field_tickets' => 'ds_content',
       'field_first_name' => 'ds_content',
       'field_last_name' => 'ds_content',
       'account' => 'ds_content',

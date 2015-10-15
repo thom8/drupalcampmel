@@ -31,6 +31,49 @@ function drupalcampmel_core_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
+  // Exported field_base: 'commerce_price'
+  $field_bases['commerce_price'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'commerce_product',
+    ),
+    'field_name' => 'commerce_price',
+    'indexes' => array(
+      'currency_price' => array(
+        0 => 'amount',
+        1 => 'currency_code',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'commerce_price',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'commerce_price',
+  );
+
+  // Exported field_base: 'commerce_stock'
+  $field_bases['commerce_stock'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'commerce_product',
+    ),
+    'field_name' => 'commerce_stock',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
+      'decimal_separator' => '.',
+      'precision' => 10,
+      'scale' => 2,
+    ),
+    'translatable' => 0,
+    'type' => 'number_decimal',
+  );
+
   // Exported field_base: 'field_block_class'
   $field_bases['field_block_class'] = array(
     'active' => 1,
@@ -425,6 +468,30 @@ function drupalcampmel_core_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_tickets'
+  $field_bases['field_tickets'] = array(
+    'active' => 1,
+    'cardinality' => 2,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_tickets',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'product_id' => array(
+        0 => 'product_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'commerce_product_reference',
+    'settings' => array(
+      'options_list_limit' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'commerce_product_reference',
   );
 
   // Exported field_base: 'field_url'

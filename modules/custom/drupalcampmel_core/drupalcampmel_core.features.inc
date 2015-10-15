@@ -5,6 +5,22 @@
  */
 
 /**
+ * Implements hook_commerce_product_default_types().
+ */
+function drupalcampmel_core_commerce_product_default_types() {
+  $items = array(
+    'tickets' => array(
+      'type' => 'tickets',
+      'name' => 'Tickets',
+      'description' => '',
+      'help' => '',
+      'revision' => 1,
+    ),
+  );
+  return $items;
+}
+
+/**
  * Implements hook_ctools_plugin_api().
  */
 function drupalcampmel_core_ctools_plugin_api($module = NULL, $api = NULL) {

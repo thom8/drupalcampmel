@@ -182,6 +182,183 @@ function drupalcampmel_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'commerce_product-product-commerce_price'
+  $field_instances['commerce_product-product-commerce_price'] = array(
+    'bundle' => 'product',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'line_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'node_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_product',
+    'field_name' => 'commerce_price',
+    'label' => 'Price',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'commerce_price',
+      'settings' => array(
+        'currency_code' => 'default',
+      ),
+      'type' => 'commerce_price_full',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_product-tickets-commerce_price'
+  $field_instances['commerce_product-tickets-commerce_price'] = array(
+    'bundle' => 'tickets',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 2,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'line_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'node_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => 'calculated_sell_price',
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_product',
+    'field_name' => 'commerce_price',
+    'label' => 'Price',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'commerce_price',
+      'settings' => array(
+        'currency_code' => 'default',
+      ),
+      'type' => 'commerce_price_full',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_product-tickets-commerce_stock'
+  $field_instances['commerce_product-tickets-commerce_stock'] = array(
+    'bundle' => 'tickets',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => NULL,
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
+      ),
+      'line_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_product',
+    'field_name' => 'commerce_stock',
+    'label' => 'Stock',
+    'required' => TRUE,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 36,
+    ),
+  );
+
   // Exported field_instance: 'entityform-confirm_order-field_eventbrite_order'
   $field_instances['entityform-confirm_order-field_eventbrite_order'] = array(
     'bundle' => 'confirm_order',
@@ -970,6 +1147,43 @@ function drupalcampmel_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_tickets'
+  $field_instances['user-user-field_tickets'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_product_reference',
+        'settings' => array(),
+        'type' => 'commerce_product_reference_title_link',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'user',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_tickets',
+    'label' => 'Tickets',
+    'required' => 1,
+    'settings' => array(
+      'field_injection' => 1,
+      'referenceable_types' => array(
+        'product' => 0,
+        'tickets' => 'tickets',
+      ),
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 0,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
@@ -990,12 +1204,15 @@ function drupalcampmel_core_field_default_field_instances() {
   t('Logo');
   t('Mailchimp');
   t('Message');
+  t('Price');
   t('Room');
   t('Session length (minutes)');
   t('Should the camp include or would you attend a codesprint?');
   t('Slot');
   t('Space separated list of classes to be applied to the block.');
+  t('Stock');
   t('Style');
+  t('Tickets');
   t('URL');
 
   return $field_instances;

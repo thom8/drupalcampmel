@@ -420,6 +420,52 @@ function drupalcampmel_core_default_panels_mini() {
   $display->uuid = 'ee9862d4-4c5e-49bb-8db4-90304e511e61';
   $display->content = array();
   $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-1241e04d-37f0-40e1-979f-c022dcfbe142';
+    $pane->panel = 'content';
+    $pane->type = 'block';
+    $pane->subtype = 'entityform_block-register_interest';
+    $pane->shown = FALSE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '1241e04d-37f0-40e1-979f-c022dcfbe142';
+    $display->content['new-1241e04d-37f0-40e1-979f-c022dcfbe142'] = $pane;
+    $display->panels['content'][0] = 'new-1241e04d-37f0-40e1-979f-c022dcfbe142';
+    $pane = new stdClass();
+    $pane->pid = 'new-7c455645-1bb3-4de4-95ab-ba25384f038a';
+    $pane->panel = 'content';
+    $pane->type = 'block';
+    $pane->subtype = 'formblock-user_register';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => 'Tickets',
+      'override_title_heading' => 'h2',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '7c455645-1bb3-4de4-95ab-ba25384f038a';
+    $display->content['new-7c455645-1bb3-4de4-95ab-ba25384f038a'] = $pane;
+    $display->panels['content'][1] = 'new-7c455645-1bb3-4de4-95ab-ba25384f038a';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $mini->display = $display;

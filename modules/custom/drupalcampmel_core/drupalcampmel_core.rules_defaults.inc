@@ -9,6 +9,37 @@
  */
 function drupalcampmel_core_default_rules_configuration() {
   $items = array();
+  $items['commerce_payment_paypal_wps_da'] = entity_import('rules_config', '{ "commerce_payment_paypal_wps_da" : {
+      "LABEL" : "PayPal WPS (Drupal Association)",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "DrupalCampMelbourne2015" ],
+      "REQUIRES" : [ "commerce_payment" ],
+      "ON" : { "commerce_payment_methods" : [] },
+      "DO" : [
+        { "commerce_payment_enable_paypal_wps" : {
+            "commerce_order" : [ "commerce-order" ],
+            "payment_method" : { "value" : {
+                "method_id" : "paypal_wps",
+                "settings" : {
+                  "business" : "accounting@association.drupal.org",
+                  "currency_code" : "AUD",
+                  "allow_supported_currencies" : 0,
+                  "language" : "AU",
+                  "server" : "sandbox",
+                  "payment_action" : "sale",
+                  "ipn_logging" : "notification",
+                  "receiver_emails" : "",
+                  "ipn_create_billing_profile" : 1,
+                  "show_payment_instructions" : 0
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_confirm_order_new_submission'] = entity_import('rules_config', '{ "rules_confirm_order_new_submission" : {
       "LABEL" : "Confirm order: New submission",
       "PLUGIN" : "reaction rule",

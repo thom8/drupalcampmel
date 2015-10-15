@@ -26,7 +26,11 @@ projects[coffee][version] = 2.2
 
 projects[commerce][version] = 1.11
 
+projects[commerce_features][version] = 1.0
+
 projects[commerce_paypal][version] = 2.3
+
+projects[commerce_stock][version] = 2.1
 
 projects[context][version] = 3.6
 
@@ -77,6 +81,8 @@ projects[flag][version] = 3.6
 projects[fontawesome][download][revision] = 2821d8b
 ; Support FA 4.2.0 - https://www.drupal.org/node/2312935#comment-9273529
 projects[fontawesome][patch][] = https://www.drupal.org/files/issues/fontawesome_7.x_2.x-2312935-17.patch
+
+projects[formblock][version] = 1.0-alpha1
 
 projects[google_analytics][download][revision] = d5c42e1
 ; Allow empty Web Property ID variable - http://drupal.org/node/1964052#comment-7269728

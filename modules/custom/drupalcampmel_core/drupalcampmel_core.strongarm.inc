@@ -108,6 +108,29 @@ function drupalcampmel_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_user__user';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'googleanalytics' => array(
+          'weight' => '4',
+        ),
+        'account' => array(
+          'weight' => '3',
+        ),
+        'timezone' => array(
+          'weight' => '5',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_user__user'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'googleanalytics_cache';
   $strongarm->value = 1;
   $export['googleanalytics_cache'] = $strongarm;
@@ -493,7 +516,7 @@ function drupalcampmel_core_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'user_register';
-  $strongarm->value = '0';
+  $strongarm->value = '2';
   $export['user_register'] = $strongarm;
 
   return $export;

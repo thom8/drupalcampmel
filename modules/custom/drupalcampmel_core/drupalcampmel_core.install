@@ -277,5 +277,9 @@ function drupalcampmel_core_update_7108() {
  * Create the Ticket products.
  */
 function drupalcampmel_core_update_7109() {
+  // Enable dependencies, flush caches and revert the feature.
+  _drupalcampmel_core_flush_revert();
+
+  // Create the Ticket products.
   drupalcampmel_core_install_add_tickets();
 }

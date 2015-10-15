@@ -268,7 +268,7 @@ function drupalcampmel_core_context_default_contexts() {
       ),
       'preprocess_css' => 0,
       'preprocess_js' => 0,
-      'reroute_email_address' => 'drupalmelbourne@gmail.com',
+      'reroute_email_address' => '',
       'reroute_email_enable' => 1,
     ),
   );

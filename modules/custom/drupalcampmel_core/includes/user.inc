@@ -32,10 +32,10 @@ function drupalcampmel_core_form_user_register_form_alter(&$form, &$form_state) 
 
     // Modify form fields; use placeholder attribute instead of title and hide
     // until a ticket is selected.
-    foreach (array('first', 'last') as $field) {
-      $form["field_{$field}_name"][LANGUAGE_NONE][0]['value']['#attributes']['placeholder']      = $form["field_{$field}_name"][LANGUAGE_NONE][0]['value']['#title'];
-      $form["field_{$field}_name"][LANGUAGE_NONE][0]['value']['#title_display']                  = 'invisible';
-      $form["field_{$field}_name"]['#states']['invisible']['#edit-field-tickets .form-checkbox'] = array(
+    foreach (array('first_name', 'last_name', 'diet', 't_shirt_size') as $field) {
+      $form["field_{$field}"][LANGUAGE_NONE][0]['value']['#attributes']['placeholder']      = $form["field_{$field}"][LANGUAGE_NONE][0]['value']['#title'];
+      $form["field_{$field}"][LANGUAGE_NONE][0]['value']['#title_display']                  = 'invisible';
+      $form["field_{$field}"]['#states']['invisible']['#edit-field-tickets .form-checkbox'] = array(
         'checked' => FALSE
       );
     }
@@ -49,6 +49,10 @@ function drupalcampmel_core_form_user_register_form_alter(&$form, &$form_state) 
 
     $form['account']['mail']['#attributes']['placeholder'] = $form['account']['mail']['#title'];
     $form['account']['mail']['#title_display']             = 'invisible';
+
+    $form['account']['mail']['#attributes']['placeholder'] = $form['account']['mail']['#title'];
+    $form['account']['mail']['#title_display']             = 'invisible';
+
 
     $form['actions']['#states']['invisible']['#edit-field-tickets .form-checkbox'] = array(
       'checked' => FALSE

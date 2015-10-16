@@ -457,15 +457,53 @@ function drupalcampmel_core_default_panels_mini() {
     );
     $pane->cache = array();
     $pane->style = array(
+      'style' => 'default',
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-md-6',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '7c455645-1bb3-4de4-95ab-ba25384f038a';
     $display->content['new-7c455645-1bb3-4de4-95ab-ba25384f038a'] = $pane;
     $display->panels['content'][1] = 'new-7c455645-1bb3-4de4-95ab-ba25384f038a';
+    $pane = new stdClass();
+    $pane->pid = 'new-4e99ec33-3782-49dd-b021-2a8d0856b048';
+    $pane->panel = 'content';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'Days',
+      'body' => '<h4>Day 1</h4>
+First day of DrupalCamp Melbourne 2015 will be focused on sessions, networking and learning Drupal. 
+<h4>Day 2</h4>
+On the second day we will hold a code sprint. This is a great place to come to contribute to Drupal and learn Drupal.
+
+Both days tickets will include <b>lunch</b>.',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'style' => 'default',
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'col-md-6',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '4e99ec33-3782-49dd-b021-2a8d0856b048';
+    $display->content['new-4e99ec33-3782-49dd-b021-2a8d0856b048'] = $pane;
+    $display->panels['content'][2] = 'new-4e99ec33-3782-49dd-b021-2a8d0856b048';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $mini->display = $display;

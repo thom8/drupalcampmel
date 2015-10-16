@@ -294,16 +294,16 @@ function drupalcampmel_core_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'Get your tickets now!',
       'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => array(
         'element_title' => array(
-          'type' => '0',
-          'class_enable' => 0,
+          'type' => 'h1',
+          'class_enable' => 1,
           'class' => 'pane-title panel-title',
           'attributes' => array(),
           'link_enabled' => 0,
@@ -317,9 +317,9 @@ function drupalcampmel_core_default_page_manager_pages() {
           'attributes_array' => array(),
         ),
         'element_content' => array(
-          'type' => '0',
-          'class_enable' => 0,
-          'class' => '',
+          'type' => 'div',
+          'class_enable' => 1,
+          'class' => 'panel-body',
           'attributes' => array(),
           'link_enabled' => 0,
           'link' => array(
@@ -332,9 +332,9 @@ function drupalcampmel_core_default_page_manager_pages() {
           'attributes_array' => array(),
         ),
         'element_wrapper' => array(
-          'type' => 'div',
-          'class_enable' => 1,
-          'class' => 'jumbotron',
+          'type' => '',
+          'class_enable' => 0,
+          'class' => '',
           'attributes' => array(),
           'attributes_array' => array(),
         ),
@@ -342,7 +342,10 @@ function drupalcampmel_core_default_page_manager_pages() {
       ),
       'style' => 'semantic_panels',
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'well',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();

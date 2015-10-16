@@ -30,11 +30,9 @@ function drupalcampmel_core_form_user_register_form_alter(&$form, &$form_state) 
       }
     }
 
-    // Add a description
-
+    // Add a description to tickets field.
     $form['field_tickets']['und']['#description'] = t("Choose which days you want to attend.");
     $form['field_tickets']['und']['#title_display'] = "invisible";
-
 
     // Modify form fields; use placeholder attribute instead of title and hide
     // until a ticket is selected.
@@ -56,34 +54,16 @@ function drupalcampmel_core_form_user_register_form_alter(&$form, &$form_state) 
     $form['account']['mail']['#attributes']['placeholder'] = $form['account']['mail']['#title'];
     $form['account']['mail']['#title_display']             = 'invisible';
 
-    $form['account']['mail']['#attributes']['placeholder'] = $form['account']['mail']['#title'];
-    $form['account']['mail']['#title_display']             = 'invisible';
-
-
     $form['actions']['#states']['invisible']['#edit-field-tickets .form-checkbox'] = array(
       'checked' => FALSE
     );
+
     $form['field_tickets']['und']['#title_display'] = "invisible";
 
     // @TODO - Password field modifications.
 
     $form['#submit'][] = 'drupalcampmel_core_purchase_tickets';
   }
-}
-
-function drupalcampmel_core_checkbox($variables) {
-  dsm(variables);
-  $element = $variables['element'];
-  $element['#attributes']['type'] = 'checkbox';
-  element_set_attributes($element, array('id', 'name', '#return_value' => 'value'));
-
-  // Unchecked checkbox has #value of integer 0.
-  if (!empty($element['#checked'])) {
-    $element['#attributes']['checked'] = 'checked';
-  }
-  _form_set_class($element, array('form-checkbox'));
-
-  return '<input' . drupal_attributes($element['#attributes']) . ' />';
 }
 
 /**

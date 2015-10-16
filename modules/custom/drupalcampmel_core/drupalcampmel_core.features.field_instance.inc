@@ -1081,6 +1081,41 @@ function drupalcampmel_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_diet'
+  $field_instances['user-user-field_diet'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'If you have a special diet, please type it here.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'user',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_diet',
+    'label' => 'Diet',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_first_name'
   $field_instances['user-user-field_first_name'] = array(
     'bundle' => 'user',
@@ -1147,6 +1182,38 @@ function drupalcampmel_core_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_t_shirt_size'
+  $field_instances['user-user-field_t_shirt_size'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Choose your t-shirt size. If you dont want one, leave this unmarked.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'user',
+    'fences_wrapper' => 'div_div_div',
+    'field_name' => 'field_t_shirt_size',
+    'label' => 'T-Shirt Size',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_tickets'
   $field_instances['user-user-field_tickets'] = array(
     'bundle' => 'user',
@@ -1188,11 +1255,13 @@ function drupalcampmel_core_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Camp length (days)');
+  t('Choose your t-shirt size. If you dont want one, leave this unmarked.');
   t('Class(es)');
   t('Codesprint');
   t('Commencement day');
   t('Comments / Thoughts');
   t('Description');
+  t('Diet');
   t('Email address');
   t('Eventbrite order');
   t('Experience level');
@@ -1200,6 +1269,7 @@ function drupalcampmel_core_field_default_field_instances() {
   t('Given your above choice, what day should the camp begin?');
   t('How long should each session be?');
   t('How many days should the camp go for?');
+  t('If you have a special diet, please type it here.');
   t('Last name');
   t('Logo');
   t('Mailchimp');
@@ -1212,6 +1282,7 @@ function drupalcampmel_core_field_default_field_instances() {
   t('Space separated list of classes to be applied to the block.');
   t('Stock');
   t('Style');
+  t('T-Shirt Size');
   t('Tickets');
   t('URL');
 

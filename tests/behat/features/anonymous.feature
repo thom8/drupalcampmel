@@ -6,7 +6,6 @@ Feature: Anonymous
   Scenario: Anonymous homepage
     Given I am on the homepage
     Then I should see "DrupalCampMelbourne"
-    And I should see "Register interest"
 
   Scenario: Contact us
     Given I am on the homepage

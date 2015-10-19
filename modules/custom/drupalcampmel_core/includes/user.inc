@@ -30,15 +30,24 @@ function drupalcampmel_core_form_user_register_form_alter(&$form, &$form_state) 
       }
     }
 
+    // Add a description to tickets field.
+    $form['field_tickets']['und']['#description'] = t("Choose which days you want to attend.");
+    $form['field_tickets']['und']['#title_display'] = "invisible";
+
     // Modify form fields; use placeholder attribute instead of title and hide
     // until a ticket is selected.
-    foreach (array('first', 'last') as $field) {
-      $form["field_{$field}_name"][LANGUAGE_NONE][0]['value']['#attributes']['placeholder']      = $form["field_{$field}_name"][LANGUAGE_NONE][0]['value']['#title'];
-      $form["field_{$field}_name"][LANGUAGE_NONE][0]['value']['#title_display']                  = 'invisible';
-      $form["field_{$field}_name"]['#states']['invisible']['#edit-field-tickets .form-checkbox'] = array(
+    foreach (array('first_name', 'last_name', 'diet') as $field) {
+      $form["field_{$field}"][LANGUAGE_NONE][0]['value']['#attributes']['placeholder']      = $form["field_{$field}"][LANGUAGE_NONE][0]['value']['#title'];
+      $form["field_{$field}"][LANGUAGE_NONE][0]['value']['#title_display']                  = 'invisible';
+      $form["field_{$field}"]['#states']['invisible']['#edit-field-tickets .form-checkbox'] = array(
         'checked' => FALSE
       );
     }
+
+    $form['field_t_shirt_size'][LANGUAGE_NONE]['#title_display'] = "invisible";
+    $form['field_t_shirt_size']['#states']['invisible']['#edit-field-tickets .form-checkbox'] = array(
+      'checked' => FALSE
+    );
 
     $form['account']['#states']['invisible']['#edit-field-tickets .form-checkbox'] = array(
       'checked' => FALSE
@@ -53,6 +62,8 @@ function drupalcampmel_core_form_user_register_form_alter(&$form, &$form_state) 
     $form['actions']['#states']['invisible']['#edit-field-tickets .form-checkbox'] = array(
       'checked' => FALSE
     );
+
+    $form['field_tickets'][LANGUAGE_NONE]['#title_display'] = "invisible";
 
     // @TODO - Password field modifications.
 
@@ -109,6 +120,7 @@ function drupalcampmel_core_purchase_tickets($form, $form_state) {
       $data[$child] = $redirect_form[$child]['#value'];
     }
   }
+
   // @TODO - React correctly to cancelled orders.
   $data['cancel_return'] = url('', array('absolute' => TRUE));
   $data['return']        = url('', array('absolute' => TRUE));

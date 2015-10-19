@@ -1,0 +1,36 @@
+/*
+*  This component provides styles for the input labels in the front page user
+*  register block.
+*/
+
+#user-register-form {
+  #edit-field-tickets-und .form-item label {
+    background-color: #5cb85c;
+    background-image: linear-gradient(to bottom, #5cb85c 0px, #419641 100%);
+    background-repeat: repeat-x;
+    border-color: #3e8f3e;
+    display: block;
+    width: 100%;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 1px rgba(0, 0, 0, 0.075);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border-radius: 6px;
+    font-size: 18px;
+    line-height: 1.33333;
+    padding: 10px 16px;
+    color: white;
+    &:focus, &:hover {
+      background-color: #419641;
+      background-position: 0 -42px;
+    }
+    &:hover {
+      background-color: #449d44;
+      border-color: #398439;
+      color: #fff;
+    }
+  }
+
+  .form-item-pass > .control-label .form-required {
+    display: none;
+  }
+}

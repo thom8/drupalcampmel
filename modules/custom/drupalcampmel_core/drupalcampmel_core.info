@@ -140,6 +140,7 @@ features[field_base][] = commerce_price
 features[field_base][] = commerce_stock
 features[field_base][] = field_block_class
 features[field_base][] = field_body
+features[field_base][] = field_diet
 features[field_base][] = field_email_address
 features[field_base][] = field_eventbrite_order
 features[field_base][] = field_first_name
@@ -155,6 +156,7 @@ features[field_base][] = field_session_level
 features[field_base][] = field_session_room
 features[field_base][] = field_session_slot
 features[field_base][] = field_session_style
+features[field_base][] = field_t_shirt_size
 features[field_base][] = field_tickets
 features[field_base][] = field_url
 
@@ -184,8 +186,10 @@ features[field_instance][] = node-session-field_session_level
 features[field_instance][] = node-session-field_session_room
 features[field_instance][] = node-session-field_session_slot
 features[field_instance][] = node-session-field_session_style
+features[field_instance][] = user-user-field_diet
 features[field_instance][] = user-user-field_first_name
 features[field_instance][] = user-user-field_last_name
+features[field_instance][] = user-user-field_t_shirt_size
 features[field_instance][] = user-user-field_tickets
 
 features[filter][] = full_html

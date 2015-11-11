@@ -310,3 +310,15 @@ function drupalcampmel_core_update_7109() {
   // Disable unused rules.
   drupalcampmel_core_install_disable_rules();
 }
+
+/**
+ * Notify ticket holders of their site account.
+ */
+function drupalcampmel_core_update_7110() {
+  $role = user_role_load_by_name('ticket holder');
+  $uids = db_select('users_roles', 'ur')->fields('ur', array('uid'))->condition('rid', $role->rid)->execute()->fetchCol();
+  $users = user_load_multiple($uids);
+  foreach ($users as $user) {
+    _user_mail_notify('status_activated', $user);
+  }
+}

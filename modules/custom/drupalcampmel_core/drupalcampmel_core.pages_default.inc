@@ -292,7 +292,20 @@ function drupalcampmel_core_default_page_manager_pages() {
     $pane->type = 'panels_mini';
     $pane->subtype = 'tickets';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 1,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'override_title' => 1,
       'override_title_text' => 'Get your tickets now!',
@@ -370,6 +383,23 @@ return TRUE;
           ),
           'not' => FALSE,
         ),
+        1 => array(
+          'name' => 'user_node',
+          'settings' => array(
+            'content_type' => 'session',
+          ),
+          'not' => TRUE,
+        ),
+        2 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 3,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => FALSE,
+        ),
       ),
     );
     $pane->configuration = array(
@@ -381,7 +411,7 @@ return TRUE;
     $pane->style = array(
       'settings' => array(
         'element_title' => array(
-          'type' => 'h2',
+          'type' => 'h1',
           'class_enable' => 1,
           'class' => 'pane-title panel-title',
           'attributes' => array(),
@@ -411,8 +441,8 @@ return TRUE;
           'attributes_array' => array(),
         ),
         'element_wrapper' => array(
-          'type' => 'div',
-          'class_enable' => 1,
+          'type' => '',
+          'class_enable' => 0,
           'class' => 'row panel',
           'attributes' => array(),
           'attributes_array' => array(),
@@ -421,7 +451,10 @@ return TRUE;
       ),
       'style' => 'semantic_panels',
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'well',
+    );
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();

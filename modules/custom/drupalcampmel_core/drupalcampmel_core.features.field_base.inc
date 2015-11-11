@@ -518,6 +518,7 @@ function drupalcampmel_core_field_default_field_bases() {
         3 => 'Large',
         4 => 'XL',
         5 => 'XXL',
+        6 => 'XXXL',
       ),
       'allowed_values_function' => '',
     ),

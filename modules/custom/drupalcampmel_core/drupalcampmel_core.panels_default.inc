@@ -480,9 +480,9 @@ function drupalcampmel_core_default_panels_mini() {
     $pane->configuration = array(
       'admin_title' => '',
       'title' => 'Days',
-      'body' => '<h4>Day 1 - Friday 27th of October</h4>
+      'body' => '<h4>Day 1 - Friday 27th of November</h4>
 First day of DrupalCamp Melbourne 2015 will be focused on sessions, networking and learning Drupal. 
-<h4>Day 2 - Saturday 28th of October</h4>
+<h4>Day 2 - Saturday 28th of November</h4>
 On the second day we will hold a code sprint. This is a great place to come to contribute to Drupal and learn Drupal.
 
 Both days tickets will include <b>lunch</b>.',

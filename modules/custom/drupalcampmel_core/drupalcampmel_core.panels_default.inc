@@ -399,6 +399,71 @@ function drupalcampmel_core_default_panels_mini() {
   $mini = new stdClass();
   $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
   $mini->api_version = 1;
+  $mini->name = 'submit_session';
+  $mini->category = 'DrupalCampMel';
+  $mini->admin_title = 'Submit a session';
+  $mini->admin_description = '';
+  $mini->requiredcontexts = array();
+  $mini->contexts = array();
+  $mini->relationships = array();
+  $display = new panels_display();
+  $display->layout = 'raw';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'center' => NULL,
+      'content' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = '21ff43cf-7916-4a3e-8b1c-e1ed292b04b3';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-1542a6b7-e827-4eed-9a82-c3ca80388f82';
+    $pane->panel = 'content';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => 'Submit your session now!',
+      'body' => '<p>This camp works best when the attendees present something, this means you too!</p>
+<p>Things you might like to talk about:</p>
+<ul>
+    <li>How to use a module, group of modules or a Drupal distribution</li>
+    <li>Case study for one of your projects</li>
+    <li>Demonstartion of something interesting to the Drupal community</li>
+    <li>Open discussion on a subject you are interested in</li>
+    <li>Ask the community for input on a problem your experiencing</li>
+    </ul>
+<div class="center"><a href="/node/add/session" class="btn btn-lg btn-primary">Add your session</a></div>',
+      'format' => 'full_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'style' => 'default',
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '1542a6b7-e827-4eed-9a82-c3ca80388f82';
+    $display->content['new-1542a6b7-e827-4eed-9a82-c3ca80388f82'] = $pane;
+    $display->panels['content'][0] = 'new-1542a6b7-e827-4eed-9a82-c3ca80388f82';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-1542a6b7-e827-4eed-9a82-c3ca80388f82';
+  $mini->display = $display;
+  $export['submit_session'] = $mini;
+
+  $mini = new stdClass();
+  $mini->disabled = FALSE; /* Edit this to true to make a default mini disabled initially */
+  $mini->api_version = 1;
   $mini->name = 'tickets';
   $mini->category = 'DrupalCampMel';
   $mini->admin_title = 'Tickets';

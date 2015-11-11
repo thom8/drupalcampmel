@@ -216,6 +216,7 @@ features[page_manager_pages][] = vote_sessions
 
 features[panels_mini][] = about
 features[panels_mini][] = credits
+features[panels_mini][] = submit_session
 features[panels_mini][] = tickets
 features[panels_mini][] = where
 

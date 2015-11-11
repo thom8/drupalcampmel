@@ -1,5 +1,5 @@
 <div
-  class="panel <?php echo $bean->field_block_class[LANGUAGE_NONE][0]['value'] ?>">
+  class="panel <?php echo isset($bean->field_block_class[LANGUAGE_NONE][0]['value']) ? $bean->field_block_class[LANGUAGE_NONE][0]['value'] : '' ?>">
   <?php if (isset($title_suffix['contextual_links'])): ?>
     <?php print render($title_suffix['contextual_links']); ?>
   <?php endif; ?>

@@ -550,8 +550,21 @@ function drupalcampmel_core_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_status_activated_body';
+  $strongarm->value = '<p>Hi [user:field-first-name],</p>
+
+<p>Congratulations, your ticket for DrupalCampMelbourne2015 is confirmed!</p>
+
+<p>You may now log in by clicking this link or copying and pasting it into your browser: <a href="[user:one-time-login-url]">[user:one-time-login-url]</a></p>
+
+<p>--  [site:name] team</p>';
+  $export['user_mail_status_activated_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'user_mail_status_activated_notify';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['user_mail_status_activated_notify'] = $strongarm;
 
   $strongarm = new stdClass();

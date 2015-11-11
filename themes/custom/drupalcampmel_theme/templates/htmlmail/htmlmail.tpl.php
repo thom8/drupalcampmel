@@ -622,7 +622,7 @@ h4 {
 
 
                                       <img align="center" alt=""
-                                           src="https://gallery.mailchimp.com/1762195d1f2ea26085e1eff0e/images/4d48512f-d7f8-4496-a197-28f0d1e3ea31.png"
+                                           src="https://gallery.mailchimp.com/1762195d1f2ea26085e1eff0e/images/69ca1f54-6d81-4e85-9512-2f6083d3dfe3.png"
                                            width="564"
                                            style="max-width:664px; padding-bottom: 0; display: inline !important; vertical-align: bottom;"
                                            class="mcnImage">

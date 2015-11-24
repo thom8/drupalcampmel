@@ -150,7 +150,8 @@ function drupalcampmel_core_user_ticket($account) {
   $wrapper = entity_metadata_wrapper('user', $account);
 
   // Ensure user actually has a ticket, otherwise deliver 'page not found'.
-  if (empty($wrapper->field_tickets->value())) {
+  $tickets = $wrapper->field_tickets->value();
+  if (empty($tickets)) {
     drupal_not_found();
     drupal_exit();
   }
@@ -173,7 +174,8 @@ function drupalcampmel_core_user_ticket_check($account, $token) {
   $wrapper = entity_metadata_wrapper('user', $account);
 
   // Ensure user actually has a ticket, otherwise deliver 'page not found'.
-  if (empty($wrapper->field_tickets->value())) {
+  $tickets = $wrapper->field_tickets->value();
+  if (empty($tickets)) {
     drupal_not_found();
     drupal_exit();
   }

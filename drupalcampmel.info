@@ -6,6 +6,7 @@ core = 7.x
 
 ; Dependencies
 
+dependencies[] = devel_generate
 dependencies[] = drupalcampmel_core
 
 
@@ -14,6 +15,18 @@ dependencies[] = drupalcampmel_core
 
 ; No Simpletests defined and/or needed yet.
 ; files[] = tests/drupalcampmel.test
+
+
+; Profiler - Devel generate
+
+devel-generate[accounts][type] = user
+devel-generate[accounts][roles][] = 3
+
+
+
+; Profiler - DrupalCampMelbourne
+
+drupalcampmelbourne[] = 1
 
 
 

@@ -21,6 +21,61 @@ foreach (module_list() as $module) {
 }
 
 /**
+ * Implements hook_profiler_components_alter().
+ *
+ * @param $components
+ */
+function drupalcampmel_core_profiler_components_alter(&$components) {
+  $components['drupalcampmelbourne'] = array(
+    'callback' => 'drupalcampmelbourne_core_profiler',
+    'weight'   => 100,
+  );
+}
+
+/**
+ * Callback for profiler component.
+ */
+function drupalcampmelbourne_core_profiler() {
+  // Create some dummy sessions.
+  $role = user_role_load_by_name('ticket holder');
+  $uids = db_select('users_roles', 'r')
+    ->fields('r', array('uid'))
+    ->condition('rid', $role->rid)
+    ->execute()
+    ->fetchCol();
+  foreach ($uids as $uid) {
+    $operation['num_nodes'] = 1;
+    $operation['node_types'] = drupal_map_assoc(array('session'));
+    $operation['users'] = drupal_map_assoc(array($uid));
+    $operation['kill_content'] = NULL;
+    $operation['add_alias'] = NULL;
+    $form_state = array('values' => $operation);
+    drupal_form_submit('devel_generate_content_form', $form_state);
+  }
+
+  // Vote for some dummy sessions.
+  foreach ($uids as $uid) {
+    $account = user_load($uid);
+    $votes = array_rand($uids, rand(1, 5));
+    if (is_array($votes)) {
+      foreach ($votes as $vote) {
+        if ($vote !== $uid) {
+          $query = new EntityFieldQuery();
+          $result = $query->entityCondition('entity_type', 'node')
+            ->entityCondition('bundle', 'session')
+            ->propertyCondition('uid', $vote)
+            ->execute();
+          if (isset($result['node'])) {
+            $entity_id = key($result['node']);
+            flag('flag', 'vote', $entity_id, $account);
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_menu().
  */
 function drupalcampmel_core_menu() {
@@ -47,10 +102,23 @@ function drupalcampmel_core_schedule_generate_confirm($form, $form_state) {
  */
 function drupalcampmel_core_schedule_generate_confirm_submit($form, $form_state) {
   // Ensure rules don't trigger during this process.
-  $GLOBALS['conf']['rules_event_whitelist'] = array();
+  $whitelist = rules_get_cache('rules_event_whitelist');
+  rules_set_cache('rules_event_whitelist', array('fake' => TRUE));
+
+  // Reset schedule if already generated.
+  if (variable_get('drupalcampmel_schedule', FALSE)) {
+    $nodes = node_load_multiple(array(), array('type' => 'session'));
+    foreach ($nodes as $node) {
+      /** @var EntityDrupalWrapper $wrapper */
+      $wrapper = entity_metadata_wrapper('node', $node);
+      $wrapper->field_session_room->set(NULL);
+      $wrapper->field_session_slot->set(NULL);
+      $wrapper->save();
+    }
+  }
 
   // Build list of votes and sort.
-  $counts    = array();
+  $counts = array();
   $flag_data = flag_get_flag_flagging_data('vote');
   foreach ($flag_data as $flag) {
     $counts[$flag->entity_id] = isset($counts[$flag->entity_id]) ? $counts[$flag->entity_id] + 1 : 1;
@@ -59,13 +127,16 @@ function drupalcampmel_core_schedule_generate_confirm_submit($form, $form_state)
 
   // Set the number of concurrent sessions.
   $sessions = 6;
-  if (count($counts) > 18) {
+  if (count($counts) > 18 && count($counts) <= 21) {
+    $sessions = 7;
+  }
+  elseif (count($counts) > 21) {
     $sessions = 8;
   }
 
-  $room    = 1;
+  $room = 1;
   $session = 0;
-  $i       = 0;
+  $i = 0;
   foreach ($counts as $nid => $count) {
     // Ensure we don't have more than 24 sessions, that's the current cap.
     $i++;
@@ -84,10 +155,11 @@ function drupalcampmel_core_schedule_generate_confirm_submit($form, $form_state)
 
     // Update nodes with schedule information.
     $node = node_load($nid);
-    $node = entity_metadata_wrapper('node', $node);
-    $node->field_session_room->set($room);
-    $node->field_session_slot->set($session);
-    $node->save();
+    /** @var EntityDrupalWrapper $wrapper */
+    $wrapper = entity_metadata_wrapper('node', $node);
+    $wrapper->field_session_room->set($room);
+    $wrapper->field_session_slot->set($session);
+    $wrapper->save();
   }
 
   // Set schedule flag and revert features.
@@ -95,12 +167,15 @@ function drupalcampmel_core_schedule_generate_confirm_submit($form, $form_state)
   $GLOBALS['conf']['drupcampmel_schedule'] = TRUE;
   drupal_flush_all_caches();
   features_revert(array(
-      'drupalcampmel_core' => array(
-        'page_manager_pages',
-        'views_view'
-      )
-    ));
+    'drupalcampmel_core' => array(
+      'page_manager_pages',
+      'views_view'
+    )
+  ));
   views_invalidate_cache();
+
+  // Restore Rules event whitelist.
+  rules_set_cache('rules_event_whitelist', $whitelist);
 
   // Redirect to schedule.
   drupal_set_message('Schedule generated!');

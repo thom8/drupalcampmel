@@ -791,7 +791,7 @@ return TRUE;
   $page->admin_description = '';
   $page->path = 'schedule';
   $page->access = array(
-    'logic' => 'and',
+    'logic' => 'or',
     'plugins' => array(
       0 => array(
         'name' => 'role',
@@ -799,6 +799,14 @@ return TRUE;
           'rids' => array(
             0 => 3,
           ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+      1 => array(
+        'name' => 'perm',
+        'settings' => array(
+          'perm' => 'administer site configuration',
         ),
         'context' => 'logged-in-user',
         'not' => FALSE,

@@ -13,6 +13,7 @@ function drupalcampmel_core_install() {
 
   // Create the 'Creating a session' bean.
   drupalcampmel_core_install_create_session_bean();
+  drupalcampmel_core_install_creating_a_session_bean();
 
   // Enable dependencies, flush caches and revert the feature.
   _drupalcampmel_core_flush_revert();
@@ -247,7 +248,7 @@ function drupalcampmel_core_install_creating_a_session_bean() {
   $bean->delta = 'creating-a-session';
 
   $bean->field_body[LANGUAGE_NONE][0] = array(
-    'value'  => '<p>Todo<div><br><a href="/node/add/session"><button type="button" class="btn btn-default">Create a session</button></a></div></p>',
+    'value'  => '<p>You haven\'t created a session yet, but it\'s not too late; We strongly encourage everyone to propose a talk, everyone has something worth saying and worth hearing!</p><div><br><a href="/node/add/session"><button type="button" class="btn btn-default">Create a session</button></a></div>',
     'format' => 'full_html',
   );
 
@@ -321,4 +322,11 @@ function drupalcampmel_core_update_7110() {
   foreach ($users as $user) {
     _user_mail_notify('status_activated', $user);
   }
+}
+
+/**
+ * Add the 'Creating a session' bean.
+ */
+function drupalcampmel_core_update_7111() {
+  drupalcampmel_core_install_creating_a_session_bean();
 }

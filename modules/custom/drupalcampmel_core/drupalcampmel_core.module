@@ -21,6 +21,61 @@ foreach (module_list() as $module) {
 }
 
 /**
+ * Implements hook_profiler_components_alter().
+ *
+ * @param $components
+ */
+function drupalcampmel_core_profiler_components_alter(&$components) {
+  $components['drupalcampmelbourne'] = array(
+    'callback' => 'drupalcampmelbourne_core_profiler',
+    'weight'   => 100,
+  );
+}
+
+/**
+ * Callback for profiler component.
+ */
+function drupalcampmelbourne_core_profiler() {
+  // Create some dummy sessions.
+  $role = user_role_load_by_name('ticket holder');
+  $uids = db_select('users_roles', 'r')
+    ->fields('r', array('uid'))
+    ->condition('rid', $role->rid)
+    ->execute()
+    ->fetchCol();
+  foreach ($uids as $uid) {
+    $operation['num_nodes'] = 1;
+    $operation['node_types'] = drupal_map_assoc(array('session'));
+    $operation['users'] = drupal_map_assoc(array($uid));
+    $operation['kill_content'] = NULL;
+    $operation['add_alias'] = NULL;
+    $form_state = array('values' => $operation);
+    drupal_form_submit('devel_generate_content_form', $form_state);
+  }
+
+  // Vote for some dummy sessions.
+  foreach ($uids as $uid) {
+    $account = user_load($uid);
+    $votes = array_rand($uids, rand(1, 5));
+    if (is_array($votes)) {
+      foreach ($votes as $vote) {
+        if ($vote !== $uid) {
+          $query = new EntityFieldQuery();
+          $result = $query->entityCondition('entity_type', 'node')
+            ->entityCondition('bundle', 'session')
+            ->propertyCondition('uid', $vote)
+            ->execute();
+          if (isset($result['node'])) {
+            $entity_id = key($result['node']);
+            flag('flag', 'vote', $entity_id, $account);
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
  * Implements hook_menu().
  */
 function drupalcampmel_core_menu() {

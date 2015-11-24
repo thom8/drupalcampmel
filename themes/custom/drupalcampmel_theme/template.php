@@ -123,7 +123,7 @@ function drupalcampmel_theme_preprocess_views_view_matrix(&$vars) {
   $vars['matrix_attributes']['class'] = array('table', 'table-responsive');
 
   // Name rooms.
-  $rooms = array('Activity room', 'Meeting room 2/3', 'Meeting room 1');
+  $rooms = array('Community Room', 'Activities room', 'The Terrace');
   foreach ($vars['header'] as $id => $header) {
     if ($id == 0) {
       continue;

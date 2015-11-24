@@ -29,8 +29,8 @@ function drupalcampmel_core_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '24';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'matrix';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
@@ -91,6 +91,16 @@ function drupalcampmel_core_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'session' => 'session',
   );
+  /* Filter criterion: Content: Room (field_session_room) */
+  $handler->display->display_options['filters']['field_session_room_value']['id'] = 'field_session_room_value';
+  $handler->display->display_options['filters']['field_session_room_value']['table'] = 'field_data_field_session_room';
+  $handler->display->display_options['filters']['field_session_room_value']['field'] = 'field_session_room_value';
+  $handler->display->display_options['filters']['field_session_room_value']['operator'] = 'not empty';
+  /* Filter criterion: Content: Slot (field_session_slot) */
+  $handler->display->display_options['filters']['field_session_slot_value']['id'] = 'field_session_slot_value';
+  $handler->display->display_options['filters']['field_session_slot_value']['table'] = 'field_data_field_session_slot';
+  $handler->display->display_options['filters']['field_session_slot_value']['field'] = 'field_session_slot_value';
+  $handler->display->display_options['filters']['field_session_slot_value']['operator'] = 'not empty';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -174,15 +184,6 @@ function drupalcampmel_core_views_default_views() {
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: User: Entityform Submission */
-  $handler->display->display_options['relationships']['entityform']['id'] = 'entityform';
-  $handler->display->display_options['relationships']['entityform']['table'] = 'users';
-  $handler->display->display_options['relationships']['entityform']['field'] = 'entityform';
-  $handler->display->display_options['relationships']['entityform']['relationship'] = 'uid';
-  $handler->display->display_options['relationships']['entityform']['required'] = TRUE;
-  $handler->display->display_options['relationships']['entityform']['bundle_types'] = array(
-    'confirm_order' => 'confirm_order',
-  );
   /* Relationship: Flags: vote */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';

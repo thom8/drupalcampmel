@@ -56,8 +56,8 @@ dependencies[] = mailchimp
 dependencies[] = mailchimp_lists
 dependencies[] = mailcontrol
 dependencies[] = mailsystem
-dependencies[] = mobile_codes
 dependencies[] = menu
+dependencies[] = mobile_codes
 dependencies[] = node
 dependencies[] = node_limit
 dependencies[] = node_limit_type
@@ -247,6 +247,7 @@ features[user_permission][] = view any sponsor bean
 features[user_permission][] = view any users ticket
 features[user_permission][] = view field_session_room
 features[user_permission][] = view field_session_slot
+features[user_permission][] = view field_tickets
 features[user_permission][] = view own unpublished content
 
 features[user_role][] = ticket holder

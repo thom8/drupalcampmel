@@ -123,6 +123,15 @@ function drupalcampmel_core_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'view field_tickets'.
+  $permissions['view field_tickets'] = array(
+    'name' => 'view field_tickets',
+    'roles' => array(
+      'volunteer' => 'volunteer',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'view own unpublished content'.
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',

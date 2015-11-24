@@ -6,6 +6,17 @@
  */
 
 /**
+ * Implements hook_permission().
+ */
+function drupalcampmel_core_permission() {
+  return array(
+    'view any users ticket' => array(
+      'title' => t('View an users ticket'),
+    ),
+  );
+}
+
+/**
  * Implements hook_form_alter().
  *
  * @param $form
@@ -126,4 +137,74 @@ function drupalcampmel_core_purchase_tickets($form, $form_state) {
   $data['return']        = url('', array('absolute' => TRUE));
   $data['item_name_1'] .= ' (2732)';
   drupal_goto($redirect_form['#action'], array('query' => $data));
+}
+
+/**
+ * Menu callback for User ticket.
+ *
+ * @param $account
+ * @return string
+ */
+function drupalcampmel_core_user_ticket($account) {
+  /** @var EntityDrupalWrapper $wrapper */
+  $wrapper = entity_metadata_wrapper('user', $account);
+
+  // Ensure user actually has a ticket, otherwise deliver 'page not found'.
+  if (empty($wrapper->field_tickets->value())) {
+    drupal_not_found();
+    drupal_exit();
+  }
+
+  return theme('mobilecode', array(
+    'data'       => url("user/{$account->uid}/ticket/" . substr(drupal_hmac_base64($account->uid, drupal_get_private_key() . drupal_get_hash_salt()), 0, 8), array('absolute' => TRUE)),
+    'attributes' => array('#preset' => 'large'),
+  ));
+}
+
+/**
+ * Menu callback for User ticket check.
+ *
+ * @param $account
+ * @param $token
+ * @return bool|string
+ */
+function drupalcampmel_core_user_ticket_check($account, $token) {
+  /** @var EntityDrupalWrapper $wrapper */
+  $wrapper = entity_metadata_wrapper('user', $account);
+
+  // Ensure user actually has a ticket, otherwise deliver 'page not found'.
+  if (empty($wrapper->field_tickets->value())) {
+    drupal_not_found();
+    drupal_exit();
+  }
+
+  // Ensure the scanned ticket is valid for this user account.
+  $user_token = substr(drupal_hmac_base64($account->uid, drupal_get_private_key() . drupal_get_hash_salt()), 0, 8);
+  if ($token != $user_token) {
+    drupal_set_title('Invalid ticket');
+    drupal_set_message('The scanned ticket is invalid', 'error');
+    return '';
+  }
+
+  return entity_view('user', array($account), 'ticket_check');
+}
+
+/**
+ * Menu access callback for User ticket.
+ *
+ * @param        $account
+ * @param string $op
+ * @return bool
+ */
+function drupalcampmel_core_user_ticket_access($account, $op = 'view') {
+  if (user_access('view any users ticket')) {
+    return TRUE;
+  }
+
+  global $user;
+  if ($user->uid == $account->uid && $op == 'view') {
+    return TRUE;
+  }
+
+  return FALSE;
 }

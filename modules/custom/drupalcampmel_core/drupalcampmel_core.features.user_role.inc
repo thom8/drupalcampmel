@@ -16,5 +16,11 @@ function drupalcampmel_core_user_default_roles() {
     'weight' => 2,
   );
 
+  // Exported role: volunteer.
+  $roles['volunteer'] = array(
+    'name' => 'volunteer',
+    'weight' => 3,
+  );
+
   return $roles;
 }

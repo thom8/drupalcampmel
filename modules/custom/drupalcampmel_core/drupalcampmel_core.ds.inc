@@ -223,5 +223,58 @@ function drupalcampmel_core_ds_layout_settings_info() {
   );
   $export['user|user|form'] = $ds_layout;
 
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'user|user|ticket_check';
+  $ds_layout->entity_type = 'user';
+  $ds_layout->bundle = 'user';
+  $ds_layout->view_mode = 'ticket_check';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_first_name',
+        1 => 'field_last_name',
+        2 => 'field_tickets',
+        3 => 'field_t_shirt_size',
+        4 => 'field_diet',
+      ),
+    ),
+    'fields' => array(
+      'field_first_name' => 'ds_content',
+      'field_last_name' => 'ds_content',
+      'field_tickets' => 'ds_content',
+      'field_t_shirt_size' => 'ds_content',
+      'field_diet' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => TRUE,
+    'layout_link_attribute' => FALSE,
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['user|user|ticket_check'] = $ds_layout;
+
+  return $export;
+}
+
+/**
+ * Implements hook_ds_view_modes_info().
+ */
+function drupalcampmel_core_ds_view_modes_info() {
+  $export = array();
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'ticket_check';
+  $ds_view_mode->label = 'ticket_check';
+  $ds_view_mode->entities = array(
+    'user' => 'user',
+  );
+  $export['ticket_check'] = $ds_view_mode;
+
   return $export;
 }

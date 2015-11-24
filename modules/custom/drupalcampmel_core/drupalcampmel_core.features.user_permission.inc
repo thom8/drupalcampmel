@@ -94,6 +94,15 @@ function drupalcampmel_core_user_default_permissions() {
     'module' => 'bean',
   );
 
+  // Exported permission: 'view any users ticket'.
+  $permissions['view any users ticket'] = array(
+    'name' => 'view any users ticket',
+    'roles' => array(
+      'volunteer' => 'volunteer',
+    ),
+    'module' => 'drupalcampmel_core',
+  );
+
   // Exported permission: 'view field_session_room'.
   $permissions['view field_session_room'] = array(
     'name' => 'view field_session_room',

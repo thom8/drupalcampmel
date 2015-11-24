@@ -56,6 +56,7 @@ dependencies[] = mailchimp
 dependencies[] = mailchimp_lists
 dependencies[] = mailcontrol
 dependencies[] = mailsystem
+dependencies[] = mobile_codes
 dependencies[] = menu
 dependencies[] = node
 dependencies[] = node_limit
@@ -127,6 +128,9 @@ features[ds_layout_settings][] = node|session|default
 features[ds_layout_settings][] = node|session|form
 features[ds_layout_settings][] = user|user|default
 features[ds_layout_settings][] = user|user|form
+features[ds_layout_settings][] = user|user|ticket_check
+
+features[ds_view_modes][] = ticket_check
 
 features[entityform_type][] = confirm_order
 features[entityform_type][] = contact
@@ -240,11 +244,13 @@ features[user_permission][] = flag vote
 features[user_permission][] = unflag vote
 features[user_permission][] = view any misc bean
 features[user_permission][] = view any sponsor bean
+features[user_permission][] = view any users ticket
 features[user_permission][] = view field_session_room
 features[user_permission][] = view field_session_slot
 features[user_permission][] = view own unpublished content
 
 features[user_role][] = ticket holder
+features[user_role][] = volunteer
 
 features[variable][] = admin_theme
 features[variable][] = blockify_blocks

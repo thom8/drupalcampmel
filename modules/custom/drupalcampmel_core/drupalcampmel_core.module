@@ -127,7 +127,10 @@ function drupalcampmel_core_schedule_generate_confirm_submit($form, $form_state)
 
   // Set the number of concurrent sessions.
   $sessions = 6;
-  if (count($counts) > 18) {
+  if (count($counts) > 18 && count($counts) <= 21) {
+    $sessions = 7;
+  }
+  elseif (count($counts) > 21) {
     $sessions = 8;
   }
 

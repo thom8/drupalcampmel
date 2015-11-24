@@ -133,31 +133,53 @@ function drupalcampmel_theme_preprocess_views_view_matrix(&$vars) {
   }
 
   // Schedule.
-  if (count($vars['rows']) <= 6) {
-    $schedule = array(
-      1       => '10:45 - 11:30',
-      2       => '11:40 - 12:25',
-      'lunch' => t('Lunch'),
-      3       => '13:10 - 13:55',
-      4       => '14:05 - 14:50',
-      'break' => t('Break'),
-      5       => '15:20 - 16:05',
-      6       => '16:15 - 17:00',
-    );
-  }
-  else {
-    $schedule = array(
-      1       => '10:45 - 11:30',
-      2       => '11:35 - 12:05',
-      'lunch' => t('Lunch'),
-      3       => '12:55 - 13:25',
-      4       => '13:30 - 14:00',
-      5       => '14:05 - 14:35',
-      'break' => t('Break'),
-      6       => '15:00 - 15:30',
-      7       => '15:35 - 16:05',
-      8       => '16:10 - 16:40',
-    );
+  $schedule = array();
+  switch (count($vars['rows'])) {
+    // 45 minute session schedule.
+    case 6:
+      $schedule = array(
+        1       => '10:45 - 11:30',
+        2       => '11:35 - 12:20',
+        'lunch' => t('Lunch'),
+        3       => '13:20 - 14:05',
+        4       => '14:10 - 14:55',
+        'break' => t('Break'),
+        5       => '15:10 - 15:55',
+        6       => '16:00 - 16:45',
+      );
+      break;
+
+    // 40 minute session schedule.
+    case 7:
+      $schedule = array(
+        1       => '10:45 - 11:25',
+        2       => '11:30 - 12:10',
+        'lunch' => t('Lunch'),
+        3       => '13:10 - 13:50',
+        4       => '13:55 - 14:35',
+        5       => '14:40 - 15:20',
+        'break' => t('Break'),
+        6       => '15:35 - 16:15',
+        7       => '16:20 - 17:00',
+      );
+
+      break;
+
+    // 30 minute session schedule.
+    case 8:
+      $schedule = array(
+        1       => '10:45 - 11:15',
+        2       => '11:20 - 11:50',
+        'lunch' => t('Lunch'),
+        3       => '12:50 - 13:20',
+        4       => '13:25 - 13:55',
+        5       => '14:00 - 14:30',
+        'break' => t('Break'),
+        6       => '14:45 - 15:15',
+        7       => '15:20 - 15:50',
+        8       => '15:55 - 16:25',
+      );
+      break;
   }
 
   $i = 0;

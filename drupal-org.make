@@ -104,6 +104,8 @@ projects[mailcontrol][version] = 1.0
 
 projects[mailsystem][version] = 2.34
 
+projects[mobile_codes][version] = 2.1
+
 projects[module_filter][version] = 2.0
 
 projects[navbar][version] = 1.6

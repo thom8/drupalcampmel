@@ -110,7 +110,17 @@ function drupalcampmel_core_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_user__user';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'ticket_check' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'googleanalytics' => array(
@@ -123,7 +133,68 @@ function drupalcampmel_core_strongarm() {
           'weight' => '5',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'product:sku' => array(
+          'default' => array(
+            'weight' => '-10',
+            'visible' => FALSE,
+          ),
+          'ticket_check' => array(
+            'weight' => '6',
+            'visible' => FALSE,
+          ),
+        ),
+        'product:title' => array(
+          'default' => array(
+            'weight' => '-5',
+            'visible' => FALSE,
+          ),
+          'ticket_check' => array(
+            'weight' => '7',
+            'visible' => FALSE,
+          ),
+        ),
+        'product:status' => array(
+          'default' => array(
+            'weight' => '5',
+            'visible' => FALSE,
+          ),
+          'ticket_check' => array(
+            'weight' => '9',
+            'visible' => FALSE,
+          ),
+        ),
+        'product:commerce_price' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'ticket_check' => array(
+            'weight' => '8',
+            'visible' => FALSE,
+          ),
+        ),
+        'product:commerce_stock' => array(
+          'default' => array(
+            'weight' => '36',
+            'visible' => FALSE,
+          ),
+          'ticket_check' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+        ),
+        'summary' => array(
+          'default' => array(
+            'weight' => '5',
+            'visible' => TRUE,
+          ),
+          'ticket_check' => array(
+            'weight' => '5',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_user__user'] = $strongarm;

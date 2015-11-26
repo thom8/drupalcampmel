@@ -19,12 +19,21 @@ install_site: true
 # Apache config
 apache_vhosts:
   - {servername: "{{ drupal_domain }}", documentroot: "{{ drupal_core_path }}"}
+  - {servername: "db.{{ drupal_domain }}", documentroot: "/opt/adminer", extra_parameters: "DirectoryIndex adminer.php"}
+  - {servername: "logs.{{ drupal_domain }}", documentroot: "/usr/share/php/pimpmylog"}
 
-# Symlinks
-symlinks:
-  - src: /drupal/modules/custom
-    link: /drupal/docroot/profiles/drupalcampmel/modules/custom
-    force: yes
-  - src: /drupal/themes/custom
-    link: /drupal/docroot/profiles/drupalcampmel/themes/custom
-    force: yes
+installed_extras:
+  - adminer
+  - mailhog
+  - memcached
+  - pimpmylog
+  - varnish
+  - xdebug
+  - xhprof
+  - selenium
+  - drupal-console
+  # - solr
+
+# Pimp my Log settings.
+pimpmylog_install_dir: /usr/share/php/pimpmylog
+pimpmylog_grant_all_privs: true

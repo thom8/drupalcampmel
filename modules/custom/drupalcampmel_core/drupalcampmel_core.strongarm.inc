@@ -659,5 +659,47 @@ function drupalcampmel_core_strongarm() {
   $strongarm->value = '2';
   $export['user_register'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xhprof_default_class';
+  $strongarm->value = 'XHProfRunsFile';
+  $export['xhprof_default_class'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xhprof_disable_admin_paths';
+  $strongarm->value = 1;
+  $export['xhprof_disable_admin_paths'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xhprof_enabled';
+  $strongarm->value = 1;
+  $export['xhprof_enabled'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xhprof_flags_cpu';
+  $strongarm->value = 1;
+  $export['xhprof_flags_cpu'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xhprof_flags_memory';
+  $strongarm->value = 1;
+  $export['xhprof_flags_memory'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xhprof_interval';
+  $strongarm->value = '';
+  $export['xhprof_interval'] = $strongarm;
+
   return $export;
 }

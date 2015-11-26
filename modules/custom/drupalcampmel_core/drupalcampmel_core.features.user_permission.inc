@@ -20,6 +20,16 @@ function drupalcampmel_core_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'access xhprof data'.
+  $permissions['access xhprof data'] = array(
+    'name' => 'access xhprof data',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'xhprof',
+  );
+
   // Exported permission: 'change own username'.
   $permissions['change own username'] = array(
     'name' => 'change own username',

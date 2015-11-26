@@ -27,6 +27,21 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder ".", "/drupal",
     type: "nfs",
     id: "drupal"
+  config.vm.synced_folder "./modules/custom", "/drupal/docroot/profiles/drupalcampmel/modules/custom",
+    type: "nfs",
+    id: "modules"
+  config.vm.synced_folder "./themes/custom", "/drupal/docroot/profiles/drupalcampmel/themes/custom",
+    type: "nfs",
+    id: "themes"
+
+  # Vagrant Host Updater
+  if Vagrant.has_plugin?('vagrant-hostsupdater')
+    subdomains = ['db', 'logs']
+    config.hostsupdater.aliases = Array.new()
+    subdomains.each do |domain|
+      config.hostsupdater.aliases.push("#{domain}.#{vconfig['drupal_domain']}")
+    end
+  end
 
   # Upload vagrant.config.yml
   config.vm.provision "vagrant_config", type: "file" do |s|
@@ -37,7 +52,7 @@ Vagrant.configure("2") do |config|
   # Provision box
   config.vm.provision "ansible", type: "shell" do |s|
     s.privileged = true
-    s.inline = "ANSIBLE_FORCE_COLOR=1 PYTHONUNBUFFERED=1 ansible-playbook /ansible/playbook.yml --sudo -c local -i 'localhost,'"
+    s.inline = "ANSIBLE_FORCE_COLOR=1 PYTHONUNBUFFERED=1 ansible-playbook -vvv /ansible/playbook.yml --sudo -c local -i 'localhost,'"
   end
 
   # VirtualBox.

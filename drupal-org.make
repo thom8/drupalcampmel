@@ -162,6 +162,8 @@ projects[views_matrix][download][revision] = 888fff4
 
 projects[views_slideshow][version] = 3.1
 
+projects[xhprof][version] = 1.0-beta3
+
 projects[xmlsitemap][version] = 2.2
 ; Variable module integration - http://drupal.org/node/1989862#comment-7389678
 projects[xmlsitemap][patch][] = http://drupal.org/files/variable_integration-1989862-1.patch
